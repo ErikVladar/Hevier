@@ -141,7 +141,7 @@
         position: absolute;
         inset: 0;
         background: linear-gradient(to right,
-                rgba(143, 143, 143, 0.9),
+                rgba(255, 255, 255, 0.9),
                 rgba(255, 255, 255, 0.4));
 
         pointer-events: none;
@@ -154,7 +154,12 @@
     }
 
     #navbar {
-        background: linear-gradient(to right, rgba(24, 76, 139), rgba(191, 219, 254, 0));
+        /* background: linear-gradient(to right, rgba(24, 76, 139), rgba(191, 219, 254, 0)); */
+    }
+
+    #more-main {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
     }
     
     @font-face {
@@ -177,16 +182,16 @@
         ↑
     </button>
     <div class="min-h-full">
-        <nav id="navbar" class="fixed top-0 z-30 w-full text-xl bg-blue-200 transition-all duration-300">
+        <nav id="navbar" class="fixed top-0 z-30 w-full text-xl transition-all duration-300">
             <x-navbar />
         </nav>
     </div>
     <div
         class="bg-hero md:pt-20 bg-scroll md:bg-fixed md:bg-cover bg-center bg-repeat items-center md:bg-no-repeat [@media(min-width:1080px)]:px-20">
-        <div class="bg-white/75 ">
-            <section class="min-h-[50vh] grid md:grid-cols-3">
+        <div id="more-main" class="bg-white/40  rounded-3xl">
+            <section class="min-h-[50vh] grid py-0  md:grid-cols-3">
                 <!-- Left: Text/Story (2/3) -->
-                <div class="flex items-center p-10 md:col-span-2">
+                <div class="flex mx-20 items-center p-10 md:col-span-2">
                     <div>
                         <h2 class="text-5xl md:text-6xl text-black font-bold mb-6">Lara Sprintová</h2>
                         <hr class="border-t mb-8 mt-8 border-gray-600 w-full">
@@ -229,7 +234,7 @@
                 </div>
 
                 <!-- Right: Text/Story -->
-                <div class="flex items-center p-10 md:col-span-2">
+                <div class="flex mx-20 items-center p-10 md:col-span-2">
                     <div>
                         <h2 class="text-6xl text-black font-bold mb-4">Peter Kováč</h2>
 

@@ -67,7 +67,7 @@
     }
 
     #navbar {
-        background: linear-gradient(to right, rgba(24, 76, 139), rgba(191, 219, 254, 0));
+        /* background: linear-gradient(to right, rgba(24, 76, 139), rgba(191, 219, 254, 0)); */
     }
     
     @font-face {
@@ -90,7 +90,7 @@
         ↑
     </button>
     <div class="min-h-full">
-        <nav id="navbar" class="fixed top-0 z-50 w-full text-xl bg-blue-200 transition-all duration-300">
+        <nav id="navbar" class="fixed top-0 z-50 w-full text-xl transition-all duration-300">
             <x-navbar />
         </nav>
     </div>

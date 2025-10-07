@@ -153,16 +153,24 @@
     }
 
     #navbar {
-        background: linear-gradient(to right, rgba(24, 76, 139), rgba(191, 219, 254, 0));
+        /* background: linear-gradient(to right, rgba(24, 76, 139), rgba(191, 219, 254, 0)); */
     }
 
     #bio {
-        background: linear-gradient(to top, rgb(191, 219, 254,0), rgb(191, 219, 254));
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
     }
-
+    
+    @font-face {
+        font-family: 'Kaushan';
+        src: url('/Kaushan/KaushanScript-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
 </style>
 
-<body class="font-[Allan] antialiased">
+<body class="font-[Kaushan] antialiased">
     {{-- <body class="font-[Tagesschrift]"> --}}
 
     <button id="scrollToTopBtn"
@@ -173,7 +181,7 @@
         ↑
     </button>
     <div class="min-h-full">
-        <nav id="navbar" class="fixed top-0 z-30 w-full text-xl bg-blue-200 transition-all duration-300">
+        <nav id="navbar" class="fixed top-0 z-30 w-full text-xl transition-all duration-300">
             <x-navbar />
         </nav>
     </div>
@@ -203,7 +211,7 @@
                         alt="foto autora" class="w-[30rem] h-[30rem] object-cover rounded-full shadow-lg mb-4">
                 </div>
                 <div class="text-center md:text-left">
-                    <h2 class="text-6xl text-white font-bold mb-4">Daniel Hevier</h2>
+                    <h2 class="text-6xl text-gray-700 font-bold mb-4">Daniel Hevier</h2>
                     <p class="text-3xl text-gray-800 mb-6">
                         Daniel Hevier je jeden z najvýznamnejších slovenských spisovateľov, známy predovšetkým svojou
                         tvorbou pre deti a mládež. Počas svojej bohatej kariéry napísal desiatky kníh, básní, piesní aj

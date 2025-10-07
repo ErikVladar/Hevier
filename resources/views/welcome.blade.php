@@ -30,6 +30,9 @@
     <!-- Lightbox2 JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="/turn/turn.js"></script>
 </head>
 
 
@@ -147,7 +150,7 @@
     }
 
     #navbar {
-        background: linear-gradient(to right, rgba(24, 76, 139), rgba(191, 219, 254, 0));
+        /* background: linear-gradient(to right, rgba(24, 76, 139), rgba(191, 219, 254, 0)); */
     }
 
     #merch {
@@ -162,7 +165,26 @@
         /* Optional for better layering */
         border-radius: 0;
     }
-    
+
+    #magazine {
+        width: 800px;
+        height: 400px;
+    }
+
+    #magazine .turn-page {
+        background-color: #ccc;
+    }
+
+    #flipbook>div {
+        width: 100%;
+        height: 100%;
+    }
+
+    #reviews {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
     @font-face {
         font-family: 'Kaushan';
         src: url('/Kaushan/KaushanScript-Regular.ttf') format('truetype');
@@ -174,12 +196,12 @@
 
 <body class="font-[Kaushan] antialiased">
     <div class=" min-h-full">
-        <nav id="navbar" class="fixed top-0 z-30 w-full text-xl bg-blue-200 transition-all duration-300">
+        <nav id="navbar" class="fixed top-0 z-30 w-full text-xl transition-all duration-300">
             <x-navbar />
         </nav>
     </div>
     <div
-        class="bg-hero md:pt-20 bg-scroll md:bg-fixed md:bg-cover bg-center bg-repeat items-center md:bg-no-repeat [@media(min-width:1080px)]:px-20">
+        class="bg-hero md:pt-20 bg-scroll md:bg-fixed md:bg-cover bg-center bg-repeat items-center md:bg-no-repeat [@media(min-width:1080px)]:px-32">
         <div class="w-full relative bg-cover bg-centerm-32 px-20 mt-12 items-center justify-center text-center">
             <section id="about" class="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-screen">
                 <div id="title" class="flex flex-col h-full p-12">
@@ -219,21 +241,35 @@
                     @endauth
                 </div>
 
-                <div id="cover" class="flex flex-col h-full w-full items-center justify-center p-12">
-                    <img src="/imgs/TITULKA.jpg" alt="Book Cover" style="max-height:60vh; height:auto; width:auto;"
-                        class="shadow-2xl shadow-black/90 object-contain">
+                <div id="cover" class="flex flex-col h-full mt-32 w-full items-center justify-center">
 
-                    <button type="button" onclick="window.location.href='/shop'" class="cta-button">
+                    <div id="flipbook-wrapper" style="position: relative; left: -150px;">
+                        <div id="flipbook" style="width:1200px; height:900px;">
+                            <div class="hard">
+                                <img src="/imgs/TITULKA.jpg" style="width:100%; height:100%; object-fit:cover;">
+                            </div>
+                            <div class="bg-gray-200 hard"></div>
+                            <div class="bg-white"> Page 1 </div>
+                            <div class="bg-white"> Page 2 </div>
+                            <div class="bg-white"> Page 3 </div>
+                            <div class="bg-white"> Page 4 </div>
+                            <div class="bg-gray-200 hard"></div>
+                            <div class="bg-gray-200 hard"></div>
+                        </div>
+                    </div>
+
+
+                    <button type="button" onclick="window.location.href='/shop'" class="cta-button mt-6 mb-20">
                         Kúpiť
                     </button>
                 </div>
             </section>
         </div>
-        <section class="relative w-full overflow-hidden px-20">
+        <section class="relative w-full overflow-hidden">
             <section id="merch"
                 class="relative w-full min-h-screen grid grid-cols-1 md:grid-cols-1 gap-10 items-center justify-center text-center px-6">
 
-                <section id="about-parents" class="text-left text-gray-900 py-12 px-6 md:px-16">
+                <section id="about-parents" class="text-left rounded-3xl text-gray-900 py-12 px-6 md:px-16">
                     <div class="max-w-4xl p-8 mx-auto">
 
                         {{-- Lead paragraph / editable --}}
@@ -270,7 +306,7 @@
                         @endauth
 
                         {{-- Why parents section --}}
-                        <div class="rounded-lg bg-blue-200 p-6 md:p-8">
+                        <div class="rounded-lg bg-white p-6 md:p-8">
                             <h3 class="text-5xl text-gray-600 font-semibold mb-4">Prečo to ocenia rodičia?</h3>
 
                             {{-- Editable list --}}
@@ -319,10 +355,9 @@
                 </div>
             </div>
         </section>
-    </div>
 
-    <!-- full-width band with vertical spacing -->
-    {{-- <section class="bg-blue-200">
+        <!-- full-width band with vertical spacing -->
+        {{-- <section class="bg-blue-200">
         <div class="max-w-7xl mx-auto px-6 py-6">
             <!-- content container (centered & constrained) -->
             <main class="space-y-0">
@@ -385,51 +420,60 @@
             </main>
         </div>
     </section> --}}
-    <section class="w-full bg-blue-200 py-12">
-        <!-- Section heading -->
-        <h2 class="text-4xl font-bold text-center mb-12">Recenzie</h2>
+        <section id="reviews" class="w-full bg-white/20 py-12">
+            <!-- Section heading -->
+            <h2 class="text-4xl font-bold text-center mb-12">Recenzie</h2>
 
-        <!-- Reviews grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
+            <!-- Reviews grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
 
-            <!-- Review 1 -->
-            <article class="bg-blue-100 rounded-2xl shadow-lg p-6 flex flex-col items-center text-center">
-                <img src="/imgs/review2.png" alt="Mária Nováková"
-                    class="w-20 h-20 rounded-full object-cover mb-4 shadow-md">
-                <h3 class="text-lg font-bold mb-2">Mária Nováková</h3>
-                <p class="mt-2 text-gray-700 text-xl leading-relaxed">
-                    "Táto kniha úplne zmenila prístup môjho dieťaťa k pohybu – teraz sa teší na každý deň!"
-                </p>
-            </article>
+                <!-- Review 1 -->
+                <article class="bg-gray-100 rounded-2xl shadow-lg p-6 flex flex-col items-center text-center">
+                    <img src="/imgs/review2.png" alt="Mária Nováková"
+                        class="w-20 h-20 rounded-full object-cover mb-4 shadow-md">
+                    <h3 class="text-lg font-bold mb-2">Mária Nováková</h3>
+                    <p class="mt-2 text-gray-700 text-xl leading-relaxed">
+                        "Táto kniha úplne zmenila prístup môjho dieťaťa k pohybu – teraz sa teší na každý deň!"
+                    </p>
+                </article>
 
-            <!-- Review 2 -->
-            <article class="bg-blue-100 rounded-2xl shadow-lg p-6 flex flex-col items-center text-center">
-                <img src="/imgs/review1.png" alt="Peter Horváth"
-                    class="w-20 h-20 rounded-full object-cover mb-4 shadow-md">
-                <h3 class="text-lg font-bold mb-2">Peter Horváth</h3>
-                <p class="mt-2 text-gray-700 text-xl leading-relaxed">
-                    "Úžasný príbeh a inšpirácia pre deti, aby sa hýbali a objavovali nové aktivity."
-                </p>
-            </article>
+                <!-- Review 2 -->
+                <article class="bg-gray-100 rounded-2xl shadow-lg p-6 flex flex-col items-center text-center">
+                    <img src="/imgs/review1.png" alt="Peter Horváth"
+                        class="w-20 h-20 rounded-full object-cover mb-4 shadow-md">
+                    <h3 class="text-lg font-bold mb-2">Peter Horváth</h3>
+                    <p class="mt-2 text-gray-700 text-xl leading-relaxed">
+                        "Úžasný príbeh a inšpirácia pre deti, aby sa hýbali a objavovali nové aktivity."
+                    </p>
+                </article>
 
-            <!-- Review 3 -->
-            <article class="bg-blue-100 rounded-2xl shadow-lg p-6 flex flex-col items-center text-center">
-                <img src="/imgs/lara.png" alt="Lara Kováčová"
-                    class="w-20 h-20 rounded-full object-cover mb-4 shadow-md">
-                <h3 class="text-lg font-bold mb-2">Lara Kováčová</h3>
-                <p class="mt-2 text-gray-700 text-xl leading-relaxed">
-                    "Moje deti sa do knihy úplne ponorili a každý deň skúšajú nové pohybové výzvy."
-                </p>
-            </article>
+                <!-- Review 3 -->
+                <article class="bg-gray-100 rounded-2xl shadow-lg p-6 flex flex-col items-center text-center">
+                    <img src="/imgs/lara.png" alt="Lara Kováčová"
+                        class="w-20 h-20 rounded-full object-cover mb-4 shadow-md">
+                    <h3 class="text-lg font-bold mb-2">Lara Kováčová</h3>
+                    <p class="mt-2 text-gray-700 text-xl leading-relaxed">
+                        "Moje deti sa do knihy úplne ponorili a každý deň skúšajú nové pohybové výzvy."
+                    </p>
+                </article>
 
-        </div>
-    </section>
+            </div>
+        </section>
 
+    </div>
 
     <x-footer />
 </body>
 
 </html>
+<script type="text/javascript">
+    $("#flipbook").turn({
+        width: 600,
+        height: 450,
+        autoCenter: true
+    });
+</script>
+
 <script>
     const toggleBtn = document.getElementById('menu-toggle');
     const menu = document.getElementById('desktop-menu');

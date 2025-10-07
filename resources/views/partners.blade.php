@@ -67,7 +67,12 @@
     }
 
     #navbar {
-        background: linear-gradient(to right, rgba(24, 76, 139), rgba(191, 219, 254, 0));
+        /* background: linear-gradient(to right, rgba(24, 76, 139), rgba(191, 219, 254, 0)); */
+    }
+
+    #partners {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
     }
     
     @font-face {
@@ -89,14 +94,14 @@
         ↑
     </button>
     <div class="min-h-full">
-        <nav id="navbar" class="fixed top-0 z-30 w-full text-xl bg-blue-200 transition-all duration-300">
+        <nav id="navbar" class="fixed top-0 z-30 w-full text-xl transition-all duration-300">
             <x-navbar />
         </nav>
     </div>
     <div
         class="bg-hero md:pt-20 bg-scroll md:bg-fixed md:bg-cover bg-center bg-repeat items-center md:bg-no-repeat [@media(min-width:1080px)]:px-20">
 
-        <section class="md:pt-20 pb-32 py-16 px-4 bg-white/75 text-center">
+        <section id="partners" class="md:pt-20 pb-32 py-16 bg-white/30 px-4 text-center rounded-3xl">
             <h1 class="text-7xl font-bold mb-10 text-blue-900">Partneri</h1>
 
             <hr class="border-t mb-8 mt-8 mx-32 border-gray-600">
