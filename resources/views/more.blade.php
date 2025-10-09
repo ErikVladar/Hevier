@@ -93,7 +93,7 @@
     .bg-hero {
         position: relative;
         background-image: url('imgs/bg.png');
-        background-repeat: repeat-y;
+        background-repeat: no-repeat;
         background-position: top center;
         background-size: 100% auto;
         overflow-x: hidden;
@@ -113,6 +113,17 @@
     .bg-hero>* {
         position: relative;
         z-index: 2;
+    }
+
+    @media (max-width: 767px) {
+        .bg-hero {
+            background-image: url('imgs/bg-phone.png');
+            background-size: 100% auto;
+            /* match width, auto height */
+            background-position: top center;
+            /* align as needed */
+            background-repeat: no-repeat;
+        }
     }
 
     #more-main {

@@ -50,7 +50,7 @@
     .bg-hero {
         position: relative;
         background-image: url('imgs/bg.png');
-        background-repeat: repeat-y;
+        background-repeat: no-repeat;
         background-position: top center;
         background-size: 100% auto;
         overflow-x: hidden;
@@ -71,6 +71,16 @@
         position: relative;
         z-index: 2;
     }
+
+    @media (max-width: 767px) {
+        .bg-hero {
+            background-image: url('imgs/bg-phone.png');
+            background-size: 100% auto;
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+    }
+
 
     #partners {
         backdrop-filter: blur(10px);
@@ -95,11 +105,13 @@
     </div>
 
     <!-- Partners Section -->
-    <div class="bg-hero md:pt-20 bg-scroll md:bg-fixed bg-center bg-repeat md:bg-no-repeat [@media(min-width:1080px)]:px-20">
+    <div
+        class="bg-hero md:pt-20 bg-scroll md:bg-fixed bg-center bg-repeat md:bg-no-repeat [@media(min-width:1080px)]:px-20">
         <section id="partners" class="md:pt-20 pb-32 py-16 bg-white/30 px-4 text-center rounded-t-3xl">
             <!-- General Partner -->
             <h2 class="text-4xl font-bold mb-10 text-blue-900">Generálny partner</h2>
-            <div class="max-w-7xl mx-auto flex flex-wrap justify-center mb-20 gap-x-6 gap-y-24" style="justify-content: space-around; align-items:center">
+            <div class="max-w-7xl mx-auto flex flex-wrap justify-center mb-20 gap-x-6 gap-y-24"
+                style="justify-content: space-around; align-items:center">
                 <div class="min-h-40 relative flex flex-col group" data-aos="zoom-in">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/O2-Logo.svg" alt="Partner"
                         class="rounded-lg max-w-40 object-cover">
@@ -115,7 +127,8 @@
 
             <!-- Main Partner -->
             <h2 class="text-4xl font-bold mb-10 text-blue-900">Hlavný partner</h2>
-            <div class="max-w-7xl mx-auto flex flex-wrap justify-center mb-20 gap-x-6 gap-y-24" style="justify-content: space-around; align-items:center">
+            <div class="max-w-7xl mx-auto flex flex-wrap justify-center mb-20 gap-x-6 gap-y-24"
+                style="justify-content: space-around; align-items:center">
                 <div class="relative flex items-center group" data-aos="zoom-in">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Veolia_logo.svg/2560px-Veolia_logo.svg.png"
                         alt="Partner" class="rounded-lg max-w-40 object-cover">
@@ -131,7 +144,8 @@
 
             <!-- Partners -->
             <h2 class="text-4xl font-bold mb-10 text-blue-900">Partneri</h2>
-            <div class="max-w-7xl mx-auto flex flex-wrap justify-center mb-20 gap-x-6 gap-y-24" style="justify-content: space-around; align-items:center">
+            <div class="max-w-7xl mx-auto flex flex-wrap justify-center mb-20 gap-x-6 gap-y-24"
+                style="justify-content: space-around; align-items:center">
                 <div class="relative flex flex-col group" data-aos="fade-up" data-aos-delay="50">
                     <img src="https://dam.nmhmedia.sk/image/c2107e8c-84dd-40be-be86-44d1d66d1828_dam-url7yyatp.png/960/540"
                         alt="Partner" class="rounded-lg max-w-40 object-cover">
@@ -154,18 +168,19 @@
                         alt="Partner" class="max-w-40 object-cover">
                 </div>
                 <div class="relative flex flex-col group" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/SPP_logo.jpg"
-                        alt="Partner" class="max-w-40 object-cover">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/SPP_logo.jpg" alt="Partner"
+                        class="max-w-40 object-cover">
                 </div>
                 <div class="relative flex flex-col group" data-aos="fade-up" data-aos-delay="350">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Zoznam_logo.png"
-                        alt="Partner" class="max-w-40 object-cover">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Zoznam_logo.png" alt="Partner"
+                        class="max-w-40 object-cover">
                 </div>
             </div>
 
             <!-- Institutional Partners -->
             <h2 class="text-4xl font-bold mb-10 text-blue-900">Inštitucionálni Partneri</h2>
-            <div class="max-w-7xl mx-auto flex flex-wrap justify-center mb-20 gap-x-6 gap-y-24" style="justify-content: space-around; align-items:center">
+            <div class="max-w-7xl mx-auto flex flex-wrap justify-center mb-20 gap-x-6 gap-y-24"
+                style="justify-content: space-around; align-items:center">
                 <div class="relative flex flex-col group" data-aos="zoom-in">
                     <img src="https://www.vsstz.sk/wp-content/uploads/2017/04/logo-ministerstvo-skolstva-1400x441-1.png"
                         alt="Partner" class="max-h-28 object-cover">
@@ -205,7 +220,11 @@
                 scrollBtn.classList.remove("opacity-60");
             }
         });
-        scrollBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+        scrollBtn.addEventListener("click", () => window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        }));
     </script>
 </body>
+
 </html>

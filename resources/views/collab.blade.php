@@ -92,7 +92,8 @@
     .bg-hero {
         position: relative;
         background-image: url('imgs/bg.png');
-        background-repeat: repeat-y;
+        /* desktop default */
+        background-repeat: no-repeat;
         background-position: top center;
         background-size: 100% auto;
         overflow-x: hidden;
@@ -112,6 +113,17 @@
     .bg-hero>* {
         position: relative;
         z-index: 2;
+    }
+
+    @media (max-width: 767px) {
+        .bg-hero {
+            background-image: url('imgs/bg-phone.png');
+            background-size: 100% auto;
+            /* match width, auto height */
+            background-position: top center;
+            /* align as needed */
+            background-repeat: no-repeat;
+        }
     }
 
     #bio {
@@ -238,7 +250,10 @@
         }
     });
     scrollBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     });
 
     // Desktop menu animation
@@ -265,8 +280,11 @@
                 entry.target.classList.add('show');
             }
         });
-    }, { threshold: 0.15 });
+    }, {
+        threshold: 0.15
+    });
 
     document.querySelectorAll('.fade-in, .slide-left, .slide-right').forEach(el => observer.observe(el));
 </script>
+
 </html>

@@ -126,7 +126,6 @@
     .bg-hero {
         position: relative;
         background-image: url('imgs/bg.png');
-        /* desktop default */
         background-repeat: no-repeat;
         background-position: top center;
         background-size: 100% auto;
@@ -168,7 +167,7 @@
     #merch {
         position: relative;
         /* Gradient overlay: transparent top → light blue bottom */
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(191, 219, 254, 1));
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6));
 
         /* Blur the content behind */
         backdrop-filter: blur(10px);
@@ -248,7 +247,7 @@
         <!-- Flipbook centered -->
         <div id="flipbook" class="shadow-2xl animate-on-scroll slide-left" style="width: 900px; height: 650px;">
             <div class="hard">
-                <img src="/imgs/TITULKA.jpg" class="w-full h-full object-cover"/>
+                <img src="/imgs/TITULKA.jpg" class="w-full h-full object-cover" />
             </div>
             <div class="bg-gray-200 hard"></div>
             <div class="bg-white flex items-center justify-center text-2xl">Page 1</div>
@@ -265,7 +264,7 @@
         </nav>
     </div>
     <div
-        class="bg-hero md:pt-20 bg-scroll md:bg-fixed md:bg-cover bg-center bg-repeat items-center md:bg-no-repeat [@media(min-width:1080px)]:px-32">
+        class="bg-hero md:pt-20 bg-scroll md:bg-fixed md:bg-cover bg-center bg-repeat items-center md:bg-no-repeat [@media(min-width:1080px)]:px-20">
         <div class="w-full relative bg-cover bg-centerm-32 px-20 mt-12 items-center justify-center text-center">
             <section id="about"
                 class="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-screen animate-on-scroll slide-left">
@@ -284,10 +283,10 @@
                             </button>
                         </form>
                     @else
-                        <h1 class="text-black text-6xl sm:text-7xl md:text-7xl lg:text-8xl xl:text-8xl text-left mb-4">
+                        <h1 class="text-black text-6xl sm:text-7xl md:text-7xl lg:text-8xl xl:text-8xl text-left mb-4"
+                            style="transform: rotate(-1deg); transform-origin: left;">
                             {{ $content['about']['title'] }}
                         </h1>
-
                     @endauth
 
                     <!-- Body -->
@@ -303,7 +302,8 @@
                             </button>
                         </form>
                     @else
-                        <p class="text-gray-800 text-3xl text-left">
+                        <p class="text-gray-800 text-3xl text-left"
+                            style="transform: rotate(-1deg); transform-origin: left;">
                             {{ $content['about']['body'] }}
                         </p>
                     @endauth
@@ -327,7 +327,7 @@
         </div>
         <section class="relative w-full overflow-hidden">
             <section id="merch"
-                class="relative w-full min-h-screen grid grid-cols-1 md:grid-cols-1 gap-10 items-center justify-center text-center px-6 animate-on-scroll rounded-t-3xl fade-in">
+                class="relative w-full min-h-screen grid grid-cols-1 md:grid-cols-1 gap-10 items-center justify-center text-center animate-on-scroll rounded-t-3xl fade-in">
                 <section id="about-parents" class="text-left text-gray-900 py-12 px-6 md:px-16">
                     <div class="max-w-4xl p-8 mx-auto">
 
