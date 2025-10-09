@@ -13,8 +13,8 @@ Route::view('more', 'more')->name('more');
 Route::view('stats', 'stats')->name('stats');
 Route::view('partners', 'partners')->name('partners');
 Route::get('/gallery', function () {
-    $images = File::files(public_path('gallery'));
-    $images = array_map(fn($file) => 'gallery/' . $file->getFilename(), $images);
+    $images = File::files(public_path('storage/gallery'));
+    $images = array_map(fn($file) => 'storage/gallery/' . $file->getFilename(), $images);
     return view('gallery', compact('images'));
 });
 

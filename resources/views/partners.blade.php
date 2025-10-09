@@ -97,10 +97,6 @@
     <!-- Partners Section -->
     <div class="bg-hero md:pt-20 bg-scroll md:bg-fixed bg-center bg-repeat md:bg-no-repeat [@media(min-width:1080px)]:px-20">
         <section id="partners" class="md:pt-20 pb-32 py-16 bg-white/30 px-4 text-center rounded-t-3xl">
-            
-            <h1 class="text-7xl font-bold mb-10 text-blue-900" data-aos="fade-down">Partneri</h1>
-            <hr class="border-t mb-8 mt-8 mx-32 border-gray-600" data-aos="fade-right">
-
             <!-- General Partner -->
             <h2 class="text-4xl font-bold mb-10 text-blue-900">Generálny partner</h2>
             <div class="max-w-7xl mx-auto flex flex-wrap justify-center mb-20 gap-x-6 gap-y-24" style="justify-content: space-around; align-items:center">
