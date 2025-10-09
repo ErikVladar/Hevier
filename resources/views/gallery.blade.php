@@ -69,6 +69,11 @@
     #navbar {
         /* background: linear-gradient(to right, rgba(24, 76, 139), rgba(191, 219, 254, 0)); */
     }
+
+    #gallery {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
     
     @font-face {
         font-family: 'Kaushan';
@@ -98,7 +103,7 @@
     <div x-data="gallerySlideshow({{ Js::from($images) }})">
         <div
             class="bg-hero md:pt-20 bg-scroll md:bg-fixed md:bg-cover bg-center bg-repeat items-center md:bg-no-repeat [@media(min-width:1080px)]:px-20">
-            <div class="bg-white/70 z-40">
+            <div id="gallery" class="bg-white/30 z-40 rounded-t-3xl">
 
                 <!-- Gallery Grid -->
                 <section class="py-20">
@@ -206,7 +211,7 @@
             slides: images.map((img, i) => ({
                 image: img,
                 title: `Fotka ${i + 1}`,
-                text: '',
+                text: 'krátky opis',
             })),
             currentIndex: 0,
             get currentSlide() {
