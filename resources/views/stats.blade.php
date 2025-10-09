@@ -23,6 +23,8 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Lightbox2 CSS -->
@@ -33,6 +35,14 @@
 </head>
 
 <style>
+    @font-face {
+        font-family: 'Allan';
+        src: url('/Allan/Allan-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
     .cta-button {
         margin-top: 2rem;
         cursor: pointer;
@@ -132,7 +142,10 @@
         content: "";
         position: absolute;
         inset: 0;
-        background-color: rgba(255, 255, 255, 0.9);
+        background: linear-gradient(to right,
+                rgba(255, 255, 255, 0.9),
+                rgba(255, 255, 255, 0.4));
+
         pointer-events: none;
         z-index: 1;
     }
@@ -143,11 +156,24 @@
     }
 
     #navbar {
-        background: linear-gradient(to bottom, rgba(24, 76, 139), rgba(191, 219, 254, 0.5));
+        /* background: linear-gradient(to right, rgba(24, 76, 139), rgba(191, 219, 254, 0)); */
+    }
+
+    #more-main {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    @font-face {
+        font-family: 'Kaushan';
+        src: url('/Kaushan/KaushanScript-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
     }
 </style>
 
-<body class="font-[Quicksand]">
+<body class="font-[Kaushan] antialiased">
     {{-- <body class="font-[Tagesschrift]"> --}}
 
     <button id="scrollToTopBtn"
@@ -158,125 +184,171 @@
         ↑
     </button>
     <div class="min-h-full">
-        <nav id="navbar" class="fixed top-0 z-30 w-full text-xl bg-blue-200 transition-all duration-300">
+        <nav id="navbar" class="fixed top-0 z-30 w-full text-xl transition-all duration-300">
             <x-navbar />
         </nav>
     </div>
     <div
         class="bg-hero md:pt-20 bg-scroll md:bg-fixed md:bg-cover bg-center bg-repeat items-center md:bg-no-repeat [@media(min-width:1080px)]:px-20">
-        <div class="">
-            <section class="min-h-[50vh]  grid md:grid-cols-2">
-                <!-- Left: Text/Story -->
-                <div class="flex items-center p-10">
-                    <div>
-                        <h2 class="text-4xl font-bold mb-4">Meno 1</h2>
-                        <p class="text-lg text-gray-800 break-words max-w-prose">
-                            Popis...
-                            ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
+        <div id="more-main" class="bg-white/40 rounded-t-3xl">
+            <section class="p-10 space-y-10 max-w-7xl mx-auto">
+
+                <div class="text-center space-y-4">
+                    <h1 class="text-6xl font-bold text-gray-800">Štatistiky o pohybe detí</h1>
+                    <p class="text-2xl text-gray-600">Ako aktívne sú deti?</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div class="bg-white/70 rounded-2xl shadow-lg p-8">
+                        <h2 class="text-3xl font-semibold mb-6 text-gray-800">Priemerný denný pohyb detí</h2>
+                        <canvas id="activityChart" class="w-full h-[300px]"></canvas>
+                        <p class="mt-4 text-gray-600 text-lg">
+                            Väčšina detí sa k odporúčaným 60 minútam denne nepribližuje.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/70 rounded-2xl shadow-lg p-8">
+                        <h2 class="text-3xl font-semibold mb-6 text-gray-800">Čas pred obrazovkou</h2>
+                        <canvas id="screenTimeChart" class="w-full h-[300px]"></canvas>
+                        <p class="mt-4 text-gray-600 text-lg">
+                            Deti trávia viac času pred obrazovkou, než v pohybe.
                         </p>
                     </div>
                 </div>
 
-                <!-- Right: Photo + Achievements -->
-                <div class="flex items-center justify-center p-8">
-                    <div class="flex flex-col items-center gap-6">
-                        <!-- Circular Photo -->
-                        <img src="https://placehold.co/200x200" alt="Peter Kováč"
-                            class="w-80 h-80 rounded-full object-cover shadow-lg">
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div class="bg-white/70 rounded-2xl shadow-lg p-8 overflow-x-auto">
+                        <h2 class="text-3xl font-semibold mb-6 text-gray-800">Najobľúbenejšie športy</h2>
+                        <table class="min-w-full text-left border-collapse text-base">
+                            <thead class="bg-blue-200 text-gray-800">
+                                <tr>
+                                    <th class="px-4 py-2 border-b">Šport</th>
+                                    <th class="px-4 py-2 border-b">% detí</th>
+                                    <th class="px-4 py-2 border-b">Chlapci</th>
+                                    <th class="px-4 py-2 border-b">Dievčatá</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                <tr class="hover:bg-blue-50">
+                                    <td class="px-4 py-2 border-b">Futbal</td>
+                                    <td>42%</td>
+                                    <td>60%</td>
+                                    <td>22%</td>
+                                </tr>
+                                <tr class="hover:bg-blue-50">
+                                    <td class="px-4 py-2 border-b">Tanec</td>
+                                    <td>28%</td>
+                                    <td>6%</td>
+                                    <td>48%</td>
+                                </tr>
+                                <tr class="hover:bg-blue-50">
+                                    <td class="px-4 py-2 border-b">Plávanie</td>
+                                    <td>34%</td>
+                                    <td>32%</td>
+                                    <td>36%</td>
+                                </tr>
+                                <tr class="hover:bg-blue-50">
+                                    <td class="px-4 py-2 border-b">Cyklistika</td>
+                                    <td>25%</td>
+                                    <td>27%</td>
+                                    <td>23%</td>
+                                </tr>
+                                <tr class="hover:bg-blue-50">
+                                    <td class="px-4 py-2 border-b">Gymnastika</td>
+                                    <td>18%</td>
+                                    <td>5%</td>
+                                    <td>32%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-                        <!-- Achievements -->
-                        <ul class="list-disc text-gray-700 space-y-2">
-                            <li>uspech 1</li>
-                            <li>uspech 2</li>
-                            <li>uspech 3</li>
-                        </ul>
+                    <div class="bg-white/70 rounded-2xl shadow-lg p-8">
+                        <h2 class="text-3xl font-semibold mb-6 text-gray-800">Koľko detí spĺňa odporúčania</h2>
+                        <canvas id="pieChart" class="w-full h-[300px]"></canvas>
                     </div>
                 </div>
+
+                <div class="bg-gray-50 rounded-2xl shadow-inner p-10 text-center text-gray-800">
+                    <h3 class="text-3xl font-bold mb-4">Zhrnutie</h3>
+                    <p class="text-xl leading-relaxed max-w-4xl mx-auto">
+                        Pohybové návyky detí sa zhoršujú – iba <span class="font-semibold">1 z 3</span> spĺňa odporúčané
+                        úrovne aktivity.
+                        Pasívny životný štýl postupne nahrádza prirodzený pohyb, ktorý je kľúčom k zdraviu, sústredeniu
+                        a dobrej nálade.
+                    </p>
+                </div>
+
             </section>
-
-            <hr class="border-t border-gray-300 w-full">
-
-            <section class="min-h-[50vh] grid md:grid-cols-2">
-                <!-- Left: Circular Photo + Achievements -->
-                <div class="flex items-center justify-center p-8">
-                    <div class="flex flex-col items-center gap-6">
-                        <!-- Circular Photo -->
-                        <img src="https://placehold.co/200x200" alt="Peter Kováč"
-                            class="w-80 h-80 rounded-full object-cover shadow-lg">
-
-                        <!-- Achievements -->
-                        <ul class="list-disc text-gray-700 space-y-2">
-                            <li>uspech 1</li>
-                            <li>uspech 2</li>
-                            <li>uspech 3</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Right: Text/Story -->
-                <div class="flex items-center p-10">
-                    <div>
-                        <h2 class="text-4xl font-bold mb-4">Meno 2</h2>
-                        <p class="text-lg text-gray-800 break-words max-w-prose">
-                            Popis...
-                            ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
-                        </p>
-                    </div>
-            </section>
-            <div class="w-full bg-blue-200 text-center text-black overflow-hidden py-16">
-                {{-- <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
-        <div class="flex flex-col items-center">
-          <h3 class="text-2xl font-semibold mb-4">športovec 1</h3>
-          <img src="tyler.png" alt="športovec 1" class="h-40 w-40 rounded-full object-cover mb-4 shadow-lg" />
-          <p class="text-base leading-relaxed text-justify">športovec 1 opis</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <h3 class="text-2xl font-semibold mb-4">športovec 2</h3>
-          <img src="tyler.png" alt="športovec 1" class="h-40 w-40 rounded-full object-cover mb-4 shadow-lg" />
-          <p class="text-base leading-relaxed text-justify">športovec 2 opis</p>
-        </div>
-        <div class="flex flex-col items-center">
-          <h3 class="text-2xl font-semibold mb-4">športovec 3</h3>
-          <img src="tyler.png" alt="športovec 3" class="h-40 w-40 rounded-full object-cover mb-4 shadow-lg" />
-          <p class="text-base leading-relaxed text-justify">športovec 3 opis</p>
-        </div>
-      </div> --}}
-                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                    <a href="https://externy-eshop.sk/merch" target="_blank">
-                        <div class="flex justify-center gap-6">
-                            <div class="flex flex-col gap-4">
-                                <img src="https://static.vecteezy.com/system/resources/thumbnails/041/714/543/small_2x/ai-generated-black-blank-t-shirt-front-mockup-on-a-transparent-background-png.png"
-                                    alt="Merch 7" class="w-24 h-24 object-cover rotate-[-6deg] rounded">
-                            </div>
-
-                            <div class="flex flex-col gap-4">
-                                <img src="https://static.vecteezy.com/system/resources/thumbnails/041/714/543/small_2x/ai-generated-black-blank-t-shirt-front-mockup-on-a-transparent-background-png.png"
-                                    alt="Merch 8" class="w-24 h-24 object-cover rotate-[3deg] rounded">
-                            </div>
-
-                            <div class="flex flex-col gap-4">
-                                <img src="https://static.vecteezy.com/system/resources/thumbnails/041/714/543/small_2x/ai-generated-black-blank-t-shirt-front-mockup-on-a-transparent-background-png.png"
-                                    alt="Merch 9" class="w-24 h-24 object-cover rotate-[-4deg] rounded">
-                            </div>
-                        </div>
-                        <button class="cta-button-black">
-                            e-shop s merchandise
-                        </button>
-                    </a>
-                    <div class="text-center md:text-left">
-                        <p class="text-xl text-gray-400 mb-6">
-                            • infografika (content zatial neznamy?)
-                            • Ako ti pohyb pomáha (funfacts) – infografika – pohyblivá + text 4-5 viet
-                        </p>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <x-footer />
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.3.0/dist/flowbite.min.js"></script>
 </body>
+
+<script>
+    // Activity Chart
+    new Chart(document.getElementById('activityChart'), {
+        type: 'bar',
+        data: {
+            labels: ['6–8 r.', '9–11 r.', '12–14 r.', '15–17 r.'],
+            datasets: [{
+                label: 'Minút denne',
+                data: [75, 62, 48, 35],
+                backgroundColor: 'rgba(37, 99, 235, 0.7)'
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Screen Time Chart
+    new Chart(document.getElementById('screenTimeChart'), {
+        type: 'line',
+        data: {
+            labels: ['Po', 'Ut', 'St', 'Št', 'Pi', 'So', 'Ne'],
+            datasets: [{
+                label: 'Hodiny denne',
+                data: [2.5, 2.8, 3.0, 3.2, 3.5, 4.2, 4.0],
+                borderColor: 'rgba(234, 88, 12, 0.9)',
+                tension: 0.3
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Pie Chart
+    new Chart(document.getElementById('pieChart'), {
+        type: 'pie',
+        data: {
+            labels: ['Spĺňajú odporúčanie', 'Nespĺňajú'],
+            datasets: [{
+                data: [33, 67],
+                backgroundColor: ['rgba(34,197,94,0.8)', 'rgba(239,68,68,0.8)'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+</script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {

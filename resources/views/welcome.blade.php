@@ -126,7 +126,8 @@
     .bg-hero {
         position: relative;
         background-image: url('imgs/bg.png');
-        background-repeat: repeat-y;
+        /* desktop default */
+        background-repeat: no-repeat;
         background-position: top center;
         background-size: 100% auto;
         overflow-x: hidden;
@@ -139,7 +140,6 @@
         background: linear-gradient(to right,
                 rgba(255, 255, 255, 0.7),
                 rgba(0, 0, 0, 0.1));
-
         pointer-events: none;
         z-index: 1;
     }
@@ -148,6 +148,18 @@
         position: relative;
         z-index: 2;
     }
+
+    @media (max-width: 767px) {
+        .bg-hero {
+            background-image: url('imgs/bg-phone.png');
+            background-size: 100% auto;
+            /* match width, auto height */
+            background-position: top center;
+            /* align as needed */
+            background-repeat: no-repeat;
+        }
+    }
+
 
     #navbar {
         /* background: linear-gradient(to right, rgba(24, 76, 139), rgba(191, 219, 254, 0)); */
@@ -185,6 +197,36 @@
         -webkit-backdrop-filter: blur(10px);
     }
 
+    /* --- ANIMATIONS --- */
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1);
+    }
+
+    .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* optional variants */
+    .fade-in {
+        transform: none;
+    }
+
+    .slide-left {
+        transform: translateX(-30px);
+    }
+
+    .slide-right {
+        transform: translateX(30px);
+    }
+
+    .zoom-in {
+        transform: scale(0.95);
+    }
+
+
     @font-face {
         font-family: 'Kaushan';
         src: url('/Kaushan/KaushanScript-Regular.ttf') format('truetype');
@@ -195,6 +237,28 @@
 </style>
 
 <body class="font-[Kaushan] antialiased">
+    <div id="book-modal"
+        class="fixed inset-0 hidden justify-center items-center bg-black bg-opacity-70 z-50 transition-opacity duration-300">
+
+        <!-- Close button (absolute to viewport) -->
+        <button id="close-book" class="absolute top-6 right-8 text-white text-4xl font-bold z-[60] hover:text-gray-300">
+            ×
+        </button>
+
+        <!-- Flipbook centered -->
+        <div id="flipbook" class="shadow-2xl animate-on-scroll slide-left" style="width: 900px; height: 650px;">
+            <div class="hard">
+                <img src="/imgs/TITULKA.jpg" class="w-full h-full object-cover"/>
+            </div>
+            <div class="bg-gray-200 hard"></div>
+            <div class="bg-white flex items-center justify-center text-2xl">Page 1</div>
+            <div class="bg-white flex items-center justify-center text-2xl">Page 2</div>
+            <div class="bg-white flex items-center justify-center text-2xl">Page 3</div>
+            <div class="bg-white flex items-center justify-center text-2xl">Page 4</div>
+            <div class="bg-gray-200 hard"></div>
+            <div class="bg-gray-200 hard"></div>
+        </div>
+    </div>
     <div class=" min-h-full">
         <nav id="navbar" class="fixed top-0 z-30 w-full text-xl transition-all duration-300">
             <x-navbar />
@@ -203,7 +267,8 @@
     <div
         class="bg-hero md:pt-20 bg-scroll md:bg-fixed md:bg-cover bg-center bg-repeat items-center md:bg-no-repeat [@media(min-width:1080px)]:px-32">
         <div class="w-full relative bg-cover bg-centerm-32 px-20 mt-12 items-center justify-center text-center">
-            <section id="about" class="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-screen">
+            <section id="about"
+                class="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-screen animate-on-scroll slide-left">
                 <div id="title" class="flex flex-col h-full p-12">
                     <!-- Title -->
                     @auth
@@ -219,7 +284,10 @@
                             </button>
                         </form>
                     @else
-                        <h1 class="text-black text-8xl text-left mb-4">{{ $content['about']['title'] }}</h1>
+                        <h1 class="text-black text-6xl sm:text-7xl md:text-7xl lg:text-8xl xl:text-8xl text-left mb-4">
+                            {{ $content['about']['title'] }}
+                        </h1>
+
                     @endauth
 
                     <!-- Body -->
@@ -241,35 +309,26 @@
                     @endauth
                 </div>
 
-                <div id="cover" class="flex flex-col h-full mt-32 w-full items-center justify-center">
+                <div id="cover"
+                    class="flex flex-col h-full mt-32 w-full items-center justify-center animate-on-scroll slide-right">
 
-                    <div id="flipbook-wrapper" style="position: relative; left: -150px;">
-                        <div id="flipbook" style="width:1200px; height:900px;">
-                            <div class="hard">
-                                <img src="/imgs/TITULKA.jpg" style="width:100%; height:100%; object-fit:cover;">
-                            </div>
-                            <div class="bg-gray-200 hard"></div>
-                            <div class="bg-white"> Page 1 </div>
-                            <div class="bg-white"> Page 2 </div>
-                            <div class="bg-white"> Page 3 </div>
-                            <div class="bg-white"> Page 4 </div>
-                            <div class="bg-gray-200 hard"></div>
-                            <div class="bg-gray-200 hard"></div>
-                        </div>
+                    <!-- Clickable Cover -->
+                    <div id="book-cover" class="cursor-pointer transition-transform hover:scale-105">
+                        <img src="/imgs/TITULKA.jpg" alt="Book Cover"
+                            style="width:400px; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
                     </div>
-
 
                     <button type="button" onclick="window.location.href='/shop'" class="cta-button mt-6 mb-20">
                         Kúpiť
                     </button>
                 </div>
+
             </section>
         </div>
         <section class="relative w-full overflow-hidden">
             <section id="merch"
-                class="relative w-full min-h-screen grid grid-cols-1 md:grid-cols-1 gap-10 items-center justify-center text-center px-6">
-
-                <section id="about-parents" class="text-left rounded-3xl text-gray-900 py-12 px-6 md:px-16">
+                class="relative w-full min-h-screen grid grid-cols-1 md:grid-cols-1 gap-10 items-center justify-center text-center px-6 animate-on-scroll rounded-t-3xl fade-in">
+                <section id="about-parents" class="text-left text-gray-900 py-12 px-6 md:px-16">
                     <div class="max-w-4xl p-8 mx-auto">
 
                         {{-- Lead paragraph / editable --}}
@@ -292,7 +351,8 @@
                                 <p class="text-2xl md:text-3xl leading-relaxed max-w-3xl">
                                     Nie je len kniha do police.
                                     Je to <span class="italic">dobrodružstvo</span>, ktoré učí deti, že
-                                    <span class="font-semibold text-green-700">pohyb je energia života</span> – viac než len
+                                    <span class="font-semibold text-green-700">pohyb je energia života</span> – viac než
+                                    len
                                     šport či tréning.
                                 </p>
 
@@ -349,7 +409,7 @@
 
                 <!-- Content -->
                 <div class="relative z-10 flex flex-col items-center justify-center min-h-[400px] space-y-6 p-8">
-                    <button type="button" onclick="window.location.href='/shop'" class="cta-button">
+                    <button type="button" onclick="window.location.href='/shop'" class="cta-button  fade-in">
                         E-shop merch
                     </button>
                 </div>
@@ -420,8 +480,7 @@
             </main>
         </div>
     </section> --}}
-        <section id="reviews" class="w-full bg-white/20 py-12">
-            <!-- Section heading -->
+        <section id="reviews" class="w-full bg-white/20 py-12 animate-on-scroll zoom-in">
             <h2 class="text-4xl font-bold text-center mb-12">Recenzie</h2>
 
             <!-- Reviews grid -->
@@ -466,11 +525,62 @@
 </body>
 
 </html>
-<script type="text/javascript">
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll(".animate-on-scroll").forEach(el => observer.observe(el));
+    });
+</script>
+
+<script>
+    // Initialize flipbook only once
     $("#flipbook").turn({
-        width: 600,
-        height: 450,
+        width: 900,
+        height: 650,
         autoCenter: true
+    });
+
+    const cover = document.getElementById('book-cover');
+    const modal = document.getElementById('book-modal');
+    const closeBtn = document.getElementById('close-book');
+
+    // Open modal
+    cover.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex', 'opacity-100');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Close modal
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('opacity-100');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }, 300);
+    });
+
+    // Close on background click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeBtn.click();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeBtn.click();
+        }
     });
 </script>
 

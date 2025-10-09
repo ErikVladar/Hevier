@@ -10,7 +10,7 @@ Route::view('/', 'welcome');
 
 Route::view('collab', 'collab')->name('collab');
 Route::view('more', 'more')->name('more');
-Route::view('stats', 'more')->name('more');
+Route::view('stats', 'stats')->name('stats');
 Route::view('partners', 'partners')->name('partners');
 Route::get('/gallery', function () {
     $images = File::files(public_path('gallery'));
