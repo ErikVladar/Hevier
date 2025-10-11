@@ -30,64 +30,6 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 </head>
 
-<style>
-    @font-face {
-        font-family: 'Allan';
-        src: url('/Allan/Allan-Regular.ttf') format('truetype');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-    }
-
-    @font-face {
-        font-family: 'Kaushan';
-        src: url('/Kaushan/KaushanScript-Regular.ttf') format('truetype');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-    }
-
-    .bg-hero {
-        position: relative;
-        background-image: url('imgs/bg.png');
-        background-repeat: no-repeat;
-        background-position: top center;
-        background-size: 100% auto;
-        overflow-x: hidden;
-    }
-
-    .bg-hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to right,
-                rgba(255, 255, 255, 0.7),
-                rgba(0, 0, 0, 0.1));
-        pointer-events: none;
-        z-index: 1;
-    }
-
-    .bg-hero>* {
-        position: relative;
-        z-index: 2;
-    }
-
-    @media (max-width: 767px) {
-        .bg-hero {
-            background-image: url('imgs/bg-phone.png');
-            background-size: 100% auto;
-            background-position: top center;
-            background-repeat: no-repeat;
-        }
-    }
-
-
-    #partners {
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-    }
-</style>
-
 <body class="font-[Kaushan] antialiased">
 
     <!-- Scroll to top -->

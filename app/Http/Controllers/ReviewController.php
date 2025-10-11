@@ -26,6 +26,7 @@ class ReviewController extends Controller
     {
         $validated = $request->validate([
             'name'  => 'required|string|max:255',
+            'rating' =>'required|float',
             'text'  => 'required|string',
             'photo' => 'nullable|image|max:2048',
         ]);
@@ -50,6 +51,7 @@ class ReviewController extends Controller
     {
         $validated = $request->validate([
             'name'  => 'required|string|max:255',
+            'rating' =>'required|float',
             'text'  => 'required|string',
             'photo' => 'nullable|image|max:2048',
         ]);

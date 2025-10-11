@@ -1,60 +1,5 @@
-
-  @font-face {
-  font-family: 'Tagesschrift';
-  src: url('/fonts/Tagesschrift/Tagesschrift-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Quicksand';
-  src: url('/fonts/Quicksand/Quicksand-VariableFont_wght.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-  html {
-    overflow-y: scroll;
-  }
-  @keyframes fade-in {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fade-down {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fade-up {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes bounce-slow {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-
-  .animate-fade-in {
-    animation: fade-in 1s ease-out forwards;
-  }
-
-  .animate-fade-down {
-    animation: fade-down 1s ease-out forwards;
-  }
-
-  .animate-fade-up {
-    animation: fade-up 1s ease-out forwards;
-  }
-
-  .animate-bounce-slow {
-    animation: bounce-slow 2s infinite;
-  }
-
-  /* From Uiverse.io by gharsh11032000 */ 
 .cta-button {
-  margin-top:2rem;
+  margin-top: 2rem;
   cursor: pointer;
   position: relative;
   padding: 10px 24px;
@@ -89,7 +34,7 @@
 .cta-button:hover {
   color: #212121;
   scale: 1.1;
-  box-shadow: 0 0px 20px rgba(193, 163, 98,0.4);
+  box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
 }
 
 .cta-button:active {
@@ -97,7 +42,7 @@
 }
 
 .cta-button-black {
-  margin-top:2rem;
+  margin-top: 2rem;
   cursor: pointer;
   position: relative;
   padding: 10px 24px;
@@ -132,51 +77,116 @@
 .cta-button-black:hover {
   color: #FFFFFF;
   scale: 1.1;
-  box-shadow: 0 0px 20px rgba(255, 255, 255,0.4);
+  box-shadow: 0 0px 20px rgba(255, 255, 255, 0.4);
 }
 
 .cta-button-black:active {
   scale: 1;
 }
 
-.modal-overlay {
-            position: fixed;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
+.bg-hero {
+  position: relative;
+  background-image: url('imgs/bg.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  overflow-x: hidden;
+}
 
-        .modal-box {
-            background: white;
-            color: black;
-            padding: 2rem;
-            border-radius: 12px;
-            max-width: 900px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-        }
+.bg-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right,
+          rgba(255, 255, 255, 0.9),
+          rgba(255, 255, 255, 0.4));
 
-        .modal-box p { text-align: left; }
+  pointer-events: none;
+  z-index: 1;
+}
 
-        .modal-close {
-            position: absolute;
-            top: 12px;
-            right: 16px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #999;
-        }
+.bg-hero>* {
+  position: relative;
+  z-index: 2;
+}
 
-        .modal-close:hover {
-            color: #000;
-        }
+@media (max-width: 767px) {
+  .bg-hero {
+      background-image: url('imgs/bg-phone.png');
+      background-size: 100% auto;
+      background-position: top center;
+      background-repeat: no-repeat;
+  }
+}
 
-[x-cloak] { display: none !important; }
+
+#navbar {
+  /* background: linear-gradient(to right, rgba(24, 76, 139), rgba(191, 219, 254, 0)); */
+}
+
+#merch {
+  position: relative;
+  /* Gradient overlay: transparent top → light blue bottom */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6));
+
+  /* Blur the content behind */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+#magazine {
+  width: 800px;
+  height: 400px;
+}
+
+#magazine .turn-page {
+  background-color: #ccc;
+}
+
+#flipbook>div {
+  width: 100%;
+  height: 100%;
+}
+
+#reviews {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* --- ANIMATIONS --- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1);
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* optional variants */
+.fade-in {
+  transform: none;
+}
+
+.slide-left {
+  transform: translateX(-30px);
+}
+
+.slide-right {
+  transform: translateX(30px);
+}
+
+.zoom-in {
+  transform: scale(0.95);
+}
+
+
+@font-face {
+  font-family: 'Kaushan';
+  src: url('/Kaushan/KaushanScript-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

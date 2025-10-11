@@ -12,6 +12,7 @@ class Review extends Model
     // Allow these fields to be mass assigned
     protected $fillable = [
         'name',
+        'rating',
         'photo',
         'text',
     ];

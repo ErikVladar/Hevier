@@ -31,58 +31,6 @@
 
 
 </head>
-<style>
-    @font-face {
-        font-family: 'Allan';
-        src: url('/Allan/Allan-Regular.ttf') format('truetype');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-    }
-
-    .bg-hero {
-        position: relative;
-        background-image: url('imgs/bg.png');
-        background-repeat: repeat-y;
-        background-position: top center;
-        background-size: 100% auto;
-        overflow-x: hidden;
-    }
-
-    .bg-hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to right,
-                rgba(255, 255, 255, 0.7),
-                rgba(0, 0, 0, 0.1));
-
-        pointer-events: none;
-        z-index: 1;
-    }
-
-    .bg-hero>* {
-        position: relative;
-        z-index: 2;
-    }
-
-    #navbar {
-        /* background: linear-gradient(to right, rgba(24, 76, 139), rgba(191, 219, 254, 0)); */
-    }
-
-    #gallery {
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-    }
-    
-    @font-face {
-        font-family: 'Kaushan';
-        src: url('/Kaushan/KaushanScript-Regular.ttf') format('truetype');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-    }
-</style>
 
 <body class="font-[Kaushan] antialiased">
     {{-- <body class="font-[Tagesschrift]"> --}}
