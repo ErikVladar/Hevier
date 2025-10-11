@@ -23,7 +23,8 @@
 <div id="nav-desktop-menu"
     class="fixed top-0 left-0 h-screen w-1/4 bg-white transform -translate-x-full transition-transform duration-500 ease-in-out z-40 shadow-lg">
     <div class="pt-20 px-4">
-        <a href="/" class="block py-3 hover:text-gray-500">O knihe</a>
+        <a href="/" class="block py-3 hover:text-gray-500">Domov</a>
+        <a href="/about" class="block py-3 hover:text-gray-500">O knihe</a>
         <a href="/collab" class="block py-3 hover:text-gray-500">Spolupráca</a>
         <a href="/more" class="block py-3 hover:text-gray-500">Chcem Viac</a>
         <a href="/stats" class="block py-3 hover:text-gray-500">Štatistika</a>

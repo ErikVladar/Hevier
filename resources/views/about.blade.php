@@ -231,108 +231,22 @@
 </style>
 
 <body class="font-[Kaushan] antialiased">
-    <div id="book-modal"
-        class="fixed inset-0 hidden justify-center items-center bg-black bg-opacity-70 z-50 transition-opacity duration-300">
 
-        <!-- Close button (absolute to viewport) -->
-        <button id="close-book" class="absolute top-6 right-8 text-white text-4xl font-bold z-[60] hover:text-gray-300">
-            ×
-        </button>
-
-        <!-- Flipbook centered -->
-        <div id="flipbook" class="shadow-2xl animate-on-scroll slide-left" style="width: 900px; height: 650px;">
-            <div class="hard">
-                <img src="/imgs/TITULKA.jpg" class="w-full h-full object-cover" />
-            </div>
-            <div class="bg-gray-200 hard"></div>
-            <div class="bg-white flex items-center justify-center text-2xl">Page 1</div>
-            <div class="bg-white flex items-center justify-center text-2xl">Page 2</div>
-            <div class="bg-white flex items-center justify-center text-2xl">Page 3</div>
-            <div class="bg-white flex items-center justify-center text-2xl">Page 4</div>
-            <div class="bg-gray-200 hard"></div>
-            <div class="bg-gray-200 hard"></div>
-        </div>
-    </div>
     <div class=" min-h-full">
         <nav id="navbar" class="fixed top-0 z-30 w-full text-xl transition-all duration-300">
             <x-navbar />
         </nav>
     </div>
     <div
-        class="bg-hero md:pt-20 bg-scroll md:bg-fixed md:bg-cover bg-center bg-repeat items-center md:bg-no-repeat [@media(min-width:1080px)]:px-20">
-        <div id="merch"
-            class="relative w-full min-h-screen rounded-3xl grid grid-cols-1 md:grid-cols-1 gap-10 items-center justify-center text-center rounded-t-3xl">
+        class="bg-hero md:pt-12 bg-scroll md:bg-fixed md:bg-cover bg-center bg-repeat items-center md:bg-no-repeat [@media(min-width:1080px)]:px-20">
+        <section id="merch"
+            class="relative w-full min-h-screen grid grid-cols-1 md:grid-cols-1 gap-10 items-center justify-center text-center animate-on-scroll rounded-t-3xl fade-in">
 
-            <div class="w-full relative bg-cover bg-centerm-32 px-20 mt-12 items-center justify-center text-center">
-                <section id="about" class="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-screenx">
-                    <div id="title" class="flex flex-col h-full p-12">
-                        <!-- Title -->
-                        @auth
-                            <form method="POST" action="{{ route('content.update') }}" class="mb-4">
-                                @csrf
-                                <input type="hidden" name="field" value="title">
-                                <input type="text" name="title" value="{{ $content['about']['title'] }}"
-                                    class="w-full text-4xl font-bold border rounded px-2 py-1 mb-2">
-                                <button type="submit"
-                                    class="px-6 py-3 bg-green-600 text-white font-semibold rounded-xl shadow-md 
-                                       hover:bg-blue-700 transform hover:scale-105 transition duration-200">
-                                    Uložiť
-                                </button>
-                            </form>
-                        @else
-                            <div class="animate-on-scroll slide-left">
-                                <h1 class="text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl text-left mb-4"
-                                    style="transform: rotate(-1deg); transform-origin: left;">
-                                    {{ $content['about']['title_1'] }}
-                                </h1>
-                            </div>
-                            <div class="animate-on-scroll slide-right">
-                                <h1 class="text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl text-left mb-4"
-                                    style="transform: rotate(-1deg); transform-origin: rigth;">
-                                    {{ $content['about']['title_2'] }}
-                                </h1>
-                            </div>
-                        @endauth
+            <div class="w-full relative bg-cover bg-centerm-32 px-20 items-center justify-center text-center">
 
-                        <!-- Body -->
-                        @auth
-                        <div>
-                            <form method="POST" action="{{ route('content.update') }}">
-                                @csrf
-                                <input type="hidden" name="field" value="body">
-                                <textarea name="body" class="w-full border rounded px-2 py-1 mb-2">{{ $content['about']['body'] }}</textarea>
-                                <button type="submit"
-                                    class="px-6 py-3 bg-green-600 text-white font-semibold rounded-xl shadow-md 
-                                       hover:bg-green-700 transform hover:scale-105 transition duration-200">
-                                    Uložiť
-                                </button>
-                            </form>
-                        @else
-                            <p class="text-gray-800 text-3xl text-left"
-                                style="transform: rotate(-1deg); transform-origin: left;">
-                                {{ $content['about']['body'] }}
-                            </p>
-                        @endauth
-                    </div>
-
-                    <div id="cover"
-                        class="flex flex-col h-full mt-32 w-full items-center justify-center animate-on-scroll slide-right">
-
-                        <!-- Clickable Cover -->
-                        <div id="book-cover" class="cursor-pointer transition-transform hover:scale-105">
-                            <img src="/imgs/TITULKA.jpg" alt="Book Cover"
-                                style="width:400px; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
-                        </div>
-
-                        <button type="button" onclick="window.location.href='/shop'" class="cta-button mt-6 mb-20">
-                            Kúpiť
-                        </button>
-                    </div>
-
-                </section>
             </div>
-            {{-- <section class="relative w-full overflow-hidden">
-                <section id="about-parents" class="text-left text-gray-900 py-12 px-6 md:px-16">
+            <section class="relative w-full overflow-hidden">
+                <section id="about-parents" class="text-gray-900 py-12 px-6">
                     <div class="max-w-4xl p-8 mx-auto">
                         @auth
                             <form method="POST" action="{{ route('content.update') }}" class="mb-6">
@@ -345,29 +259,32 @@
                                 </button>
                             </form>
                         @else
-                            <div class="mb-6 space-y-4 text-black">
+                            <div class="mb-6 text-black">
                                 <p class="text-5xl font-extrabold tracking-tight">
                                     STRÁŽCOVIA <span class="text-blue-800">POHYBU</span>
                                 </p>
 
-                                <p class="text-2xl md:text-3xl leading-relaxed max-w-3xl">
-                                    Nie je len kniha do police.
-                                    Je to <span class="italic">dobrodružstvo</span>, ktoré učí deti, že
-                                    <span class="font-semibold text-green-700">pohyb je energia života</span> – viac než
-                                    len
-                                    šport či tréning.
-                                </p>
+                                <div class="pt-20">
+                                    <p class="text-2xl md:text-3xl leading-relaxed max-w-3xl">
+                                        Nie je len kniha do police.
+                                        Je to <span class="italic">dobrodružstvo</span>, ktoré učí deti, že
+                                        <span class="font-semibold text-green-700">pohyb je energia života</span> – viac než
+                                        len
+                                        šport či tréning.
+                                    </p>
 
-                                <p class="text-2xl md:text-3xl leading-relaxed max-w-3xl">
-                                    Hrdinovia ukazujú, že <span class="underline decoration-green-700">sila, odvaha a
-                                        priateľstvo</span>
-                                    sa rodia v pohybe – nie pri obrazovke.
-                                </p>
+                                    <p class="text-2xl md:text-3xl leading-relaxed max-w-3xl">
+                                        Hrdinovia ukazujú, že <span class="underline decoration-green-700">sila, odvaha a
+                                            priateľstvo</span>
+                                        sa rodia v pohybe – nie pri obrazovke.
+                                    </p>
+                                </div>
                             </div>
 
                         @endauth
+                        <h3 class="text-5xl text-gray-600 font-semibold mb-4">Prečo to ocenia rodičia?</h3>
                         <div class="rounded-lg bg-white p-6 md:p-8">
-                            <h3 class="text-5xl text-gray-600 font-semibold mb-4">Prečo to ocenia rodičia?</h3>
+                            
 
                             @auth
                                 <form method="POST" action="{{ route('content.update') }}" class="space-y-4">
@@ -396,7 +313,7 @@
                         </div>
                     </div>
                 </section>
-            </section> --}}
+            </section>
 
             <div class="relative overflow-hidden">
                 <!-- Background image -->
@@ -413,7 +330,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- full-width band with vertical spacing -->
         {{-- <section class="bg-blue-200">
@@ -479,77 +396,7 @@
             </main>
         </div>
     </section> --}}
-        <section id="reviews" class="w-full bg-white/20 py-12 animate-on-scroll zoom-in">
-            <h2 class="text-4xl font-bold text-center mb-12">Recenzie</h2>
 
-            <!-- Reviews grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
-                <article class="relative bg-gray-100 rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center md:items-start overflow-visible">
-              
-                    <div class="relative flex-shrink-0 md:w-1/3 flex flex-col items-center">
-                        <img src="/imgs/review2.png" alt="Mária Nováková"
-                            class="w-24 h-24 rounded-xl object-cover shadow-md -mt-10 md:-mt-12 md:ml-[-1rem]">
-                        <h3 class="text-lg font-bold mt-4">Mária Nováková</h3>
-                        <div class="flex mt-1 text-yellow-400">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i>
-                        </div>
-                    </div>
-            
-                    <div class="mt-4 md:mt-0 md:ml-6 md:w-2/3 text-center md:text-left">
-                        <p class="text-gray-700 text-lg leading-relaxed">
-                            Táto kniha úplne zmenila prístup môjho dieťaťa k pohybu – teraz sa teší na každý deň!
-                        </p>
-                    </div>
-                </article>
-            
-                <article class="relative bg-gray-100 rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center md:items-start overflow-visible">
-                    <div class="relative flex-shrink-0 md:w-1/3 flex flex-col items-center">
-                        <img src="/imgs/review1.png" alt="Peter Horváth"
-                            class="w-24 h-24 rounded-xl object-cover shadow-md -mt-10 md:-mt-12 md:ml-[-1rem]">
-                        <h3 class="text-lg font-bold mt-4">Peter Horváth</h3>
-                        <div class="flex mt-1 text-yellow-400">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star"></i>
-                        </div>
-                    </div>
-            
-                    <div class="mt-4 md:mt-0 md:ml-6 md:w-2/3 text-center md:text-left">
-                        <p class="text-gray-700 text-lg leading-relaxed">
-                            Úžasný príbeh a inšpirácia pre deti, aby sa hýbali a objavovali nové aktivity.
-                        </p>
-                    </div>
-                </article>
-            
-                <article class="relative bg-gray-100 rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center md:items-start overflow-visible">
-                    <div class="relative flex-shrink-0 md:w-1/3 flex flex-col items-center">
-                        <img src="/imgs/lara.png" alt="Lara Kováčová"
-                            class="w-24 h-24 rounded-xl object-cover shadow-md -mt-10 md:-mt-12 md:ml-[-1rem]">
-                        <h3 class="text-lg font-bold mt-4">Lara Kováčová</h3>
-                        <div class="flex mt-1 text-yellow-400">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                        </div>
-                    </div>
-            
-                    <div class="mt-4 md:mt-0 md:ml-6 md:w-2/3 text-center md:text-left">
-                        <p class="text-gray-700 text-lg leading-relaxed">
-                            Skvelá kniha
-                        </p>
-                    </div>
-                </article>
-            </div>
-            
-        </section>
 
     </div>
 
@@ -601,6 +448,11 @@
             modal.classList.remove('flex');
             document.body.style.overflow = 'auto';
         }, 300);
+    });
+
+    // Close on background click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeBtn.click();
     });
 
     // Close on Escape key

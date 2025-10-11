@@ -7,7 +7,7 @@ use App\Http\Controllers\ContentController;
 use Illuminate\Support\Facades\File;
 
 Route::view('/', 'welcome');
-
+Route::view('about', 'about')->name('about');
 Route::view('collab', 'collab')->name('collab');
 Route::view('more', 'more')->name('more');
 Route::view('stats', 'stats')->name('stats');
@@ -28,7 +28,13 @@ Route::get('/', function () {
     return view('welcome', compact('reviews'));
 })->name('home');
 
+Route::get('about', function () {
+    $reviews = Review::latest()->take(6)->get(); // limit to 6 newest
+    return view('about', compact('reviews'));
+})->name('about');
+
 Route::get('/', [ContentController::class, 'home'])->name('home');
+Route::get('about', [ContentController::class, 'about'])->name('about');
 Route::get('/admin', [ContentController::class, 'admin']);
 Route::post('/admin/update', [ContentController::class, 'update'])->name('content.update');
 

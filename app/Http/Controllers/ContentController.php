@@ -26,6 +26,14 @@ class ContentController extends Controller
         return view('welcome', compact('content', 'reviews'));
     }
 
+    public function about()
+    {
+        $content = json_decode(file_get_contents(resource_path('content.json')), true);
+        $reviews = \App\Models\Review::latest()->take(6)->get();
+
+        return view('about', compact('content', 'reviews'));
+    }
+
 
     // Show admin form
     public function admin()
