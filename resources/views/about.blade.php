@@ -55,162 +55,144 @@
                 <section id="about-parents" class="text-gray-900 py-12 px-6">
                     <div class="max-w-4xl p-8 mx-auto">
                         @auth
-                            <form method="POST" action="{{ route('content.update') }}" class="mb-6">
-                                @csrf
-                                <input type="hidden" name="field" value="about_parents_lead">
-                                <textarea name="lead" rows="4" class="w-full border rounded px-3 py-2 mb-3">{{ $content['about_parents']['lead'] ?? 'STRÁŽCOVIA POHYBU nie je len ďalšia kniha do police. Je to príbeh, ktorý učí deti, že pohyb je viac než šport či tréning – je to energia, ktorá nás drží pri živote. Hrdinovia knihy ukazujú, že sila, odvaha a priateľstvo sa budujú v pohybe, nie pri obrazovke.' }}</textarea>
-                                <button type="submit"
-                                    class="px-4 py-2 bg-green-600 text-white rounded shadow-sm hover:bg-green-700">
-                                    Uložiť
-                                </button>
-                            </form>
+                        <form method="POST" action="{{ route('content.update') }}" class="mb-6">
+                            @csrf
+                            <input type="hidden" name="field" value="about_parents_lead">
+                            <textarea name="lead" rows="4" class="w-full border rounded px-3 py-2 mb-3">{{ $content['about_parents']['lead'] ?? 'STRÁŽCOVIA POHYBU nie je len ďalšia kniha do police. Je to príbeh, ktorý učí deti, že pohyb je viac než šport či tréning – je to energia, ktorá nás drží pri živote. Hrdinovia knihy ukazujú, že sila, odvaha a priateľstvo sa budujú v pohybe, nie pri obrazovke.' }}</textarea>
+                            <button type="submit"
+                                class="px-4 py-2 bg-green-600 text-white rounded shadow-sm hover:bg-green-700">
+                                Uložiť
+                            </button>
+                        </form>
                         @else
                         <div class="mb-12 text-black max-w-5xl mx-auto px-6 md:px-0">
                             <p class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
-                              STRÁŽCOVIA <span class="text-blue-800">POHYBU</span>
+                                STRÁŽCOVIA <span class="text-blue-800">POHYBU</span>
                             </p>
-                          
+
                             <div class="mt-12 space-y-8 text-xl md:text-2xl leading-relaxed text-gray-900">
-                              
-                              <p>
-                                Nie je len kniha do police. Je to <span class="italic">dobrodružstvo</span>, ktoré učí deti, že
-                                <span class="font-semibold text-green-700">pohyb je energia života</span> – viac než len šport či tréning. 
-                                Každý hrdina, každá situácia, každá nová výzva je navrhnutá tak, aby deti spontánne motivovala vstať a skúmať, behať, skákať a hýbať sa s radosťou.
-                              </p>
-                          
-                              <p>
-                                Hrdinovia ukazujú, že <span class="underline decoration-green-700">sila, odvaha a priateľstvo</span>
-                                sa rodia v pohybe – nie pri obrazovke. Či už sa vydávajú do lesa, prekonávajú vlastné obavy alebo spolupracujú s kamarátmi, každý príbeh posúva dieťa o krok bližšie k objavovaniu vlastného potenciálu.
-                              </p>
-                          
-                              <p>
-                                Každá kapitola otvára nové dobrodružstvá: beh na lúke, horolezecké prekážky, alebo tvorivé hry, ktoré učia trpezlivosti, tímovej práci a empatii. Deti sa nenápadne učia, že aktívny život prináša radosť, energiu a pocit vlastnej sily.
-                              </p>
-                          
-                              <p>
-                                Rodičia sa môžu zapojiť a zdieľať tieto zážitky s deťmi, diskutovať o rozhodnutiach hrdinov, rozvíjať rozhovory o hodnotách a zdravom životnom štýle. Kniha vytvára priestor pre spoločné aktivity, kde sa rodina učí spolu, cez zábavu a pohyb, bez nátlaku.
-                              </p>
-                          
-                              <p>
-                                STRÁŽCOVIA POHYBU nie je len kniha. Je to komplexná cesta, ktorá kombinuje dobrodružstvo, emócie a pohyb do jedinečného zážitku. Dieťa sa učí, že aktívny život je plný možností, radosti a objavovania vlastnej sily – a že každý krok, skok či výzva ho približuje k lepšej verzii seba samého.
-                              </p>
-                          
-                              <p>
-                                Tento príbeh je inšpiráciou nielen pre deti, ale aj pre rodičov – ukazuje, že svet mimo obrazoviek je plný radosti, pohybu a možností. Hrdinovia sa stávajú sprievodcami, ktorí odhaľujú, že energia, odhodlanie a priateľstvo sa najlepšie rozvíjajú cez skúsenosti a akciu.
-                              </p>
-                              
+
+                                <p>
+                                    Nie je len kniha do police. Je to <span class="italic">dobrodružstvo</span>, ktoré učí deti, že
+                                    <span class="font-semibold text-green-700">pohyb je energia života</span> – viac než len šport či tréning.
+                                    Každý hrdina, každá situácia, každá nová výzva je navrhnutá tak, aby deti spontánne motivovala vstať a skúmať, behať, skákať a hýbať sa s radosťou.
+                                </p>
+
+                                <p>
+                                    Hrdinovia ukazujú, že <span class="underline decoration-green-700">sila, odvaha a priateľstvo</span>
+                                    sa rodia v pohybe – nie pri obrazovke. Či už sa vydávajú do lesa, prekonávajú vlastné obavy alebo spolupracujú s kamarátmi, každý príbeh posúva dieťa o krok bližšie k objavovaniu vlastného potenciálu.
+                                </p>
+
+                                <p>
+                                    Každá kapitola otvára nové dobrodružstvá: beh na lúke, horolezecké prekážky, alebo tvorivé hry, ktoré učia trpezlivosti, tímovej práci a empatii. Deti sa nenápadne učia, že aktívny život prináša radosť, energiu a pocit vlastnej sily.
+                                </p>
+
+                                <p>
+                                    Rodičia sa môžu zapojiť a zdieľať tieto zážitky s deťmi, diskutovať o rozhodnutiach hrdinov, rozvíjať rozhovory o hodnotách a zdravom životnom štýle. Kniha vytvára priestor pre spoločné aktivity, kde sa rodina učí spolu, cez zábavu a pohyb, bez nátlaku.
+                                </p>
+
+                                <p>
+                                    STRÁŽCOVIA POHYBU nie je len kniha. Je to komplexná cesta, ktorá kombinuje dobrodružstvo, emócie a pohyb do jedinečného zážitku. Dieťa sa učí, že aktívny život je plný možností, radosti a objavovania vlastnej sily – a že každý krok, skok či výzva ho približuje k lepšej verzii seba samého.
+                                </p>
+
+                                <p>
+                                    Tento príbeh je inšpiráciou nielen pre deti, ale aj pre rodičov – ukazuje, že svet mimo obrazoviek je plný radosti, pohybu a možností. Hrdinovia sa stávajú sprievodcami, ktorí odhaľujú, že energia, odhodlanie a priateľstvo sa najlepšie rozvíjajú cez skúsenosti a akciu.
+                                </p>
+
                             </div>
-                          </div>
-                          
+                        </div>
+
 
                         @endauth
                         <h3 class="text-5xl text-gray-600 font-semibold mb-4">Prečo to ocenia rodičia?</h3>
 
 
                         @auth
-                            <form method="POST" action="{{ route('content.update') }}" class="space-y-4">
-                                @csrf
-                                <input type="hidden" name="field" value="about_parents_points">
-                                <textarea name="points" rows="6" class="w-full border rounded px-3 py-2">{{ $content['about_parents']['points'] ?? "Zdravý vzor: Dieťa dostane hrdinov, ktorí inšpirujú k aktívnemu životu namiesto pasívneho sedenia.\n\nDobrodružstvo + ponaučenie: Nie je to suché moralizovanie, ale napínavý príbeh, v ktorom sa deti učia nenápadne – cez emócie a zážitky.\n\nSpojenie rodiny: Kniha vytvára priestor na rozhovory o zdravom životnom štýle, pohybe a hodnotách." }}</textarea>
-                                <div>
-                                    <button type="submit"
-                                        class="px-4 py-2 bg-green-600 text-white rounded shadow-sm hover:bg-green-700">
-                                        Uložiť
-                                    </button>
-                                </div>
-                            </form>
-                        @else
-                            <div class="flex flex-col items-center gap-6 py-10 w-full max-w-3xl mx-auto">
-                                <div x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false"
-                                    class="bg-white rounded-lg shadow-lg p-6 cursor-pointer w-full max-w-sm md:max-w-md lg:max-w-lg transform transition-all duration-300 hover:scale-105 overflow-hidden">
-
-                                    <div class="grid grid-cols-[auto_1fr] items-center gap-x-4">
-                                        <div class="text-lg font-bold flex-shrink-0 transition-all duration-300"
-                                            :class="hover ? 'text-xl' : 'text-lg'">
-                                            Zdravý vzor
-                                        </div>
-
-                                        <div x-show="hover" x-transition:enter="transition ease-out duration-300 transform"
-                                            x-transition:enter-start="opacity-0 translate-x-4"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:leave="transition ease-in duration-200 transform"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave-end="opacity-0 translate-x-4"
-                                            class="text-gray-700 text-base flex-1">
-                                            Dieťa dostane hrdinov, ktorí inšpirujú k aktívnemu životu namiesto pasívneho
-                                            sedenia.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false"
-                                    class="bg-white rounded-lg shadow-lg p-6 cursor-pointer w-full max-w-sm md:max-w-md lg:max-w-lg transform transition-all duration-300 hover:scale-105 overflow-hidden">
-
-                                    <div class="grid grid-cols-[auto_1fr] items-center gap-x-4">
-                                        <div class="text-lg font-bold flex-shrink-0 transition-all duration-300"
-                                            :class="hover ? 'text-xl' : 'text-lg'">
-                                            Dobrodružstvo + ponaučenie
-                                        </div>
-
-                                        <div x-show="hover" x-transition:enter="transition ease-out duration-300 transform"
-                                            x-transition:enter-start="opacity-0 translate-x-4"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:leave="transition ease-in duration-200 transform"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave-end="opacity-0 translate-x-4"
-                                            class="text-gray-700 text-base flex-1">
-                                            Nie je to suché moralizovanie, ale napínavý príbeh, v ktorom sa deti učia
-                                            nenápadne
-                                            – cez emócie a zážitky.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false"
-                                    class="bg-white rounded-lg shadow-lg p-6 cursor-pointer w-full max-w-sm md:max-w-md lg:max-w-lg transform transition-all duration-300 hover:scale-105 overflow-hidden">
-
-                                    <div class="grid grid-cols-[auto_1fr] items-center gap-x-4">
-                                        <div class="text-lg font-bold flex-shrink-0 transition-all duration-300"
-                                            :class="hover ? 'text-xl' : 'text-lg'">
-                                            Spojenie rodiny
-                                        </div>
-
-                                        <div x-show="hover"
-                                            x-transition:enter="transition ease-out duration-300 transform"
-                                            x-transition:enter-start="opacity-0 translate-x-4"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:leave="transition ease-in duration-200 transform"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave-end="opacity-0 translate-x-4"
-                                            class="text-gray-700 text-base flex-1">
-                                            Kniha vytvára priestor na rozhovory o zdravom životnom štýle, pohybe a
-                                            hodnotách.
-                                        </div>
-                                    </div>
-                                </div>
+                        <form method="POST" action="{{ route('content.update') }}" class="space-y-4">
+                            @csrf
+                            <input type="hidden" name="field" value="about_parents_points">
+                            <textarea name="points" rows="6" class="w-full border rounded px-3 py-2">{{ $content['about_parents']['points'] ?? "Zdravý vzor: Dieťa dostane hrdinov, ktorí inšpirujú k aktívnemu životu namiesto pasívneho sedenia.\n\nDobrodružstvo + ponaučenie: Nie je to suché moralizovanie, ale napínavý príbeh, v ktorom sa deti učia nenápadne – cez emócie a zážitky.\n\nSpojenie rodiny: Kniha vytvára priestor na rozhovory o zdravom životnom štýle, pohybe a hodnotách." }}</textarea>
+                            <div>
+                                <button type="submit"
+                                    class="px-4 py-2 bg-green-600 text-white rounded shadow-sm hover:bg-green-700">
+                                    Uložiť
+                                </button>
                             </div>
-                        @endauth
+                        </form>
+                        @else
+
                     </div>
-                </section>
-            </section>
 
-            <div class="relative overflow-hidden">
-                <!-- Background image -->
-                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/imgs/merch.JPG');">
-                </div>
+                    <x-text-extend title="Zdravy vzor" description="Nie je to suché moralizovanie, ale napínavý príbeh, v ktorom sa deti učia nenápadne – cez emócie a zážitky." />
 
-                <!-- Overlay -->
-                <div class="absolute inset-0 bg-black/50"></div>
+                    <div x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false"
+                        class="bg-white rounded-lg shadow-lg p-6 cursor-pointer w-full max-w-sm md:max-w-md lg:max-w-lg transform transition-all duration-300 hover:scale-105 overflow-hidden">
 
-                <!-- Content -->
-                <div class="relative z-10 flex flex-col items-center justify-center min-h-[400px] space-y-6 p-8">
-                    <button type="button" onclick="window.location.href='/shop'" class="cta-button"
-                        data-aos="zoom-in">
-                        E-shop merch
-                    </button>
-                </div>
-            </div>
-        </section>
+                        <div class="grid grid-cols-[auto_1fr] items-center gap-x-4">
+                            <div class="text-lg font-bold flex-shrink-0 transition-all duration-300"
+                                :class="hover ? 'text-xl' : 'text-lg'">
+                                Dobrodružstvo + ponaučenie
+                            </div>
+
+                            <div x-show="hover" x-transition:enter="transition ease-out duration-300 transform"
+                                x-transition:enter-start="opacity-0 translate-x-4"
+                                x-transition:enter-end="opacity-100 translate-x-0"
+                                x-transition:leave="transition ease-in duration-200 transform"
+                                x-transition:leave-start="opacity-100 translate-x-0"
+                                x-transition:leave-end="opacity-0 translate-x-4"
+                                class="text-gray-700 text-base flex-1">
+                                Nie je to suché moralizovanie, ale napínavý príbeh, v ktorom sa deti učia
+                                nenápadne
+                                – cez emócie a zážitky.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false"
+                        class="bg-white rounded-lg shadow-lg p-6 cursor-pointer w-full max-w-sm md:max-w-md lg:max-w-lg transform transition-all duration-300 hover:scale-105 overflow-hidden">
+
+                        <div class="grid grid-cols-[auto_1fr] items-center gap-x-4">
+                            <div class="text-lg font-bold flex-shrink-0 transition-all duration-300"
+                                :class="hover ? 'text-xl' : 'text-lg'">
+                                Spojenie rodiny
+                            </div>
+
+                            <div x-show="hover"
+                                x-transition:enter="transition ease-out duration-300 transform"
+                                x-transition:enter-start="opacity-0 translate-x-4"
+                                x-transition:enter-end="opacity-100 translate-x-0"
+                                x-transition:leave="transition ease-in duration-200 transform"
+                                x-transition:leave-start="opacity-100 translate-x-0"
+                                x-transition:leave-end="opacity-0 translate-x-4"
+                                class="text-gray-700 text-base flex-1">
+                                Kniha vytvára priestor na rozhovory o zdravom životnom štýle, pohybe a
+                                hodnotách.
+                            </div>
+                        </div>
+                    </div>
+    </div>
+    @endauth
+    </div>
+    </section>
+    </section>
+
+    <div class="relative overflow-hidden">
+        <!-- Background image -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/imgs/merch.JPG');">
+        </div>
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 flex flex-col items-center justify-center min-h-[400px] space-y-6 p-8">
+            <button type="button" onclick="window.location.href='/shop'" class="cta-button"
+                data-aos="zoom-in">
+                E-shop merch
+            </button>
+        </div>
+    </div>
+    </section>
     </div>
     <x-footer />
 </body>

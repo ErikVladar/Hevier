@@ -1,0 +1,47 @@
+@keyframes growToRight {
+    from {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    to {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+@keyframes shrinkToLeft {
+    from {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+    to {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+}
+.trigger {
+    border-radius: 6px;
+    background-color: black;
+    padding: 20px;
+    z-index: 10;
+    transition: all 1s;
+}
+
+.trigger:hover {
+    border-radius: 6px 0 0 6px;
+    transition: all 0.5s;
+}
+
+.slide-element {
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-color: black;
+    padding: 16px;
+    animation: 0.3s shrinkToLeft forwards ease-in-out;
+}
+
+.trigger:hover ~ .slide-element {
+    animation: 0.3s growToRight forwards ease-in-out;
+}
