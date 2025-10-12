@@ -20,7 +20,7 @@
 }
 .trigger {
     border-radius: 6px;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     padding: 20px;
     z-index: 10;
     transition: all 1s;
@@ -37,7 +37,7 @@
     opacity: 0;
     transform: scaleX(0);
     transform-origin: left;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     padding: 16px;
     animation: 0.3s shrinkToLeft forwards ease-in-out;
 }

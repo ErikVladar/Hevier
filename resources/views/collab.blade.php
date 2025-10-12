@@ -1,53 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<x-app-layout>
+    <x-foreground>
+        <div class="pt-16 px-16 rounded-t-3xl">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Hevier</title>
-
-    <link href="{{ asset('css/my.css') }}" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <script src="//unpkg.com/alpinejs" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-    <!-- Lightbox2 CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
-    <!-- Lightbox2 JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-</head>
-
-<body class="font-[Kaushan] antialiased">
-    <button id="scrollToTopBtn"
-        class="fixed bottom-16 right-6 z-50 w-12 h-12 bg-gray-800 text-white text-xl rounded-full shadow-lg 
-         opacity-0 pointer-events-none hover:opacity-100 transition-opacity duration-300 
-         flex items-center justify-center"
-        aria-label="Scroll to top">
-        ↑
-    </button>
-
-    <div class="min-h-full">
-        <nav id="navbar" class="fixed top-0 z-30 w-full text-xl transition-all duration-300">
-            <x-navbar />
-        </nav>
-    </div>
-
-    <div class="bg-hero w-full relative bg-cover bg-center pt-16 [@media(min-width:1080px)]:px-20">
-        <section id="foreground" class="pt-16 px-16 rounded-t-3xl">
-            <div
-                class="max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row slide-left">
+            <div class="animate__animated animate__backInLeft max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row">
                 <div class="w-full md:w-2/3 p-8 md:p-12 flex flex-col justify-center text-center md:text-left">
                     <h2 class="text-4xl md:text-6xl text-gray-700 font-bold mb-4">Daniel Hevier</h2>
                     <p class="text-lg md:text-3xl text-gray-800 leading-relaxed">
@@ -64,8 +19,7 @@
                 </div>
             </div>
 
-            <div
-                class="max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row slide-right">
+            <div class="animate__animated animate__backInRight max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row">
 
                 <div class="w-full md:w-1/3">
                     <img src="imgs/MTbio.png" alt="Daniel Hevier" class="w-full h-full object-cover">
@@ -84,9 +38,9 @@
                 </div>
             </div>
 
-            <section class="px-8 fade-in">
-                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                    <div class="mt-6 content-center slide-right">
+            <section class="px-8">
+                <div class="animate__animated animate__backInUp max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                    <div class="mt-6 content-center">
                         <h1 class="text-6xl font-bold mb-12">Prečo vznikla táto kniha?</h1>
                         <p class="text-3xl text-black mb-12">
                             Spojením odbornosti O2 Športovej akadémie Mateja Tótha a tvorivého pera známeho spisovateľa
@@ -97,78 +51,11 @@
                         </p>
                     </div>
 
-                    <div class="text-center px-20 md:flex md:justify-end mb-0 mt-24 slide-left">
+                    <div class="text-center px-20 md:flex md:justify-end mb-0 mt-24">
                         <img src="imgs/149A2447.png" alt="foto k veci" class="w-96 object-cover">
                     </div>
                 </div>
             </section>
-        </section>
-    </div>
-
-    <x-footer />
-
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.3.0/dist/flowbite.min.js"></script>
-</body>
-
-<script>
-    // Navbar mobile toggle
-    document.addEventListener("DOMContentLoaded", function() {
-        const toggleButton = document.querySelector('[aria-controls="mobile-menu"]');
-        const mobileMenu = document.getElementById("mobile-menu");
-        if (toggleButton && mobileMenu) {
-            toggleButton.addEventListener("click", () => {
-                mobileMenu.classList.toggle("hidden");
-            });
-        }
-    });
-
-    // Scroll to top button
-    const scrollBtn = document.getElementById("scrollToTopBtn");
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-            scrollBtn.classList.add("opacity-60");
-            scrollBtn.classList.remove("opacity-0", "pointer-events-none");
-        } else {
-            scrollBtn.classList.add("opacity-0", "pointer-events-none");
-            scrollBtn.classList.remove("opacity-60");
-        }
-    });
-    scrollBtn.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    });
-
-    // Desktop menu animation
-    const toggleBtn = document.getElementById('menu-toggle');
-    const menu = document.getElementById('desktop-menu');
-    if (toggleBtn && menu) {
-        toggleBtn.addEventListener('click', () => {
-            const isHidden = menu.classList.contains('hidden');
-            if (isHidden) {
-                menu.classList.remove('hidden', 'max-h-0');
-                menu.classList.add('max-h-[1000px]');
-            } else {
-                menu.classList.add('max-h-0');
-                setTimeout(() => menu.classList.add('hidden'), 500);
-                menu.classList.remove('max-h-[1000px]');
-            }
-        });
-    }
-
-    // === Scroll Animations ===
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
-        });
-    }, {
-        threshold: 0.15
-    });
-
-    document.querySelectorAll('.fade-in, .slide-left, .slide-right').forEach(el => observer.observe(el));
-</script>
-
-</html>
+        </div>
+    </x-foreground>
+</x-app-layout>
