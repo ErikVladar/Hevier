@@ -16,7 +16,6 @@
                             </p>
                             <div class="bg-white my-12 mx-6 rounded-3xl shadow-lg p-8 md:p-16">
                                 <div class="max-w-5xl mx-auto space-y-10 text-gray-900">
-                                    ä
                                     <h2 class="text-4xl md:text-5xl font-extrabold text-center text-blue-900 leading-tight">
                                         viac než len kniha
                                     </h2>
