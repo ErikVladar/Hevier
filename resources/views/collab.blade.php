@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="text-center px-20 md:flex md:justify-end mb-0 mt-24">
-                        <img src="imgs/149A2447.png" alt="foto k veci" class="w-96 object-cover">
+                        <img src="storage/imgs/149A2447.png" alt="foto k veci" class="w-96 object-cover">
                     </div>
                 </div>
             </section>
