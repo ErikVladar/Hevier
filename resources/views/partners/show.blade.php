@@ -45,45 +45,24 @@
             <x-navbar />
         </nav>
     </div>
+
+    <!-- Partners Section -->
     <div
         class="bg-hero md:pt-20 bg-scroll md:bg-fixed bg-center bg-repeat md:bg-no-repeat [@media(min-width:1080px)]:px-20">
         <section id="partners" class="md:pt-20 pb-32 py-16 bg-white/30 px-4 text-center rounded-t-3xl">
+                <div class="max-w-5xl mx-auto py-16 text-center">
+                    <h1 class="text-4xl font-bold mb-6 text-blue-900">{{ $partner->name }}</h1>
+                    <img src="{{ asset($partner->image) }}" alt="{{ $partner->name }}" class="mx-auto max-h-64 mb-6">
+                    <p class="text-gray-700">{{ $partner->description ?? 'No description available.' }}</p>
 
-            <h2 class="text-4xl font-bold mb-10 text-blue-900">Generálny partner</h2>
-
-            <div class="max-w-7xl mx-auto flex flex-wrap justify-center mb-20 gap-x-6 gap-y-24"
-                style="justify-content: space-around; align-items:center">
-                @foreach ($partners->where('type', 'general') as $partner)
-                    <x-partner-card :partner="$partner" />
-                @endforeach
-            </div>
-
-            <h2 class="text-4xl font-bold mb-10 text-blue-900">Hlavný partner</h2>
-
-            <div class="max-w-7xl mx-auto flex flex-wrap justify-center mb-20 gap-x-6 gap-y-24"
-                style="justify-content: space-around; align-items:center">
-                @foreach ($partners->where('type', 'main') as $partner)
-                    <x-partner-card :partner="$partner" />
-                @endforeach
-            </div>
-
-            <h2 class="text-4xl font-bold mb-10 text-blue-900">Partneri</h2>
-
-            <div class="max-w-7xl mx-auto flex flex-wrap justify-center mb-20 gap-x-6 gap-y-24"
-                style="justify-content: space-around; align-items:center">
-                @foreach ($partners->where('type', 'partner') as $partner)
-                    <x-partner-card :partner="$partner" />
-                @endforeach
-            </div>
-
-            <h2 class="text-4xl font-bold mb-10 text-blue-900">Inštitucionálni Partneri</h2>
-
-            <div class="max-w-7xl mx-auto flex flex-wrap justify-center mb-20 gap-x-6 gap-y-24"
-                style="justify-content: space-around; align-items:center">
-                @foreach ($partners->where('type', 'institutional') as $partner)
-                    <x-partner-card :partner="$partner" />
-                @endforeach
-            </div>
+                    @if ($partner->images)
+                        <div class="flex flex-wrap justify-center gap-4 mt-10">
+                            @foreach (json_decode($partner->images, true) as $img)
+                                <img src="{{ asset($img) }}" alt="" class="max-h-32 rounded-lg">
+                            @endforeach
+                        </div>
+                    @endif
+                </div>
         </section>
     </div>
 

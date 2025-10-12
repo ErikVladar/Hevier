@@ -130,14 +130,29 @@
                     </div>
                 </div>
 
-                <div class="bg-gray-50 rounded-2xl shadow-inner p-10 text-center text-gray-800">
-                    <h3 class="text-3xl font-bold mb-4">Zhrnutie</h3>
-                    <p class="text-xl leading-relaxed max-w-4xl mx-auto">
-                        Pohybové návyky detí sa zhoršujú – iba <span class="font-semibold">1 z 3</span> spĺňa odporúčané
-                        úrovne aktivity.
-                        Pasívny životný štýl postupne nahrádza prirodzený pohyb, ktorý je kľúčom k zdraviu, sústredeniu
-                        a dobrej nálade.
-                    </p>
+                <div x-data="{ open: false }" class="max-w-2xl mx-auto my-12">
+                    <div @mouseenter="open = true" @mouseleave="open = false"
+                        class="bg-gray-50 text-center rounded-2xl shadow-inner cursor-pointer overflow-hidden
+                               transition-all duration-500 p-8"
+                        :class="open ? 'max-w-4xl' : 'max-w-2xl'">
+                        <h3 class="text-5xl font-extrabold mb-4">Zhrnutie</h3>
+
+                        <div x-show="open" x-transition:enter="transition ease-out duration-500"
+                            x-transition:enter-start="opacity-0 -translate-y-4"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:leave="transition ease-in duration-300"
+                            x-transition:leave-start="opacity-100 translate-y-0"
+                            x-transition:leave-end="opacity-0 -translate-y-4">
+                            <p class="text-xl leading-relaxed mt-4">
+                                Pohybové návyky detí sa zhoršujú – iba <span class="text-red-600">1 z 3</span> spĺňa
+                                odporúčané
+                                úrovne aktivity.
+                                Pasívny životný štýl postupne nahrádza prirodzený pohyb, ktorý je kľúčom k zdraviu,
+                                sústredeniu
+                                a dobrej nálade.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
             </section>

@@ -72,7 +72,7 @@
         </button>
 
         <!-- Flipbook centered -->
-        <div id="flipbook" class="shadow-2xl animate-on-scroll slide-left" style="width: 900px; height: 650px;">
+        <div id="flipbook" class="shadow-2xl" style="width: 900px; height: 650px;">
             <div class="hard">
                 <img src="/imgs/TITULKA.jpg" class="w-full h-full object-cover" />
             </div>
@@ -98,7 +98,6 @@
             <div class="w-full relative bg-cover bg-centerm-32 px-20 mt-12 items-center justify-center text-center">
                 <section id="about" class="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-screenx">
                     <div id="title" class="flex flex-col h-full p-12">
-                        <!-- Title -->
                         @auth
                             <form method="POST" action="{{ route('content.update') }}" class="mb-4">
                                 @csrf
@@ -126,7 +125,6 @@
                             </div>
                         @endauth
 
-                        <!-- Body -->
                         @auth
                             <form method="POST" action="{{ route('content.update') }}">
                                 @csrf
@@ -139,23 +137,24 @@
                                 </button>
                             </form>
                         @else
-                            <p class="text-gray-800 text-3xl text-left animate-on-scroll zoom-in"
-                                style="transform: rotate(-1deg); transform-origin: left;">
-                                {{ $content['about']['body'] }}
-                            </p>
+                            <div class="animate-on-scroll zoom-in">
+                                <p class="text-gray-800 text-3xl text-left animate-on-scroll zoom-in"
+                                    style="transform: rotate(-1deg); transform-origin: left;">
+                                    {{ $content['about']['body'] }}
+                                </p>
+                            </div>
                         @endauth
                     </div>
 
                     <div id="cover"
                         class="flex flex-col h-full mt-32 w-full items-center justify-center animate-on-scroll slide-right">
 
-                        <!-- Clickable Cover -->
                         <div id="book-cover" class="cursor-pointer transition-transform hover:scale-105">
                             <img src="/imgs/TITULKA.jpg" alt="Book Cover"
-                                style="width:400px; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
+                                style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
                         </div>
 
-                        <button type="button" onclick="window.location.href='/shop'" class="cta-button mt-6 mb-20">
+                        <button type="button" onclick="window.location.href='/shop'" class="cta-button mt-+ľ mb-20">
                             Kúpiť
                         </button>
                     </div>
