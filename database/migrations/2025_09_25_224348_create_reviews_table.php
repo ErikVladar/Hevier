@@ -14,6 +14,7 @@ class CreateReviewsTable extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->float('rating');
             $table->string('photo')->nullable(); // store image path or URL
             $table->text('text');
             $table->timestamps();
