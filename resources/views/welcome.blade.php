@@ -93,7 +93,7 @@
             </div>
 
             <div class="relative overflow-hidden">
-                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/imgs/merch.JPG');">
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('storage/imgs/merch.JPG');">
                 </div>
 
                 <div class="absolute inset-0 bg-black/50"></div>

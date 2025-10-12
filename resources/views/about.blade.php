@@ -36,7 +36,7 @@
                                         </div>
 
                                         <div class="flex justify-center md:justify-end">
-                                            <img src="imgs/artwork.png" alt="Ilustrácia knihy Strážcovia pohybu"
+                                            <img src="storage/imgs/artwork.png" alt="Ilustrácia knihy Strážcovia pohybu"
                                                 class="rounded-2xl shadow-md max-w-md w-full object-cover">
                                         </div>
 
@@ -109,7 +109,7 @@
         </section>
     </x-foreground>
     <div class="relative overflow-hidden"> <!-- Background image -->
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/imgs/merch.JPG');">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('storage/imgs/merch.JPG');">
         </div>
         <!-- Overlay -->
         <div class="absolute inset-0 bg-black/50"></div> <!-- Content -->
