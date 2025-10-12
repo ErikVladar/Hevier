@@ -1,68 +1,72 @@
 <x-app-layout>
     <x-foreground>
         <section id="merch" class="relative w-full min-h-screenitems-center justify-center text-center rounded-t-3xl">
-            <div class="w-full relative bg-cover bg-centerm-32 px-20 items-center justify-center"> </div>
+            <div class="w-full relative bg-cover bg-centerm-32 items-center justify-center"> </div>
             <section class="relative w-full overflow-hidden">
                 <section id="about-parents" class="text-gray-900 py-12 px-6">
-                    <div class="max-w-4xl p-8 mx-auto"> @auth <form method="POST" action="{{ route('content.update') }}"
+                    <div class="p-8"> @auth <form method="POST" action="{{ route('content.update') }}"
                                 class="mb-6"> @csrf <input type="hidden" name="field" value="about_parents_lead">
                                 <textarea name="lead" rows="4" class="w-full border rounded px-3 py-2 mb-3">{{ $content['about_parents']['lead'] ?? 'STRÁŽCOVIA POHYBU nie je len ďalšia kniha do police. Je to príbeh, ktorý učí deti, že pohyb je viac než šport či tréning – je to energia, ktorá nás drží pri živote. Hrdinovia knihy ukazujú, že sila, odvaha a priateľstvo sa budujú v pohybe, nie pri obrazovke.' }}</textarea> <button type="submit"
                                     class="px-4 py-2 bg-green-600 text-white rounded shadow-sm hover:bg-green-700"> Uložiť
                                 </button>
                             </form>
                         @else
-                            <div class="bg-white my-12 mx-6 rounded-xl p-6 md:p-12">
-                                <div class="max-w-5xl mx-auto px-6 md:px-0 space-y-6 text-gray-900">
-                                    <p
-                                        class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-20 text-black">
-                                        STRÁŽCOVIA <span class="text-blue-800">POHYBU</span>
+                            <p class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-20 text-black">
+                                STRÁŽCOVIA <span class="text-blue-800">POHYBU</span>
+                            </p>
+                            <div class="bg-white my-12 mx-6 rounded-3xl shadow-lg p-8 md:p-16">
+                                <div class="max-w-5xl mx-auto space-y-10 text-gray-900">
+                            ä
+                                    <h2 class="text-4xl md:text-5xl font-extrabold text-center text-blue-900 leading-tight">
+                                        viac než len kniha
+                                    </h2>
+                            
+                                    <p class="text-lg md:text-2xl leading-relaxed text-center max-w-3xl mx-auto">
+                                        Nie je len kniha do police. Je to <span class="italic">dobrodružstvo</span>, ktoré učí deti, že
+                                        <span class="font-semibold text-green-700">pohyb je energia života</span> – viac než len šport či tréning.
+                                        Každý hrdina, každá nová výzva motivuje deti vstať, skúmať, behať, skákať a hýbať sa s radosťou.
                                     </p>
-
-                                    <p class="text-xl md:text-2xl leading-relaxed">
-                                        Nie je len kniha do police. Je to <span class="italic">dobrodružstvo</span>, ktoré
-                                        učí deti, že
-                                        <span class="font-semibold text-green-700">pohyb je energia života</span> – viac než
-                                        len šport či tréning.
-                                        Každý hrdina, každá situácia, každá nová výzva je navrhnutá tak, aby deti spontánne
-                                        motivovala vstať,
-                                        skúmať, behať, skákať a hýbať sa s radosťou.
-                                    </p>
-
-                                    <p class="text-xl md:text-2xl leading-relaxed">
-                                        Hrdinovia ukazujú, že <span class="underline decoration-green-700">sila, odvaha a
-                                            priateľstvo</span>
-                                        sa rodia v pohybe – nie pri obrazovke. Či už sa vydávajú do lesa, prekonávajú
-                                        vlastné obavy alebo
-                                        spolupracujú s kamarátmi, každý príbeh posúva dieťa o krok bližšie k objavovaniu
-                                        vlastného potenciálu.
-                                    </p>
-
-                                    <p class="text-xl md:text-2xl leading-relaxed">
-                                        Každá kapitola otvára nové dobrodružstvá: beh na lúke, horolezecké prekážky, alebo
-                                        tvorivé hry,
-                                        ktoré učia trpezlivosti, tímovej práci a empatii. Deti sa nenápadne učia, že aktívny
-                                        život prináša
-                                        radosť, energiu a pocit vlastnej sily.
-                                    </p>
-
-                                    <p class="text-xl md:text-2xl leading-relaxed">
-                                        Rodičia sa môžu zapojiť a zdieľať tieto zážitky s deťmi, diskutovať o rozhodnutiach
-                                        hrdinov,
-                                        rozvíjať rozhovory o hodnotách a zdravom životnom štýle. Kniha vytvára priestor pre
-                                        spoločné
-                                        aktivity, kde sa rodina učí spolu, cez zábavu a pohyb, bez nátlaku.
-                                    </p>
-
-                                    <p class="text-xl md:text-2xl leading-relaxed">
-                                        STRÁŽCOVIA POHYBU nie je len kniha. Je to komplexná cesta, ktorá kombinuje
-                                        dobrodružstvo,
-                                        emócie a pohyb do jedinečného zážitku. Dieťa sa učí, že aktívny život je plný
-                                        možností,
-                                        radosti a objavovania vlastnej sily – a že každý krok, skok či výzva ho približuje k
-                                        lepšej verzii seba samého.
-                                    </p>
+                            
+                                    <div class="w-full flex justify-center">
+                                        <img src="imgs/artwork.png"
+                                             alt="Ilustrácia knihy Strážcovia pohybu"
+                                             class="rounded-2xl shadow-md max-w-2xl object-cover">
+                                    </div>
+                                    
+                                    <div class="bg-blue-50 rounded-2xl p-8 md:p-10 text-gray-800 space-y-6">
+                                        <p class="text-xl md:text-2xl leading-relaxed">
+                                            Hrdinovia ukazujú, že <span class="underline decoration-green-700">sila, odvaha a priateľstvo</span>
+                                            sa rodia v pohybe – nie pri obrazovke. Každý príbeh posúva dieťa bližšie k objaveniu vlastného potenciálu.
+                                        </p>
+                            
+                                        <p class="text-xl md:text-2xl leading-relaxed">
+                                            Každá kapitola prináša nové dobrodružstvo – beh na lúke, prekážkovú dráhu či tímové hry, ktoré učia
+                                            trpezlivosti, empatii a spolupráci.
+                                        </p>
+                                    </div>
+                            
+                                    <div class="border-l-4 border-blue-600 pl-6 space-y-4">
+                                        <p class="text-lg md:text-xl leading-relaxed italic">
+                                            Rodičia sa môžu zapojiť, zdieľať zážitky s deťmi a rozprávať sa o hodnotách, ktoré kniha otvára.
+                                        </p>
+                                        <p class="text-lg md:text-xl leading-relaxed">
+                                            Spoločné čítanie vytvára priestor pre <span class="font-semibold text-green-700">rodinné prepojenie</span>
+                                            cez zábavu, pohyb a rozhovor.
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="text-center">
+                                        <p class="text-2xl md:text-3xl font-bold text-blue-900 leading-relaxed">
+                                            STRÁŽCOVIA POHYBU je cesta plná radosti, emócií a objavovania vlastnej sily.
+                                        </p>
+                                        <p class="text-lg md:text-xl mt-4 text-gray-700">
+                                            Každý krok, skok či výzva posúva dieťa bližšie k lepšej verzii seba samého.
+                                        </p>
+                                    </div>
+                            
                                 </div>
                             </div>
+                            
                         @endauth
                         <h3 class="text-5xl text-gray-600 font-semibold mb-4">Prečo to ocenia rodičia?
                         </h3>
