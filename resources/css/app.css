@@ -92,7 +92,7 @@
 
 .bg-hero {
     position: relative;
-    background-image: url("imgs/bg.png");
+    background-image: url("/imgs/bg.png");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: 100% auto;
@@ -120,7 +120,7 @@
 
 @media (max-width: 767px) {
     .bg-hero {
-        background-image: url("imgs/bg-phone.png");
+        background-image: url("/imgs/bg-phone.png");
         background-size: 100% auto;
         background-position: top center;
         background-repeat: no-repeat;
@@ -231,17 +231,7 @@
     transform: translateX(0);
 }
 
-#more-main {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-#partners {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-#gallery {
+#foreground {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }

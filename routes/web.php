@@ -3,15 +3,24 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReviewController;
 use App\Models\Review;
+use App\Models\Partner;
 use App\Http\Controllers\ContentController;
 use Illuminate\Support\Facades\File;
+use App\Http\Controllers\PartnerController;
 
 Route::view('/', 'welcome');
 Route::view('about', 'about')->name('about');
 Route::view('collab', 'collab')->name('collab');
 Route::view('more', 'more')->name('more');
 Route::view('stats', 'stats')->name('stats');
-Route::view('partners', 'partners')->name('partners');
+// Route::view('partners', 'partners')->name('partners');
+// Route::get('/partners', [PartnerController::class, 'index'])->name('partners.index');
+Route::get('/partners', function () {
+    $partners = Partner::latest()->get(); // limit to 6 newest
+    return view('partners', compact('partners'));
+})->name('partners');
+Route::get('/partners/{partner:slug}', [PartnerController::class, 'show'])->name('partners.show');
+
 Route::get('/gallery', function () {
     $images = File::files(public_path('storage/gallery'));
     $images = array_map(fn($file) => 'storage/gallery/' . $file->getFilename(), $images);
