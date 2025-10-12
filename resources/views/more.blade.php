@@ -150,7 +150,7 @@
             </div>
         </section>
         <div class="relative overflow-hidden">
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/imgs/merch.JPG');">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('storage/imgs/merch.JPG');">
             </div>
             <div class="absolute inset-0 bg-black/50"></div>
             <div class="relative z-10 flex flex-col items-center justify-center min-h-[400px] space-y-6 p-8">
