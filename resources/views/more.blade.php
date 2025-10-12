@@ -40,8 +40,8 @@
                         <h3 class="font-semibold text-lg mb-3">Úspechy</h3>
                         <ul class="list-disc pl-5 space-y-2">
                             <li>Objavil nové miesta v parku pri hre</li>
-                            <li>Usporiadal miniturnaj s kamarátmi</li>
-                            <li>Vyrobil vlastnú športovú hračku</li>
+                        <li>Usporiadal miniturnaj s kamarátmi</li>
+                        <li>Vyrobil vlastnú športovú hračku</li>
                         </ul>
                     </div>
                 </div>
