@@ -80,7 +80,7 @@
 
                         <div id="book-cover"
                             class="animate__animated animate__backInRight cursor-pointer transition-transform hover:scale-105">
-                            <img src="imgs/TITULKA.jpg" alt="Book Cover"
+                            <img src="storage/imgs/TITULKA.jpg" alt="Book Cover"
                                 style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
                         </div>
 

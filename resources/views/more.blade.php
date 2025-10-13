@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="w-full md:w-1/3 bg-gray-200 flex flex-col items-center">
-                    <img src="/imgs/lara.png" alt="Lara Sprintová" class="w-full h-full object-cover mb-6">
+                    <img src="storage/imgs/lara.png" alt="Lara Sprintová" class="w-full h-full object-cover mb-6">
 
                     <div class="w-full text-left p-6">
                         <h3 class="font-semibold text-lg mb-3">Úspechy</h3>
@@ -34,7 +34,7 @@
                 class="max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row">
 
                 <div class="w-full md:w-1/3 bg-gray-200 flex flex-col items-center">
-                    <img src="/imgs/Peto.png" alt="Peter Kováč" class="w-full h-full object-cover">
+                    <img src="storage/imgs/Peto.png" alt="Peter Kováč" class="w-full h-full object-cover">
 
                     <div class="w-full text-left p-6">
                         <h3 class="font-semibold text-lg mb-3">Úspechy</h3>
