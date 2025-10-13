@@ -10,7 +10,7 @@
         <!-- Flipbook centered -->
         <div id="flipbook" class="shadow-2xl" style="width: 900px; height: 650px;">
             <div class="hard">
-                <img src="/imgs/TITULKA.jpg" class="w-full h-full object-cover" />
+                <img src="storage/imgs/TITULKA.jpg" class="w-full h-full object-cover" />
             </div>
             <div class="bg-gray-200 hard"></div>
             <div class="bg-white flex items-center justify-center text-2xl">Page 1</div>
@@ -80,7 +80,7 @@
 
                         <div id="book-cover"
                             class="animate__animated animate__backInRight cursor-pointer transition-transform hover:scale-105">
-                            <img src="/imgs/TITULKA.jpg" alt="Book Cover"
+                            <img src="imgs/TITULKA.jpg" alt="Book Cover"
                                 style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
                         </div>
 

@@ -1,7 +1,7 @@
 <article class="relative bg-gray-100 rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center md:items-start overflow-visible">
     <div class="relative flex-shrink-0 md:w-1/3 flex flex-col items-center">
         <img 
-            src="{{ asset('imgs/' . $review->photo) }}" 
+            src="{{ asset('storage/imgs/' . $review->photo) }}" 
             alt="{{ $review->name }}" 
             class="w-24 h-24 rounded-xl object-cover shadow-md -mt-10 md:-mt-12 md:ml-[-1rem]"
         >

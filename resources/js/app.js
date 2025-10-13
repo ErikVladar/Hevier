@@ -1,6 +1,7 @@
 import "./bootstrap";
 
 import Alpine from "alpinejs";
+
 // Import all JS modules using glob
 const modules = import.meta.glob([
     "./welcome/welcome.js",
