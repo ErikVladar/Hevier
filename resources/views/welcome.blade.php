@@ -27,7 +27,7 @@
 
             <div class="w-full relative bg-cover bg-centerm-32 px-20 mt-12 items-center justify-center text-center">
                 <section id="about" class="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-screenx">
-                    <div id="title" class="flex flex-col h-full p-12">
+                    <div id="title" class="flex flex-col h-full p-12 items-center text-center">
                         @auth
                             <form method="POST" action="{{ route('content.update') }}" class="mb-4">
                                 @csrf
@@ -42,14 +42,14 @@
                             </form>
                         @else
                             <div>
-                                <h1 class="animate__animated animate__backInLeft text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl text-left mb-4"
-                                    style="transform: rotate(-1deg); transform-origin: left;">
+                                <h1 class="animate__animated animate__slideInLeft text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-4 text-center"
+                                    style="transform: rotate(-2deg); transform-origin: left;">
                                     {{ $content['about']['title_1'] }}
                                 </h1>
                             </div>
                             <div>
-                                <h1 class="animate__animated animate__backInRight text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl text-left mb-4"
-                                    style="transform: rotate(-1deg); transform-origin: rigth;">
+                                <h1 class="animate__animated animate__slideInRight text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-4 text-center"
+                                    style="transform: rotate(-2deg); transform-origin: rigth;">
                                     {{ $content['about']['title_2'] }}
                                 </h1>
                             </div>
@@ -68,7 +68,7 @@
                             </form>
                         @else
                             <div>
-                                <p class="animate__animated animate__backInUp text-gray-800 text-3xl text-left"
+                                <p class="animate__animated animate__slideInUp text-gray-800 text-3xl text-center"
                                     style="transform: rotate(-1deg); transform-origin: left;">
                                     {{ $content['about']['body'] }}
                                 </p>
@@ -79,12 +79,12 @@
                     <div id="cover" class="flex flex-col h-full mt-32 w-full items-center justify-center">
 
                         <div id="book-cover"
-                            class="animate__animated animate__backInRight cursor-pointer transition-transform hover:scale-105">
+                            class="animate__animated animate__slideInDown cursor-pointer transition-transform hover:scale-105">
                             <img src="storage/imgs/TITULKA.jpg" alt="Book Cover"
                                 style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
                         </div>
 
-                        <button type="button" onclick="window.location.href='/shop'" class="cta-button mt-12 mb-20">
+                        <button type="button" onclick="window.location.href='/shop'" class="cta-button-black mt-12 mb-20">
                             Kúpiť
                         </button>
                     </div>
@@ -92,24 +92,25 @@
                 </section>
             </div>
 
-            <div class="relative overflow-hidden">
-                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('storage/imgs/merch.JPG');">
-                </div>
-
-                <div class="absolute inset-0 bg-black/50"></div>
-
-                <div class="relative z-10 flex flex-col items-center justify-center min-h-[400px] space-y-6 p-8">
-                    <a href="https://shop.hevi.sk/" target="_blank" rel="noopener noreferrer" class="cta-button"
-                        data-aos="zoom-in">
-                        E-shop merch
-                    </a>
-                </div>
-            </div>
+            
         </div>
     </x-foreground>
+    <div class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('storage/imgs/merch.JPG');">
+        </div>
+
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <div class="relative z-10 flex flex-col items-center justify-center min-h-[400px] space-y-6 p-8">
+            <a href="https://shop.hevi.sk/" target="_blank" rel="noopener noreferrer" class="cta-button"
+                data-aos="zoom-in">
+                E-shop merch
+            </a>
+        </div>
+    </div>
     <section id="reviews" class="w-full bg-white/20 py-12">
-        <h2 class="text-4xl font-bold text-center mb-12">Recenzie</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
+        <h2 class="text-6xl font-bold text-center mb-20 text-black">Recenzie</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto px-20">
             @foreach ($reviews as $review)
                 <x-review-card :review="$review" />
             @endforeach

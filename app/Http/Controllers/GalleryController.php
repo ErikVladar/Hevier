@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+use App\Models\GalleryPhoto;
 
 class GalleryController extends Controller
 {
     public function index()
     {
-        $images = File::files(public_path('gallery')); // reads all files in /public/gallery
-        $images = array_map(fn($file) => 'gallery/' . $file->getFilename(), $images);
+        $images = GalleryPhoto::latest()->get();
 
-        return view('gallery', compact('images'));
+        return view('gallery.index', compact('images'));
     }
 }

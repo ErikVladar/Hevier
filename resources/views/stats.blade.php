@@ -2,81 +2,87 @@
     <x-foreground>
         <section class="p-10 space-y-10 max-w-7xl mx-auto">
 
-            <div class="text-center space-y-4">
-                <h1 class="text-6xl font-bold text-gray-800">Štatistiky o pohybe detí</h1>
-                <p class="text-2xl text-gray-600">Ako aktívne sú deti?</p>
+            <div class="text-center space-y-4 mb-24">
+                <h1 class="text-6xl font-bold text-black">Štatistiky o pohybe detí</h1>
+                <p class="text-2xl text-gray-200">Ako aktívne sú deti?</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-10">
-                <div class="bg-white/70 rounded-2xl shadow-lg p-8">
-                    <h2 class="text-3xl font-semibold mb-6 text-gray-800">Priemerný denný pohyb detí</h2>
-                    <div class="w-full h-[300px]">
+                <div class="bg-white/90 rounded-2xl shadow-lg p-8">
+                    <a href="{{ route('stats.show', 'activity') }}">
+                        <h2 class="text-3xl font-semibold mb-6 text-gray-800">Priemerný denný pohyb detí</h2>
                         <canvas id="activityChart"></canvas>
-                    </div>
-                    <p class="mt-4 text-gray-600 text-lg">
-                        Väčšina detí sa k odporúčaným 60 minútam denne nepribližuje.
-                    </p>
+                        <p class="mt-4 text-gray-600 text-lg">
+                            Väčšina detí sa k odporúčaným 60 minútam denne nepribližuje.
+                        </p>
+                    </a>
                 </div>
 
-                <div class="bg-white/70 rounded-2xl shadow-lg p-8">
-                    <h2 class="text-3xl font-semibold mb-6 text-gray-800">Čas pred obrazovkou</h2>
-                    <canvas id="screenTimeChart" class="w-full h-[300px]"></canvas>
-                    <p class="mt-4 text-gray-600 text-lg">
-                        Deti trávia viac času pred obrazovkou, než v pohybe.
-                    </p>
+                <div class="bg-white/90 rounded-2xl shadow-lg p-8">
+                    <a href="{{ route('stats.show', 'screen-time') }}">
+                        <h2 class="text-3xl font-semibold mb-6 text-gray-800">Čas pred obrazovkou</h2>
+                        <canvas id="screenTimeChart"></canvas>
+                        <p class="mt-4 text-gray-600 text-lg">
+                            Deti trávia viac času pred obrazovkou, než v pohybe.
+                        </p>
+                    </a>
                 </div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-10">
-                <div class="bg-white/70 rounded-2xl shadow-lg p-8 overflow-x-auto">
-                    <h2 class="text-3xl font-semibold mb-6 text-gray-800">Najobľúbenejšie športy</h2>
-                    <table class="min-w-full text-left border-collapse text-base">
-                        <thead class="bg-blue-200 text-gray-800">
-                            <tr>
-                                <th class="px-4 py-2 border-b">Šport</th>
-                                <th class="px-4 py-2 border-b">% detí</th>
-                                <th class="px-4 py-2 border-b">Chlapci</th>
-                                <th class="px-4 py-2 border-b">Dievčatá</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-gray-700">
-                            <tr class="hover:bg-blue-50">
-                                <td class="px-4 py-2 border-b">Futbal</td>
-                                <td>42%</td>
-                                <td>60%</td>
-                                <td>22%</td>
-                            </tr>
-                            <tr class="hover:bg-blue-50">
-                                <td class="px-4 py-2 border-b">Tanec</td>
-                                <td>28%</td>
-                                <td>6%</td>
-                                <td>48%</td>
-                            </tr>
-                            <tr class="hover:bg-blue-50">
-                                <td class="px-4 py-2 border-b">Plávanie</td>
-                                <td>34%</td>
-                                <td>32%</td>
-                                <td>36%</td>
-                            </tr>
-                            <tr class="hover:bg-blue-50">
-                                <td class="px-4 py-2 border-b">Cyklistika</td>
-                                <td>25%</td>
-                                <td>27%</td>
-                                <td>23%</td>
-                            </tr>
-                            <tr class="hover:bg-blue-50">
-                                <td class="px-4 py-2 border-b">Gymnastika</td>
-                                <td>18%</td>
-                                <td>5%</td>
-                                <td>32%</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="bg-white/90 rounded-2xl shadow-lg p-8 overflow-x-auto">
+                    <a href="{{ route('stats.show', 'favorite-sports') }}">
+                        <h2 class="text-3xl font-semibold mb-6 text-gray-800">Najobľúbenejšie športy</h2>
+                        <table class="min-w-full text-left border-collapse text-base">
+                            <thead class="bg-blue-200 text-gray-800">
+                                <tr>
+                                    <th class="px-4 py-2 border-b">Šport</th>
+                                    <th class="px-4 py-2 border-b">% detí</th>
+                                    <th class="px-4 py-2 border-b">Chlapci</th>
+                                    <th class="px-4 py-2 border-b">Dievčatá</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                <tr class="hover:bg-blue-50">
+                                    <td class="px-4 py-2 border-b">Futbal</td>
+                                    <td>42%</td>
+                                    <td>60%</td>
+                                    <td>22%</td>
+                                </tr>
+                                <tr class="hover:bg-blue-50">
+                                    <td class="px-4 py-2 border-b">Tanec</td>
+                                    <td>28%</td>
+                                    <td>6%</td>
+                                    <td>48%</td>
+                                </tr>
+                                <tr class="hover:bg-blue-50">
+                                    <td class="px-4 py-2 border-b">Plávanie</td>
+                                    <td>34%</td>
+                                    <td>32%</td>
+                                    <td>36%</td>
+                                </tr>
+                                <tr class="hover:bg-blue-50">
+                                    <td class="px-4 py-2 border-b">Cyklistika</td>
+                                    <td>25%</td>
+                                    <td>27%</td>
+                                    <td>23%</td>
+                                </tr>
+                                <tr class="hover:bg-blue-50">
+                                    <td class="px-4 py-2 border-b">Gymnastika</td>
+                                    <td>18%</td>
+                                    <td>5%</td>
+                                    <td>32%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </a>
                 </div>
 
-                <div class="bg-white/70 rounded-2xl shadow-lg p-8">
-                    <h2 class="text-3xl font-semibold mb-6 text-gray-800">Koľko detí spĺňa odporúčania</h2>
-                    <canvas id="pieChart" class="w-full h-[300px]"></canvas>
+                <div class="bg-white/90 rounded-2xl shadow-lg p-8">
+                    <a href="{{ route('stats.show', 'recommendations') }}">
+                        <h2 class="text-3xl font-semibold mb-6 text-gray-800">Koľko detí spĺňa odporúčania</h2>
+                        <canvas id="pieChart" class="w-full h-[300px]"></canvas>
+                    </a>
                 </div>
             </div>
 
@@ -108,3 +114,4 @@
         </section>
     </x-foreground>
 </x-app-layout>
+

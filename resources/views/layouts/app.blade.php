@@ -47,7 +47,7 @@
         </nav>
     </div>
 
-    <div class="md:pt-20 bg-scroll md:bg-fixed md:bg-cover bg-center bg-repeat bg-white/30 items-center md:bg-no-repeat [@media(min-width:1080px)]:px-20"
+    <div class="md:pt-20 bg-scroll md:bg-fixed md:bg-cover bg-center bg-repeat bg-white/30 items-center md:bg-no-repeat [@media(min-width:1080px)]:px-32 [@media(min-width:1080px)]:pt-20"
         style="background: url({{ asset('storage/imgs/bg.png') }})">
         <main>
             {{ $slot }}

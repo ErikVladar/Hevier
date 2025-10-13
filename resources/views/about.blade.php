@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-foreground>
-        <section id="merch" class="relative w-full min-h-screenitems-center justify-center text-center rounded-t-3xl">
+        <section class="relative w-full min-h-screenitems-center justify-center text-center rounded-t-3xl">
             <div class="w-full relative bg-cover bg-centerm-32 items-center justify-center"> </div>
             <section class="relative w-full overflow-hidden">
                 <section id="about-parents" class="text-gray-900 py-12 px-6">
@@ -11,12 +11,12 @@
                                 </button>
                             </form>
                         @else
-                            <p class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-20 text-black">
+                            <p class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4 text-black">
                                 STRÁŽCOVIA <span class="text-blue-800">POHYBU</span>
                             </p>
-                            <div class="bg-white my-12 mx-6 rounded-3xl shadow-lg p-8 md:p-16">
+                            <div class="mb-12 mx-6 rounded-3xl px-8 ">
                                 <div class="max-w-5xl mx-auto space-y-10 text-gray-900">
-                                    <h2 class="text-4xl md:text-5xl font-extrabold text-center text-blue-900 leading-tight">
+                                    <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-24 text-blue-900 leading-tight">
                                         viac než len kniha
                                     </h2>
 
@@ -43,7 +43,7 @@
                                     </div>
 
 
-                                    <div class="bg-blue-50 rounded-2xl p-8 md:p-10 text-gray-800 space-y-6">
+                                    <div class="rounded-2xl p-8 md:p-10 text-gray-800 space-y-6">
                                         <p class="text-xl md:text-2xl leading-relaxed">
                                             Hrdinovia ukazujú, že <span class="underline decoration-green-700">sila, odvaha
                                                 a priateľstvo</span>
@@ -58,7 +58,7 @@
                                         </p>
                                     </div>
 
-                                    <div class="border-l-4 border-blue-600 pl-6 space-y-4">
+                                    <div class="pl-6 space-y-4">
                                         <p class="text-lg md:text-xl leading-relaxed italic">
                                             Rodičia sa môžu zapojiť, zdieľať zážitky s deťmi a rozprávať sa o hodnotách,
                                             ktoré kniha otvára.
@@ -83,7 +83,7 @@
                             </div>
 
                         @endauth
-                        <h3 class="text-5xl text-gray-600 font-semibold mb-4">Prečo to ocenia rodičia?
+                        <h3 class="text-5xl text-black font-semibold mb-4">Prečo to ocenia rodičia?
                         </h3>
                         @auth <form method="POST" action="{{ route('content.update') }}" class="space-y-4"> @csrf
                                 <input type="hidden" name="field" value="about_parents_points">

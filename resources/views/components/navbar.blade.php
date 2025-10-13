@@ -1,14 +1,12 @@
-<!-- Navbar -->
 <div class="navbar fixed top-0 left-0 w-full flex items-center justify-between h-20 px-4 z-50">
-    <!-- Burger -->
-    <button id="nav-menu-toggle" class="fixed top-4 left-4 p-2 rounded-md text-black hover:text-gray-500 z-50">
+    <button id="nav-menu-toggle"
+        class="fixed top-4 left-8 p-2 rounded-md text-white hover:text-gray-300 z-50 transition-colors duration-300">
         <span class="sr-only">Open menu</span>
         <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
     </button>
 
-    <!-- Auth -->
     <div>
         @auth
             <form method="POST" action="{{ route('logout') }}">
@@ -19,10 +17,9 @@
     </div>
 </div>
 
-<!-- Sidebar -->
-<div id="nav-desktop-menu"
-    class="fixed top-0 left-0 h-screen w-1/4 bg-white transform -translate-x-full transition-transform duration-500 ease-in-out z-40 shadow-lg">
-    <div class="pt-20 px-4">
+<div id="nav-desktop-menu" class="fixed top-0 left-0 h-screen w-1/4 bg-white z-40 shadow-lg"
+    style="transform: translateX(-100%);">
+    <div class="pt-16 px-12">
         <a href="/" class="block py-3 hover:text-gray-500">Domov</a>
         <a href="/about" class="block py-3 hover:text-gray-500">O knihe</a>
         <a href="/collab" class="block py-3 hover:text-gray-500">Spolupráca</a>
@@ -37,15 +34,23 @@
     document.addEventListener('DOMContentLoaded', () => {
         const toggle = document.getElementById('nav-menu-toggle');
         const menu = document.getElementById('nav-desktop-menu');
-        const navbar = document.querySelector('.navbar');
-        let open = false;
 
+        // Set an explicit transition on the element (one-time)
+        menu.style.transition = 'transform 0.5s ease';
+
+        let open = false;
         toggle.addEventListener('click', () => {
             open = !open;
 
-            // Slide sidebar
-            menu.classList.toggle('-translate-x-full', !open);
-            menu.classList.toggle('translate-x-0', open);
+            if (open) {
+                menu.style.transform = 'translateX(0)';
+                toggle.classList.remove('text-white');
+                toggle.classList.add('text-black');
+            } else {
+                menu.style.transform = 'translateX(-100%)';
+                toggle.classList.remove('text-black');
+                toggle.classList.add('text-white');
+            }
         });
     });
 </script>
