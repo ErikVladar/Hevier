@@ -18,7 +18,7 @@
         opacity: 0;
     }
 }
-.trigger {
+.trigger-left {
     border-radius: 6px;
     background-color: rgb(255, 255, 255);
     padding: 20px;
@@ -26,12 +26,25 @@
     transition: all 1s;
 }
 
-.trigger:hover {
+.trigger-left:hover {
     border-radius: 6px 0 0 6px;
     transition: all 0.5s;
 }
 
-.slide-element {
+.trigger-right {
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    z-index: 10;
+    transition: all 1s;
+}
+
+.trigger-right:hover {
+    border-radius: 0 6px 6px 0;
+    transition: all 0.5s;
+}
+
+.slide-element-left {
     border-bottom-right-radius: 6px;
     border-top-right-radius: 6px;
     opacity: 0;
@@ -42,6 +55,21 @@
     animation: 0.3s shrinkToLeft forwards ease-in-out;
 }
 
-.trigger:hover ~ .slide-element {
+.slide-element-right {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    background-color: rgb(255, 255, 255);
+    padding: 16px;
+    animation: 0.3s shrinkToLeft forwards ease-in-out;
+}
+
+.trigger-left:hover ~ .slide-element-left {
+    animation: 0.3s growToRight forwards ease-in-out;
+}
+
+.trigger-right:hover ~ .slide-element-right {
     animation: 0.3s growToRight forwards ease-in-out;
 }

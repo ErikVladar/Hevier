@@ -57,7 +57,7 @@ class ContentController extends Controller
                 $content['about']['title_2'] = $request->input('title_2');
                 break;
 
-
+                
 
             case 'body':
                 $content['about']['body'] = $request->input('body');
