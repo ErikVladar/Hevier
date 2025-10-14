@@ -16,7 +16,8 @@
                             </p>
                             <div class="mb-12 mx-6 rounded-3xl px-8 ">
                                 <div class="max-w-5xl mx-auto space-y-10 text-gray-900">
-                                    <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-24 text-blue-900 leading-tight">
+                                    <h2
+                                        class="text-4xl md:text-5xl font-extrabold text-center mb-24 text-blue-900 leading-tight">
                                         viac než len kniha
                                     </h2>
 
@@ -95,14 +96,17 @@
                             </form>
                         @else
                         </div>
-                        <div class="flex flex-col items-left space-y-6 px-20">
-                            <x-text-extend title="Zdravy vzor"
+                        <div class="flex flex-col items-center space-y-8 w-full">
+                            <x-text-extend title="Zdravý vzor"
                                 description="Nie je to suché moralizovanie, ale napínavý príbeh, v ktorom sa deti učia nenápadne – cez emócie a zážitky." />
+
                             <x-text-extend title="Dobrodružstvo + ponaučenie"
-                                description="Nie je to suché moralizovanie, ale napínavý príbeh, v ktorom sa deti učia nenápadne – cez emócie a zážitky." />
+                                description="Príbeh, ktorý deti vtiahne a zároveň ich vedie k pohybu a zdraviu." />
+
                             <x-text-extend title="Spojenie rodiny"
                                 description="Kniha vytvára priestor na rozhovory o zdravom životnom štýle, pohybe a hodnotách." />
                         </div>
+
                     @endauth
                 </section>
             </section>

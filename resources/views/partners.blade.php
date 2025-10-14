@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-foreground>
-        <section id="partners" class="md:pt-20 pb-32 py-16 bg-white/30 px-4 text-center rounded-t-3xl">
+        <section class="md:pt-20 pb-32 py-16 px-4 text-center rounded-t-3xl">
 
             <h2 class="text-4xl font-bold mb-10 text-blue-900">Generálny partner</h2>
 

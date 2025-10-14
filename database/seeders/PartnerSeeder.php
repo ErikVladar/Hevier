@@ -10,7 +10,7 @@ class PartnerSeeder extends Seeder
     public function run(): void
     {
         $partners = [
-            ['name' => 'O2 Slovakia', 'slug' => 'o2-slovakia', 'type' => 'general', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/4/45/O2-Logo.svg'],
+            ['name' => 'O2 Slovakia', 'slug' => 'o2-slovakia', 'type' => 'general', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/4/45/O2-Logo.svg','description' => 'O2 Slovakia podporuje projekt Strážcovia pohybu, pretože verí, že pohyb, sloboda a radosť z objavovania sú rovnako dôležité ako spojenie medzi ľuďmi. Ako generálny partner pomáha deťom objavovať svet bez hraníc – nielen v digitálnom priestore, ale aj v reálnom pohybe, ktorý prináša energiu, zdravie a úsmev.'],
             ['name' => 'Veolia', 'slug' => 'veolia', 'type' => 'main', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Veolia_logo.svg/2560px-Veolia_logo.svg.png'],
             ['name' => 'DAM', 'slug' => 'dam', 'type' => 'partner', 'image' => 'https://dam.nmhmedia.sk/image/c2107e8c-84dd-40be-be86-44d1d66d1828_dam-url7yyatp.png/960/540'],
             ['name' => 'Rajo', 'slug' => 'rajo', 'type' => 'partner', 'image' => 'https://i.logos-download.com/51884/10828-og-fe588eea4a70679217dfeb4d4744ee52.png/Rajo_Logo_og.png'],

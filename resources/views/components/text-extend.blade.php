@@ -1,16 +1,11 @@
-<div>
-    <div>
-        <div class="flex text-black">
-            <div class="trigger">
-                {{ $title }}
-            </div>
-            <div class="bg-black w-[1px] h-full">
-            </div>
+<div class="flex items-center text-black justify-center">
+    <div class="trigger text-4xl font-semibold text-right w-64 h-32 flex-shrink-0">
+        {{ $title }}
+    </div>
 
-            <div id="slide-element" class="slide-element">
-                {{ $description }}
-            </div>
-        </div>
+    <div class="w-[1px] h-12"></div>
 
+    <div class="slide-element w-[28rem] text-left text-lg h-32 leading-relaxed">
+        {{ $description }}
     </div>
 </div>
