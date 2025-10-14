@@ -87,9 +87,9 @@
 
                     <div id="title" class="flex flex-col h-full p-12 items-center text-center space-y-6">
 
-                        <div x-data="{ editing: false }" class="w-full relative mb-6">
+                        <div x-data="{ editing: false }" class="w-full text-center relative mb-6">
                             <div x-show="!editing">
-                                <div class="flex justify-between items-start">
+                                <div class="flex flex-col items-center relative text-center">
                                     <h1 class="text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInLeft"
                                         style="transform: rotate(-2deg); transform-origin: left;">
                                         {{ $content['about']['title_1'] }}
@@ -101,7 +101,7 @@
                                         </button>
                                     @endauth
                                 </div>
-                                <div class="flex justify-between items-start">
+                                <div class="flex flex-col items-center relative text-center">
 
 
                                     <h1 class="text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInRight"
@@ -137,7 +137,7 @@
                         </div>
                         
                         <div x-data="{ editing: false }" class="w-full relative mb-6">
-                            <div x-show="!editing" class="flex justify-between items-start">
+                            <div x-show="!editing" class="flex flex-col items-center relative text-center">
                                 <p class="text-gray-800 text-3xl text-center animate__animated animate__slideInUp"
                                     style="transform: rotate(-1deg); transform-origin: left;">
                                     {{ $content['about']['body'] }}
@@ -170,7 +170,7 @@
                         </div>
 
                     </div>
-                    
+
                     <div id="cover" class="flex flex-col h-full mt-32 w-full items-center justify-center">
                         <div id="book-cover"
                             class="animate__animated animate__slideInDown cursor-pointer transition-transform hover:scale-105">
