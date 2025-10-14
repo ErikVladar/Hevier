@@ -3,8 +3,8 @@
         <section class="py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <h2 class="text-6xl font-bold text-center mb-12 text-blue-900">Galéria</h2>
-                <div x-data="galleryComponent({{ Js::from($images) }})" class="max-w-7xl mx-auto">
+                <h2 class="text-6xl font-bold text-center mb-12 text-black">Galéria</h2>
+                <div x-data="galleryComponent()" x-init="items = {{ Js::from($images) }}" class="max-w-7xl mx-auto">
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                         <template x-for="(item, index) in items" :key="index">
                             <a href="#" @click.prevent="open(index)"
@@ -44,34 +44,25 @@
 </x-app-layout>
 
 <script>
-    
-    let galleryEl = document.querySelector('[x-data]');
-    let alpineData = galleryEl.__x.$data;
-
-    console.log(alpineData.items);
-
-    document.addEventListener('alpine:init', () => {
-        Alpine.data('galleryComponent', (items) => ({
-            items,
-            isOpen: false,
-            activeIndex: 0,
-            get active() {
-                return this.items[this.activeIndex]
-            },
-
-            open(index) {
-                this.activeIndex = index;
-                this.isOpen = true
-            },
-            close() {
-                this.isOpen = false
-            },
-            next() {
-                this.activeIndex = (this.activeIndex + 1) % this.items.length
-            },
-            prev() {
-                this.activeIndex = (this.activeIndex - 1 + this.items.length) % this.items.length
-            },
-        }))
-    })
+    Alpine.data('galleryComponent', () => ({
+        items: [],
+        isOpen: false,
+        activeIndex: 0,
+        get active() {
+            return this.items[this.activeIndex]
+        },
+        open(index) {
+            this.activeIndex = index;
+            this.isOpen = true
+        },
+        close() {
+            this.isOpen = false
+        },
+        next() {
+            this.activeIndex = (this.activeIndex + 1) % this.items.length
+        },
+        prev() {
+            this.activeIndex = (this.activeIndex - 1 + this.items.length) % this.items.length
+        },
+    }));
 </script>

@@ -1,3 +1,3 @@
-<div id="foreground" class="bg-white/20 rounded-t-3xl px-12 pt-8">
+<div id="foreground" class="bg-white/60 rounded-t-3xl px-4 md:px-12 pt-8">
     {{ $slot }}
 </div>

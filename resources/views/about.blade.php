@@ -11,13 +11,13 @@
                                 </button>
                             </form>
                         @else
-                            <p class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight mb-4 text-black">
+                            <p class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-4 text-black">
                                 STRÁŽCOVIA <span class="text-blue-800">POHYBU</span>
                             </p>
                             <div class="mb-12 mx-6 rounded-3xl px-8 ">
                                 <div class="max-w-5xl mx-auto space-y-10 text-gray-900">
                                     <h2
-                                        class="text-4xl md:text-5xl font-extrabold text-center mb-24 text-blue-900 leading-tight">
+                                        class="text-3xl md:text-5xl font-extrabold text-center mb-24 text-black leading-tight">
                                         viac než len kniha
                                     </h2>
 

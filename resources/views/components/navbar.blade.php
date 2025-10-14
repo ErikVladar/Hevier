@@ -17,9 +17,9 @@
     </div>
 </div>
 
-<div id="nav-desktop-menu" class="fixed top-0 left-0 h-screen w-1/4 bg-white z-40 shadow-lg"
+<div id="nav-desktop-menu" class="fixed top-0 left-0 h-screen w-1/2 md:w-1/4 bg-white z-40 shadow-lg"
     style="transform: translateX(-100%);">
-    <div class="pt-16 px-12">
+    <div class="pt-24 px-12">
         <a href="/" class="block py-3 hover:text-gray-500">Domov</a>
         <a href="/about" class="block py-3 hover:text-gray-500">O knihe</a>
         <a href="/collab" class="block py-3 hover:text-gray-500">Spolupráca</a>

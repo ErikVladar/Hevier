@@ -1,9 +1,9 @@
 <x-app-layout>
     <x-foreground>
         <section class="pt-4 px-16 rounded-t-3xl">
-            <div class="animate__animated animate__slideInLeft max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row">
+            <div class="animate__animated animate__slideInLeft max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col md:flex-row">
 
-                <div class="w-full md:w-2/3 p-8 md:p-12 flex flex-col justify-center text-center md:text-left">
+                <div class="w-full md:w-2/3 md:px-16 flex flex-col mt-16 text-center md:text-left">
                     <h2 class="text-5xl md:text-6xl text-black font-bold mb-20">Lara Sprintová</h2>
                     <p class="text-2xl md:text-3xl text-gray-800 text-justify break-words max-w-prose mb-6">
                         Lara miluje beh a skákanie, a vždy hľadá nové spôsoby, ako sa zabaviť s kamarátmi.
@@ -45,7 +45,7 @@
                     </div>
                 </div>
 
-                <div class="w-full md:w-2/3 p-8 md:p-12 flex flex-col justify-center text-center md:text-left">
+                <div class="w-full md:w-2/3 md:px-16 flex flex-col mt-16 text-center md:text-left">
                     <h2 class="text-5xl md:text-6xl text-black font-bold mb-20">Peter Kováč</h2>
                     <p class="text-2xl md:text-3xl text-gray-800 text-justify break-words max-w-prose mb-6">
                         Peter je energický chlapec, ktorý nikdy nevydrží sedieť. Vymýšla nové hry na
@@ -61,7 +61,7 @@
 
                 <div class="max-w-4xl space-y-4 mx-auto">
                     <div
-                        class="animate__animated animate__slideInUp bg-gradient-to-r from-blue-100 to-blue-200 p-6 shadow-lg flex items-start gap-4 transform transition hover:scale-105 rounded-xl">
+                        class="bg-gradient-to-r from-blue-100 to-blue-200 p-6 shadow-lg flex items-start gap-4 transform transition hover:scale-105 rounded-xl">
                         <div class="text-4xl">😄</div>
                         <div>
                             <p class="font-semibold text-lg text-blue-700">Zlepšuje náladu</p>
@@ -71,7 +71,7 @@
                     </div>
 
                     <div
-                        class="animate__animated animate__slideInUp bg-gradient-to-r from-green-100 to-green-200 p-6 shadow-lg flex items-start gap-4 transform transition hover:scale-105 rounded-xl">
+                        class="bg-gradient-to-r from-green-100 to-green-200 p-6 shadow-lg flex items-start gap-4 transform transition hover:scale-105 rounded-xl">
                         <div class="text-4xl">❤️</div>
                         <div>
                             <p class="font-semibold text-lg text-green-700">Silné srdce</p>
@@ -81,7 +81,7 @@
                     </div>
 
                     <div
-                        class="animate__animated animate__slideInUp bg-gradient-to-r from-yellow-100 to-yellow-200 p-6 shadow-lg flex items-start gap-4 transform transition hover:scale-105 rounded-xl">
+                        class="bg-gradient-to-r from-yellow-100 to-yellow-200 p-6 shadow-lg flex items-start gap-4 transform transition hover:scale-105 rounded-xl">
                         <div class="text-4xl">⚡</div>
                         <div>
                             <p class="font-semibold text-lg text-yellow-700">Zvyšuje energiu</p>
@@ -91,7 +91,7 @@
                     </div>
 
                     <div
-                        class="animate__animated animate__slideInUp bg-gradient-to-r from-red-100 to-red-200 p-6 shadow-lg flex items-start gap-4 transform transition hover:scale-105 rounded-xl">
+                        class="bg-gradient-to-r from-red-100 to-red-200 p-6 shadow-lg flex items-start gap-4 transform transition hover:scale-105 rounded-xl">
                         <div class="text-4xl">🧠</div>
                         <div>
                             <p class="font-semibold text-lg text-red-700">Zlepšuje sústredenie</p>
