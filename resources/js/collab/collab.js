@@ -1,4 +1,41 @@
-// Navbar mobile toggle
+const modals = {
+    hevier: document.getElementById("hevier-modal"),
+    toth: document.getElementById("toth-modal"),
+};
+
+const body = document.body;
+
+function openModal(modal) {
+    modal.classList.remove("hidden");
+    body.classList.add("overflow-hidden"); 
+}
+
+function closeAllModals() {
+    Object.values(modals).forEach((modal) => {
+        modal.classList.add("hidden");
+        modal
+            .querySelectorAll("iframe")
+            .forEach((frame) => (frame.src = frame.src));
+    });
+    body.classList.remove("overflow-hidden"); 
+}
+
+document
+    .getElementById("hevier-card")
+    .addEventListener("click", () => openModal(modals.hevier));
+document
+    .getElementById("toth-card")
+    .addEventListener("click", () => openModal(modals.toth));
+
+document.querySelectorAll(".close-modal").forEach((btn) => {
+    btn.addEventListener("click", closeAllModals);
+});
+
+Object.values(modals).forEach((modal) => {
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeAllModals();
+    });
+});
 document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.querySelector(
         '[aria-controls="mobile-menu"]'
@@ -9,40 +46,4 @@ document.addEventListener("DOMContentLoaded", function () {
             mobileMenu.classList.toggle("hidden");
         });
     }
-});
-
-// Desktop menu animation
-const toggleBtn = document.getElementById("menu-toggle");
-const menu = document.getElementById("desktop-menu");
-if (toggleBtn && menu) {
-    toggleBtn.addEventListener("click", () => {
-        const isHidden = menu.classList.contains("hidden");
-        if (isHidden) {
-            menu.classList.remove("hidden", "max-h-0");
-            menu.classList.add("max-h-[1000px]");
-        } else {
-            menu.classList.add("max-h-0");
-            setTimeout(() => menu.classList.add("hidden"), 500);
-            menu.classList.remove("max-h-[1000px]");
-        }
-    });
-}
-document.addEventListener("DOMContentLoaded", () => {
-    const observer = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                    observer.unobserve(entry.target);
-                }
-            });
-        },
-        {
-            threshold: 0.15,
-        }
-    );
-
-    document
-        .querySelectorAll(".animate-on-scroll")
-        .forEach((el) => observer.observe(el));
 });

@@ -1,9 +1,30 @@
 <x-app-layout>
+    <div id="hevier-modal" class="fixed inset-0 hidden bg-black bg-opacity-80 z-50 flex items-center justify-center">
+        <div class="relative w-full h-full flex items-center justify-center">
+            <button
+                class="absolute top-6 right-8 text-white text-4xl font-bold z-50 hover:text-gray-300 close-modal">×</button>
+            <div class="w-full h-full flex items-center justify-center p-6">
+                <iframe class="w-[90vw] h-[80vh] rounded-2xl shadow-2xl"
+                    src="https://www.youtube.com/embed/hlY7cZGFzZo" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="toth-modal" class="fixed inset-0 hidden bg-black bg-opacity-80 z-50 flex items-center justify-center">
+        <div class="relative w-full h-full flex items-center justify-center">
+            <button
+                class="absolute top-6 right-8 text-white text-4xl font-bold z-50 hover:text-gray-300 close-modal">×</button>
+            <div class="w-full h-full flex items-center justify-center p-6">
+                <iframe class="w-[90vw] h-[80vh] rounded-2xl shadow-2xl"
+                    src="https://www.youtube.com/embed/WH9LYP4FkOs" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
     <x-foreground>
         <div class="pt-4 px-16 rounded-t-3xl">
 
-            <div
-                class="animate__animated animate__slideInLeft max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row">
+            <div id="hevier-card"
+                class="cursor-pointer animate__animated animate__slideInLeft max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row hover:scale-[1.02] transition-transform duration-300">
                 <div class="w-full md:w-2/3 p-8 md:p-12 flex flex-col justify-center text-center md:text-left">
                     <h2 class="text-4xl md:text-6xl p-4 text-black font-bold mb-8">Daniel Hevier</h2>
                     <p class="text-m md:text-2xl p-4 text-gray-800 leading-relaxed">
@@ -20,13 +41,11 @@
                 </div>
             </div>
 
-            <div
-                class="animate__animated animate__slideInRight max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row">
-
+            <div id="toth-card"
+                class="cursor-pointer animate__animated animate__slideInRight max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row hover:scale-[1.02] transition-transform duration-300">
                 <div class="w-full md:w-1/3">
-                    <img src="imgs/MTbio.png" alt="Daniel Hevier" class="w-full h-full object-cover">
+                    <img src="imgs/MTbio.png" alt="Matej Tóth" class="w-full h-full object-cover">
                 </div>
-
                 <div class="w-full md:w-2/3 p-8 md:p-12 flex flex-col justify-center text-center md:text-left">
                     <h2 class="text-4xl md:text-6xl p-4 text-black font-bold mb-8">Matej Tóth</h2>
                     <p class="text-m md:text-2xl p-4 text-gray-800 leading-relaxed">
@@ -53,12 +72,13 @@
                             pozitívny vzťah k telu aj k sebe samému.
                         </p>
                     </div>
-
                     <img src="storage/imgs/149A2447.png" alt="foto k veci"
                         class="w-3/4 md:w-2/3 lg:w-1/2 xl:w-[40vw] mb-0 pb-0 object-cover mx-auto">
-
                 </div>
             </section>
         </div>
+
     </x-foreground>
 </x-app-layout>
+
+
