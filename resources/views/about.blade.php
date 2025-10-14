@@ -3,9 +3,10 @@
         <section class="relative w-full min-h-screenitems-center justify-center text-center rounded-t-3xl">
             <div class="w-full relative bg-cover bg-centerm-32 items-center justify-center"> </div>
             <section class="relative w-full overflow-hidden">
-                <section id="about-parents" class="text-gray-900 py-12 px-6">
+                <section class="text-gray-900 py-12 px-6">
                     <div class="p-8">
-                        <section class="py-16">
+                        <h2 class="text-6xl font-bold text-center mb-12 text-black">O knihe</h2>
+                        <section class="pt-16">
                             <div class="max-w-7xl mx-auto px-6">
 
                                 <div class="text-center mb-20">
@@ -110,11 +111,12 @@
 
                             </div>
                         </section>
-
-                        <h3 class="text-5xl text-black font-semibold mb-4">Prečo to ocenia rodičia?
-                        </h3>
                     </div>
-                    <div class="flex flex-col items-center space-y-8 w-full">
+                    <div class="flex flex-col items-center space-y-8 mt-24 mb-12 w-full">
+
+                        <h3 class="text-5xl text-black font-semibold mt-12 mb-4">Prečo to ocenia rodičia?
+                        </h3>
+
                         <x-text-extend-left title="Zdravý vzor"
                             description="Nie je to suché moralizovanie, ale napínavý príbeh, v ktorom sa deti učia nenápadne – cez emócie a zážitky." />
 
@@ -123,6 +125,10 @@
 
                         <x-text-extend-left title="Spojenie rodiny"
                             description="Kniha vytvára priestor na rozhovory o zdravom životnom štýle, pohybe a hodnotách." />
+                    </div>
+                    <div class="flex flex-col items-center space-y-8 mt-24 mb-12 w-full">
+                        <h3 class="text-5xl text-black font-semibold">Kľúčové témy
+                        </h3>
 
                         <x-text-extend-right title="Energia a radosť"
                             description="Príbehy znázorňujú pohyb ako prirodzený zdroj radosti a energie — nie ako
@@ -140,7 +146,6 @@
                             description="Kniha obsahuje jednoduché aktivity a otázky pre rodičov, ktoré podporujú
                             rozhovor po čítaní a budovanie spoločných spomienok." />
                     </div>
-
                 </section>
             </section>
         </section>

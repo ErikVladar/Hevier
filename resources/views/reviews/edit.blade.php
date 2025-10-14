@@ -19,9 +19,15 @@
                 </div>
 
                 <div>
+                    <label class="block mb-1">Hodnotenie (0–5)</label>
+                    <input type="number" name="rating" value="{{ $review->rating }}" min="0" max="5" step="1"
+                           class="w-full border rounded p-2" required>
+                </div>
+                
+                <div>
                     <label class="block mb-1">Fotka (voliteľné)</label>
                     @if ($review->photo)
-                        <img src="{{ asset('storage/' . $review->photo) }}" class="w-24 h-24 rounded-full mb-2">
+                        <img src="{{ asset('storage/imgs/' . $review->photo) }}" class="w-24 h-24 rounded-full mb-2">
                     @endif
                     <input type="file" name="photo" class="w-full">
                 </div>
