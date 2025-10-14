@@ -1,12 +1,34 @@
 <x-app-layout>
+    <div id="lara-modal" class="fixed inset-0 hidden bg-black bg-opacity-80 z-50 flex items-center justify-center">
+        <div class="relative w-full h-full flex items-center justify-center">
+            <button
+                class="absolute top-6 right-8 text-white text-4xl font-bold z-50 hover:text-gray-300 close-modal">×</button>
+            <div class="w-full h-full flex items-center justify-center p-6">
+                <iframe class="w-[90vw] h-[80vh] rounded-2xl shadow-2xl" src="https://www.youtube.com/embed/VIDEO_ID_LARA"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="peter-modal" class="fixed inset-0 hidden bg-black bg-opacity-80 z-50 flex items-center justify-center">
+        <div class="relative w-full h-full flex items-center justify-center">
+            <button
+                class="absolute top-6 right-8 text-white text-4xl font-bold z-50 hover:text-gray-300 close-modal">×</button>
+            <div class="w-full h-full flex items-center justify-center p-6">
+                <iframe class="w-[90vw] h-[80vh] rounded-2xl shadow-2xl"
+                    src="https://www.youtube.com/embed/VIDEO_ID_PETER" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
     <x-foreground>
         <section class="py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <h2 class="text-6xl font-bold text-center mb-12 text-black">Chcem Viac</h2>
 
-                <div
-                    class="animate__animated animate__slideInLeft max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+                <div id="lara-card"
+                    class="cursor-pointer animate__animated animate__slideInLeft max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col md:flex-row hover:scale-[1.02] transition-transform duration-300">
 
                     <div class="w-full md:w-2/3 md:px-16 flex flex-col mt-16 text-center md:text-left">
                         <h2 class="text-5xl md:text-6xl text-black font-bold mb-20">Lara Sprintová</h2>
@@ -34,8 +56,8 @@
 
                 <hr class="border-t border-gray-300 w-full">
 
-                <div
-                    class="animate__animated animate__slideInRight max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row">
+                <div id="peter-card"
+                    class="cursor-pointer animate__animated animate__slideInRight max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row hover:scale-[1.02] transition-transform duration-300">
 
                     <div class="w-full md:w-1/3 bg-gray-200 flex flex-col items-center">
                         <img src="storage/imgs/Peto.png" alt="Peter Kováč" class="w-full h-full object-cover">
