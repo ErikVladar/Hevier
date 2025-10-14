@@ -53,8 +53,11 @@ class ContentController extends Controller
 
         switch ($request->input('field')) {
             case 'title':
-                $content['about']['title'] = $request->input('title');
+                $content['about']['title_1'] = $request->input('title_1');
+                $content['about']['title_2'] = $request->input('title_2');
                 break;
+
+
 
             case 'body':
                 $content['about']['body'] = $request->input('body');

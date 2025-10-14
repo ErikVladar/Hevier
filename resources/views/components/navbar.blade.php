@@ -6,15 +6,6 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
     </button>
-
-    <div>
-        @auth
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <button type="submit">Logout</button>
-            </form>
-        @endauth
-    </div>
 </div>
 
 <div id="nav-desktop-menu" class="fixed top-0 left-0 h-screen w-1/2 md:w-1/4 bg-white z-40 shadow-lg"
@@ -27,6 +18,12 @@
         <a href="/stats" class="block py-3 hover:text-gray-500">Štatistika</a>
         <a href="/partners" class="block py-3 hover:text-gray-500">Partneri</a>
         <a href="/gallery" class="block py-3 hover:text-gray-500">Galéria</a>
+        @auth
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="text-red-600 hover:text-red-400">Logout</button>
+            </form>
+        @endauth
     </div>
 </div>
 
