@@ -11,77 +11,114 @@
                                 </button>
                             </form>
                         @else
-                            <p class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-4 text-black">
-                                STRÁŽCOVIA <span class="text-blue-800">POHYBU</span>
-                            </p>
-                            <div class="mb-12 mx-6 rounded-3xl px-8 ">
-                                <div class="max-w-5xl mx-auto space-y-10 text-gray-900">
-                                    <h2
-                                        class="text-3xl md:text-5xl font-extrabold text-center mb-24 text-black leading-tight">
-                                        viac než len kniha
-                                    </h2>
+                            <!-- STRÁŽCOVIA POHYBU — Prepracovaná sekcia (Tailwind) -->
+                            <section class="py-16">
+                                <div class="max-w-7xl mx-auto px-6">
 
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center text-gray-900">
+                                    <!-- Hlavný titul -->
+                                    <div class="text-center mb-20">
+                                        <p
+                                            class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-black">
+                                            STRÁŽCOVIA <span class="text-blue-800">POHYBU</span>
+                                        </p>
+                                        <p class="mt-4 text-lg md:text-xl text-black max-w-2xl mx-auto">
+                                            Interaktívna detská kniha, ktorá spája príbeh, pohyb a hodnoty — navrhnutá tak,
+                                            aby dieťa aj rodič získali návod na spoločné aktivity.
+                                        </p>
+                                    </div>
 
-                                        <div class="text-center md:text-left space-y-4">
-                                            <p class="text-lg md:text-2xl leading-relaxed">
-                                                Nie je len kniha do police. Je to <span class="italic">dobrodružstvo</span>,
-                                                ktoré učí deti, že
-                                                <span class="font-semibold text-green-700">pohyb je energia života</span> –
-                                                viac než len šport či tréning.
-                                            </p>
-                                            <p class="text-lg md:text-2xl leading-relaxed">
-                                                Každý hrdina, každá nová výzva motivuje deti vstať, skúmať, behať, skákať a
-                                                hýbať sa s radosťou.
+
+                                    <div class="space-y-6 bg-white p-8 rounded-2xl shadow-sm">
+                                        <h2 class="text-2xl md:text-3xl font-bold text-black">O čom je kniha</h2>
+                                        <p class="text-lg md:text-xl text-gray-800 leading-relaxed">
+                                            „Strážcovia pohybu“ je interaktívna dobrodružná kniha pre deti (6–12 rokov),
+                                            ktorá premieňa čítanie na výzvu k pohybu.
+                                            Každá kapitola má svoj príbeh aj jednoduchú aktivitu, ktorú môže dieťa
+                                            vyskúšať doma alebo vonku — beh, skákanie,
+                                            prekážková dráha či tímová hra. Kniha učí, že pohyb je radosť, nástroj
+                                            sebapoznania a cesta k budovaniu odvahy a spolupráce.
+                                        </p>
+                                    </div>
+
+
+                                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 my-8 items-start">
+                                        <div class="bg-white p-8 rounded-2xl shadow-sm">
+                                            <h3 class="text-xl font-semibold text-black mt-4">Pre koho je určená</h3>
+                                            <ul class="list-disc list-inside text-gray-800 space-y-2">
+                                                <li>Deti 6–12 rokov, ktoré milujú príbehy a dobrodružstvo.</li>
+                                                <li>Rodičia, ktorí chcú aktívne tráviť čas s deťmi a znižovať čas pri
+                                                    obrazovkách.</li>
+                                                <li>Učitelia, tréneri a animátori hľadajúci jednoduché nápady na pohybové
+                                                    aktivity viazané k príbehu.</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="flex items-center justify-center">
+                                            <img src="storage/imgs/artwork.png"
+                                                alt="Ilustrácia: Strážcovia pohybu — kniha a deti v pohybe"
+                                                class="rounded-2xl shadow-md h-full max-w-sm object-cover">
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="lg:col-span-2 space-y-6 bg-white p-8 rounded-2xl shadow-sm">
+                                        <h3 class="text-xl font-semibold text-black mt-4">Prečo kúpiť</h3>
+                                        <p class="text-lg text-gray-800 leading-relaxed">
+                                            Nie je to len kniha — je to nástroj pre rodičov: prepojí čítanie s reálnou
+                                            aktivitou, formuje návyky a posilňuje sebavedomie.
+                                            Každá kapitola prináša konkrétnu aktivitu, ktorú rodič môže jednoducho
+                                            zrealizovať bez špeciálneho vybavenia.
+                                        </p>
+                                    </div>
+
+                                    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                                        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-md transition">
+                                            <h4 class="text-lg font-bold text-black mb-2">Pohyb = Energia a radosť</h4>
+                                            <p class="text-sm text-gray-700 leading-relaxed">
+                                                Príbehy znázorňujú pohyb ako prirodzený zdroj radosti a energie — nie ako
+                                                povinnosť. Deti sa učia, že pohyb zlepšuje náladu, sústredenie a zdravie.
                                             </p>
                                         </div>
 
-                                        <div class="flex justify-center md:justify-end">
-                                            <img src="storage/imgs/artwork.png" alt="Ilustrácia knihy Strážcovia pohybu"
-                                                class="rounded-2xl shadow-md max-w-md w-full object-cover">
+                                        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-md transition">
+                                            <h4 class="text-lg font-bold text-black mb-2">Sila priateľstva a spolupráce</h4>
+                                            <p class="text-sm text-gray-700 leading-relaxed">
+                                                Hrdinovia riešia úlohy spoločne. Dôraz je na tímovej práci, vzájomnej
+                                                podpore a empatii — jednoduché lekcie, ktoré dieťa môže praktizovať v hre.
+                                            </p>
                                         </div>
 
+                                        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-md transition">
+                                            <h4 class="text-lg font-bold text-black mb-2">Odvaha a prekonávanie strachu</h4>
+                                            <p class="text-sm text-gray-700 leading-relaxed">
+                                                Každá výzva v knihe rozpráva o odvahu v malých krokoch — ako čeliť obavám,
+                                                skúšať nové veci a rásť cez skúsenosť.
+                                            </p>
+                                        </div>
+
+                                        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-md transition">
+                                            <h4 class="text-lg font-bold text-black mb-2">Rodinné prepojenie cez hru</h4>
+                                            <p class="text-sm text-gray-700 leading-relaxed">
+                                                Kniha obsahuje jednoduché aktivity a otázky pre rodičov, ktoré podporujú
+                                                rozhovor po čítaní a budovanie spoločných spomienok.
+                                            </p>
+                                        </div>
                                     </div>
 
-
-                                    <div class="rounded-2xl p-8 md:p-10 text-gray-800 space-y-6">
-                                        <p class="text-xl md:text-2xl leading-relaxed">
-                                            Hrdinovia ukazujú, že <span class="underline decoration-green-700">sila, odvaha
-                                                a priateľstvo</span>
-                                            sa rodia v pohybe – nie pri obrazovke. Každý príbeh posúva dieťa bližšie k
-                                            objaveniu vlastného potenciálu.
-                                        </p>
-
-                                        <p class="text-xl md:text-2xl leading-relaxed">
-                                            Každá kapitola prináša nové dobrodružstvo – beh na lúke, prekážkovú dráhu či
-                                            tímové hry, ktoré učia
-                                            trpezlivosti, empatii a spolupráci.
-                                        </p>
-                                    </div>
-
-                                    <div class="pl-6 space-y-4">
-                                        <p class="text-lg md:text-xl leading-relaxed italic">
-                                            Rodičia sa môžu zapojiť, zdieľať zážitky s deťmi a rozprávať sa o hodnotách,
-                                            ktoré kniha otvára.
-                                        </p>
-                                        <p class="text-lg md:text-xl leading-relaxed">
-                                            Spoločné čítanie vytvára priestor pre <span
-                                                class="font-semibold text-green-700">rodinné prepojenie</span>
-                                            cez zábavu, pohyb a rozhovor.
-                                        </p>
-                                    </div>
-
-                                    <div class="text-center">
-                                        <p class="text-2xl md:text-3xl font-bold text-blue-900 leading-relaxed">
-                                            STRÁŽCOVIA POHYBU je cesta plná radosti, emócií a objavovania vlastnej sily.
-                                        </p>
-                                        <p class="text-lg md:text-xl mt-4 text-gray-700">
-                                            Každý krok, skok či výzva posúva dieťa bližšie k lepšej verzii seba samého.
-                                        </p>
+                                    <div class="mt-10 bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-2xl">
+                                        <div class="max-w-4xl mx-auto text-center">
+                                            <p class="text-xl md:text-2xl font-semibold text-gray-900">
+                                                Každá kapitola = príbeh + jednoduchá aktivita. Premeňte čítanie na spoločnú
+                                                hru bez obrazoviek.
+                                            </p>
+                                        </div>
                                     </div>
 
                                 </div>
-                            </div>
+                            </section>
+
 
                         @endauth
                         <h3 class="text-5xl text-black font-semibold mb-4">Prečo to ocenia rodičia?
