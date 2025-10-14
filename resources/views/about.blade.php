@@ -11,11 +11,9 @@
                                 </button>
                             </form>
                         @else
-                            <!-- STRÁŽCOVIA POHYBU — Prepracovaná sekcia (Tailwind) -->
                             <section class="py-16">
                                 <div class="max-w-7xl mx-auto px-6">
 
-                                    <!-- Hlavný titul -->
                                     <div class="text-center mb-20">
                                         <p
                                             class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-black">

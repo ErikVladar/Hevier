@@ -2,15 +2,12 @@
     <div id="book-modal"
         class="fixed inset-0 hidden justify-center items-center bg-black bg-opacity-70 z-50 transition-opacity duration-300">
 
-        <!-- Close button -->
         <button id="close-book" class="absolute top-6 right-8 text-white text-4xl font-bold z-[60] hover:text-gray-300">
             ×
         </button>
 
-        <!-- Flipbook -->
         <div id="flipbook" class="shadow-2xl" style="width:900px; height:650px;">
 
-            <!-- Cover -->
             <div class="hard">
                 <img src="storage/imgs/TITULKA.jpg" class="w-full h-full object-cover" />
             </div>
@@ -170,7 +167,7 @@
             </a>
         </div>
     </div>
-    <section id="reviews" class="w-full bg-white/20 py-12">
+    <section id="reviews" class="w-full bg-white/60 py-12">
         <h2 class="text-6xl font-bold text-center mb-20 text-black">Recenzie</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto px-20">
             @foreach ($reviews as $review)
