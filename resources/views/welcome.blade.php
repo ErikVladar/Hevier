@@ -100,11 +100,11 @@
                                 @endauth
                         
                                 {{-- TITLES --}}
-                                <h1 class="text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInLeft"
+                                <h1 class="text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInLeft animate__slow"
                                     style="transform: rotate(-2deg); transform-origin: left;">
                                     {{ $content['about']['title_1'] }}
                                 </h1>
-                                <h1 class="text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInRight"
+                                <h1 class="text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInRight animate__slow"
                                     style="transform: rotate(-2deg); transform-origin: right;">
                                     {{ $content['about']['title_2'] }}
                                 </h1>
@@ -135,7 +135,7 @@
                         {{-- BODY --}}
                         <div x-data="{ editing: false }" class="w-full relative">
                             <div x-show="!editing" class="relative flex justify-center items-center">
-                                <p class="text-gray-800 text-3xl animate__animated animate__slideInUp"
+                                <p class="text-gray-800 text-3xl animate__animated animate__slideInUp animate__slow"
                                     style="transform: rotate(-1deg); transform-origin: left;">
                                     {{ $content['about']['body'] }}
                                 </p>
@@ -170,7 +170,7 @@
                     {{-- BOOK COVER --}}
                     <div id="cover" class="flex flex-col h-full mt-32 w-full items-center justify-center">
                         <div id="book-cover"
-                            class="animate__animated animate__zoomIn cursor-pointer transition-transform hover:scale-105">
+                            class="animate__animated animate__zoomIn animate__slow cursor-pointer transition-transform hover:scale-105">
                             <img src="storage/imgs/TITULKA.jpg" alt="Book Cover"
                                 style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
                         </div>

@@ -5,25 +5,25 @@
             <section class="relative w-full overflow-hidden">
                 <section class="text-gray-900 py-12 px-6">
                     <div class="p-8">
-                        <h2 class="text-6xl font-bold text-center mb-12 text-black">O knihe</h2>
+                        <h2 class="animate__animated animate__zoomIn animate__slow text-6xl font-bold text-center mb-12 text-black">O knihe</h2>
                         <section class="pt-16">
                             <div class="max-w-7xl mx-auto px-6">
 
                                 <div class="text-center mb-20">
                                     <p
-                                        class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-black">
+                                        class="animate__animated animate__slideInLeft animate__slow text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-black">
                                         STRÁŽCOVIA <span class="text-blue-800">POHYBU</span>
                                     </p>
-                                    <p class="mt-4 text-lg md:text-xl text-black max-w-2xl mx-auto">
+                                    <p class="animate__animated animate__slideInRight animate__slow mt-4 text-lg md:text-xl text-black max-w-2xl mx-auto">
                                         Interaktívna detská kniha, ktorá spája príbeh, pohyb a hodnoty — navrhnutá tak,
                                         aby dieťa aj rodič získali návod na spoločné aktivity.
                                     </p>
                                 </div>
 
 
-                                <div class="space-y-6 bg-white p-8 rounded-2xl shadow-sm">
-                                    <h2 class="text-2xl md:text-3xl font-bold text-black">O čom je kniha</h2>
-                                    <p class="text-lg md:text-xl text-gray-800 leading-relaxed">
+                                <div class="animate__animated animate__zoomIn animate__slow space-y-6 p-8 rounded-2xl">
+                                    <h2 class="text-3xl md:text-4xl font-bold text-black">O čom je kniha</h2>
+                                    <p class="text-xl md:text-2xl text-black leading-relaxed">
                                         „Strážcovia pohybu“ je interaktívna dobrodružná kniha pre deti (6–12 rokov),
                                         ktorá premieňa čítanie na výzvu k pohybu.
                                         Každá kapitola má svoj príbeh aj jednoduchú aktivitu, ktorú môže dieťa
@@ -34,10 +34,10 @@
                                 </div>
 
 
-                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 my-8 items-start">
-                                    <div class="bg-white p-8 rounded-2xl shadow-sm">
-                                        <h3 class="text-xl font-semibold text-black mt-4">Pre koho je určená</h3>
-                                        <ul class="list-disc list-inside text-gray-800 space-y-2">
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                                    <div class="animate__animated animate__slideInLeft animate__slow p-8 rounded-2xl">
+                                        <h2 class="text-3xl md:text-4xl font-semibold text-black mb-4">Pre koho je určená</h2>
+                                        <ul class="list-disc list-inside text-black space-y-2">
                                             <li>Deti 6–12 rokov, ktoré milujú príbehy a dobrodružstvo.</li>
                                             <li>Rodičia, ktorí chcú aktívne tráviť čas s deťmi a znižovať čas pri
                                                 obrazovkách.</li>
@@ -46,7 +46,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="flex items-center justify-center">
+                                    <div class="animate__animated animate__slideInRight animate__slow flex items-center justify-center">
                                         <img src="storage/imgs/artwork.png"
                                             alt="Ilustrácia: Strážcovia pohybu — kniha a deti v pohybe"
                                             class="rounded-2xl shadow-md h-full max-w-sm object-cover">
@@ -55,9 +55,9 @@
                                 </div>
 
 
-                                <div class="lg:col-span-2 space-y-6 bg-white p-8 rounded-2xl shadow-sm">
-                                    <h3 class="text-xl font-semibold text-black mt-4">Prečo kúpiť</h3>
-                                    <p class="text-lg text-gray-800 leading-relaxed">
+                                <div class="animate__animated animate__zoomIn animate__slow lg:col-span-2 space-y-2 p-8 rounded-2xl">
+                                    <h2 class="text-3xl md:text-4xl font-semibold text-black mb-4">Prečo kúpiť</h2>
+                                    <p class="text-xl md:text-2xl text-black leading-relaxed">
                                         Nie je to len kniha — je to nástroj pre rodičov: prepojí čítanie s reálnou
                                         aktivitou, formuje návyky a posilňuje sebavedomie.
                                         Každá kapitola prináša konkrétnu aktivitu, ktorú rodič môže jednoducho
@@ -100,9 +100,9 @@
                                     </div>
                                 </div> --}}
 
-                                <div class="mt-10 bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-2xl">
+                                <div class="animate__animated animate__zoomIn animate__slow mt-10 bg-gradient-to-r p-6 rounded-2xl">
                                     <div class="max-w-4xl mx-auto text-center">
-                                        <p class="text-xl md:text-2xl font-semibold text-gray-900">
+                                        <p class="text-xl md:text-2xl text-black leading-relaxed">
                                             Každá kapitola = príbeh + jednoduchá aktivita. Premeňte čítanie na spoločnú
                                             hru bez obrazoviek.
                                         </p>
@@ -114,7 +114,7 @@
                     </div>
                     <div class="flex flex-col items-center space-y-8 mt-24 mb-12 w-full">
 
-                        <h3 class="text-5xl text-black font-semibold mt-12 mb-4">Prečo to ocenia rodičia?
+                        <h3 class="animate__animated animate__zoomIn animate__slow text-5xl text-black font-semibold mt-12 mb-4">Prečo to ocenia rodičia?
                         </h3>
 
                         <x-text-extend-left title="Zdravý vzor"

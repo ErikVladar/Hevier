@@ -35,9 +35,9 @@
             <section class="py-20">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                    <h2 class="text-6xl font-bold text-center mb-12 text-black">Galéria</h2>
+                    <h2 class="animate__animated animate__zoomIn animate__slow text-6xl font-bold text-center mb-12 text-black">Galéria</h2>
 
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                    <div class="animate__animated animate__slideInUp animate__slow grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                         @foreach ($images as $index => $image)
                             <a href="#" @click.prevent="activeIndex={{ $index }}; isOpen=true"
                                 class="block overflow-hidden rounded-xl aspect-square">

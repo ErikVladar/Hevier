@@ -22,11 +22,11 @@
     </div>
     <x-foreground>
         <section class="pt-20">
-            <div class="max-w-7xl mx-auto px-4 sm:pt-6 lg:pt-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <h2 class="text-6xl font-bold text-center mb-12 text-black">Spolupráca</h2>
+                <h2 class="animate__animated animate__zoomIn animate__slow text-6xl font-bold text-center mb-12 text-black">Spolupráca</h2>
                 <div id="hevier-card"
-                    class="cursor-pointer animate__animated animate__slideInLeft max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row hover:scale-[1.02] transition-transform duration-300">
+                    class="cursor-pointer animate__animated animate__slideInLeft animate__slow max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row hover:scale-[1.02] transition-transform duration-300">
                     <div class="w-full md:w-2/3 p-8 md:p-12 flex flex-col justify-center text-center md:text-left">
                         <h2 class="text-4xl md:text-6xl p-4 text-black font-bold mb-8">Daniel Hevier</h2>
                         <p class="text-m md:text-2xl p-4 text-gray-800 leading-relaxed">
@@ -48,7 +48,7 @@
                 </div>
 
                 <div id="toth-card"
-                    class="cursor-pointer animate__animated animate__slideInRight max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row hover:scale-[1.02] transition-transform duration-300">
+                    class="cursor-pointer animate__animated animate__slideInRight animate__slow max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row hover:scale-[1.02] transition-transform duration-300">
                     <div class="w-full md:w-1/3">
                         <img src="imgs/MTbio.png" alt="Matej Tóth" class="w-full h-full object-cover">
                     </div>
@@ -68,7 +68,7 @@
 
                 <section class="px-8">
                     <div
-                        class="animate__animated animate__backInUp max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                        class="animate__animated animate__backInUp animate__slow max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                         <div class="mt-6 content-center">
                             <h2 class="text-6xl font-bold mb-12">Prečo vznikla táto kniha?</h2>
                             <p class="text-2xl text-black mb-12">

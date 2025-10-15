@@ -3,9 +3,9 @@
         <section class="py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-8 lg:px-8">
 
-                <h2 class="text-6xl font-bold text-center mb-12 text-black">Štatistika</h2>
+                <h2 class="animate__animated animate__zoomIn animate__slow text-6xl font-bold text-center mb-12 text-black">Štatistika</h2>
 
-                <div class="text-center space-y-4 mb-24">
+                <div class="animate__animated animate__zoomIn animate__slow text-center space-y-4 mb-24">
                     <h1 class="text-5xl font-bold text-black">Štatistiky o pohybe detí</h1>
                     <p class="text-2xl text-gray-800">Ako aktívne sú deti?</p>
                 </div>

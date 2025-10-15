@@ -29,6 +29,7 @@
 .trigger-left:hover {
     border-radius: 6px 0 0 6px;
     transition: all 0.5s;
+    scale: 1.05;
 }
 
 .trigger-right {
@@ -42,6 +43,7 @@
 .trigger-right:hover {
     border-radius: 0 6px 6px 0;
     transition: all 0.5s;
+    scale: 1.05;
 }
 
 .slide-element-left {
@@ -68,8 +70,10 @@
 
 .trigger-left:hover ~ .slide-element-left {
     animation: 0.3s growToRight forwards ease-in-out;
+    scale: 1.05;
 }
 
 .trigger-right:hover ~ .slide-element-right {
     animation: 0.3s growToRight forwards ease-in-out;
+    scale: 1.05;
 }
