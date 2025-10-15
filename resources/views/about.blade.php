@@ -113,7 +113,7 @@
                     </div>
                     <div class="flex flex-col items-center space-y-8 mt-24 mb-12 w-full">
 
-                        <h3 class="animate__animated animate__zoomIn animate__slow text-5xl text-black font-semibold mt-12 mb-4">Prečo to ocenia rodičia?
+                        <h3 class="animate__animated animate__zoomIn animate__slow text-5xl text-black font-semibold mt-12 mb-12">Prečo to ocenia rodičia?
                         </h3>
 
                         <x-text-extend-left title="Zdravý vzor"
@@ -126,7 +126,7 @@
                             description="Kniha vytvára priestor na rozhovory o zdravom životnom štýle, pohybe a hodnotách." />
                     </div>
                     <div class="flex flex-col items-center space-y-8 mt-24 mb-12 w-full">
-                        <h3 class="text-5xl text-black font-semibold">Kľúčové témy
+                        <h3 class="text-5xl text-black font-semibold mt-12 mb-12">Kľúčové témy
                         </h3>
 
                         <x-text-extend-right title="Energia a radosť"
