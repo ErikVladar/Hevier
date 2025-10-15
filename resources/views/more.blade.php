@@ -4,7 +4,7 @@
             <button
                 class="absolute top-6 right-8 text-white text-4xl font-bold z-50 hover:text-gray-300 close-modal">×</button>
             <div class="w-full h-full flex items-center justify-center p-6">
-                <iframe class="w-[90vw] h-[80vh] rounded-2xl shadow-2xl" src="https://www.youtube.com/embed/VIDEO_ID_LARA"
+                <iframe class="w-[90vw] h-[80vh] rounded-2xl shadow-2xl" src="https://www.youtube.com/embed/E5mQr8sBULk"
                     frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
@@ -16,7 +16,7 @@
                 class="absolute top-6 right-8 text-white text-4xl font-bold z-50 hover:text-gray-300 close-modal">×</button>
             <div class="w-full h-full flex items-center justify-center p-6">
                 <iframe class="w-[90vw] h-[80vh] rounded-2xl shadow-2xl"
-                    src="https://www.youtube.com/embed/VIDEO_ID_PETER" frameborder="0" allowfullscreen></iframe>
+                    src="https://www.youtube.com/embed/zXlWdUc1cwY" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
