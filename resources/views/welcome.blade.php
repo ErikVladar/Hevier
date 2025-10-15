@@ -86,10 +86,8 @@
                 <section id="about" class="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-screen">
                     <div id="title" class="flex flex-col h-full p-12 items-center text-center space-y-12">
                 
-                        {{-- TITLE 1 --}}
                         <div x-data="{ editing: false }" class="w-full relative mb-6">
                             <div x-show="!editing" class="relative flex flex-col items-center justify-center">
-                                {{-- PEN BUTTON --}}
                                 @auth
                                 <div class="absolute -top-4 -right-4 z-10">
                                     <button @click.prevent="editing=true"
@@ -99,7 +97,6 @@
                                 </div>
                                 @endauth
                         
-                                {{-- TITLES --}}
                                 <h1 class="text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInLeft animate__slow"
                                     style="transform: rotate(-2deg); transform-origin: left;">
                                     {{ $content['about']['title_1'] }}
@@ -131,8 +128,6 @@
                             </div>
                         </div>
                         
-                
-                        {{-- BODY --}}
                         <div x-data="{ editing: false }" class="w-full relative">
                             <div x-show="!editing" class="relative flex justify-center items-center">
                                 <p class="text-gray-800 text-3xl animate__animated animate__slideInUp animate__slow"
@@ -166,8 +161,7 @@
                         </div>
                 
                     </div>
-                
-                    {{-- BOOK COVER --}}
+                    
                     <div id="cover" class="flex flex-col h-full mt-32 w-full items-center justify-center">
                         <div id="book-cover"
                             class="animate__animated animate__zoomIn animate__slow cursor-pointer transition-transform hover:scale-105">
@@ -175,10 +169,9 @@
                                 style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
                         </div>
                 
-                        <button type="button" onclick="window.location.href='/shop'"
-                            class="cta-button-black mt-12 mb-32">
+            <a href="https://shop.hevi.sk/" target="_blank" rel="noopener noreferrer" class="cta-button-black mt-12 mb-32">
                             Kúpiť
-                        </button>
+                    </a>
                     </div>
                 </section>
                 
