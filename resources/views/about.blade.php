@@ -5,9 +5,8 @@
             <section class="relative w-full overflow-hidden">
                 <section class="text-gray-900 py-12 px-6">
                     <div class="p-8">
-                        <h2 class="animate__animated animate__zoomIn animate__slow text-6xl font-bold text-center mb-12 text-black">O knihe</h2>
-                        <section class="pt-16">
-                            <div class="max-w-7xl mx-auto px-6">
+                        <section>
+                            <div class="space-y-16 max-w-7xl mx-auto px-6">
 
                                 <div class="text-center mb-20">
                                     <p
@@ -49,7 +48,7 @@
                                     <div class="animate__animated animate__slideInRight animate__slow flex items-center justify-center">
                                         <img src="storage/imgs/artwork.png"
                                             alt="Ilustrácia: Strážcovia pohybu — kniha a deti v pohybe"
-                                            class="rounded-2xl shadow-md h-full max-w-sm object-cover">
+                                            class="rounded-2xl shadow-md h-full mt-8 max-w-sm object-cover">
                                     </div>
 
                                 </div>

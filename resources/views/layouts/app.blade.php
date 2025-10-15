@@ -47,12 +47,13 @@
         </nav>
     </div>
 
-    <div class="md:pt-20 bg-scroll md:bg-fixed md:bg-cover bg-center bg-repeat bg-white/30 items-center md:bg-no-repeat [@media(min-width:1080px)]:px-32 [@media(min-width:1080px)]:pt-20"
-        style="background: url({{ asset('storage/imgs/bg.png') }})">
+    <div class="min-h-screen bg-fixed bg-cover bg-center bg-no-repeat bg-white/30 items-center [@media(min-width:1080px)]:px-32 [@media(min-width:1080px)]:pt-20"
+        style="background-image: url('{{ asset('storage/imgs/bg.png') }}'); background-attachment: fixed;">
         <main>
             {{ $slot }}
         </main>
     </div>
+
 
     <x-footer />
 </body>
