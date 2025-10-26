@@ -80,7 +80,7 @@
 
                     <!-- Text Content -->
                     <div class="w-full md:w-2/3 p-8 md:p-12 flex flex-col justify-center text-center md:text-left">
-                        <h2 class="font-[Kaushan] antialiased text-4xl md:text-6xl p-4 text-black font-bold mb-8">Matej
+                        <h2 class="text-4xl md:text-6xl p-4 text-black font-bold mb-8">Matej
                             Tóth</h2>
                         <p class="text-m md:text-2xl p-4 text-gray-800 leading-relaxed">
                             Matej Tóth je jeden z najvýznamnejších slovenských športovcov, špecialista na chôdzu na dlhé
