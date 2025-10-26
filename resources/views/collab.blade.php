@@ -24,44 +24,71 @@
         <section class="pt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <h2 class="animate__animated animate__zoomIn animate__slow text-6xl font-bold text-center mb-12 text-black">Spolupráca</h2>
+                <h2
+                    class="antialiased animate__animated animate__zoomIn animate__slow text-6xl font-bold text-center mb-12 text-black">
+                    O autoroch</h2>
                 <div id="hevier-card"
-                    class="cursor-pointer animate__animated animate__slideInLeft animate__slow max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row hover:scale-[1.02] transition-transform duration-300">
+                    class="relative animate__animated animate__slideInLeft animate__slow max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row transition-transform duration-300">
+
+                    <div class="absolute top-4 right-4 z-20">
+                        <div
+                            class="flex cursor-pointer hover:scale-[1.05]  items-center justify-center w-12 h-12 bg-black/70 rounded-full shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </div>
+
                     <div class="w-full md:w-2/3 p-8 md:p-12 flex flex-col justify-center text-center md:text-left">
-                        <h2 class="text-4xl md:text-6xl p-4 text-black font-bold mb-8">Daniel Hevier</h2>
+                        <h2 class="antialiased text-4xl md:text-6xl p-4 text-black font-bold mb-8">Daniel Hevier</h2>
                         <p class="text-m md:text-2xl p-4 text-gray-800 leading-relaxed">
                             Daniel Hevier je jeden z najvýznamnejších slovenských spisovateľov, známy predovšetkým
-                            svojou
-                            tvorbou pre deti a mládež. Počas svojej bohatej kariéry napísal desiatky kníh, básní, piesní
-                            aj
-                            divadelných hier. Jeho štýl je hravý, pútavý a zároveň hlboký – vďaka čomu dokáže zaujať
-                            malých
-                            aj veľkých čitateľov. Okrem literatúry sa venuje aj vzdelávaniu a motivácii mladých ľudí,
-                            pričom
-                            prepája svet tvorivosti, hodnotového myslenia a rozvoja osobnosti.
+                            svojou tvorbou pre deti a mládež. Počas svojej bohatej kariéry napísal desiatky kníh, básní,
+                            piesní
+                            aj divadelných hier. Jeho štýl je hravý, pútavý a zároveň hlboký – vďaka čomu dokáže zaujať
+                            malých aj veľkých čitateľov. Okrem literatúry sa venuje aj vzdelávaniu a motivácii mladých
+                            ľudí,
+                            pričom prepája svet tvorivosti, hodnotového myslenia a rozvoja osobnosti.
                         </p>
                     </div>
-                    <div class="w-full md:w-1/3">
-                        <img src="https://m.smedata.sk/api-media/media/image/sme/2/85/8538902/8538902_1200x.jpg?rev=3"
-                            alt="Daniel Hevier" class="w-full h-full object-cover">
+                    <div class="w-full md:w-1/3 relative">
+                        <img src="storage/imgs/daniel-hevier.png" alt="Daniel Hevier"
+                            class="w-full h-full object-cover">
                     </div>
                 </div>
 
+
                 <div id="toth-card"
-                    class="cursor-pointer animate__animated animate__slideInRight animate__slow max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row hover:scale-[1.02] transition-transform duration-300">
-                    <div class="w-full md:w-1/3">
-                        <img src="imgs/MTbio.png" alt="Matej Tóth" class="w-full h-full object-cover">
+                    class="relative animate__animated animate__slideInRight animate__slow max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row transition-transform duration-300">
+
+                    <!-- Video Icon -->
+                    <div class="absolute top-4 left-4 z-20">
+                        <div
+                            class="flex cursor-pointer hover:scale-[1.05] items-center justify-center w-12 h-12 bg-black/70 rounded-full shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
                     </div>
+
+                    <!-- Image -->
+                    <div class="w-full md:w-1/3 relative">
+                        <img src="storage/imgs/MATEJ_TÓTH_2016.jpg" alt="Matej Tóth" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Text Content -->
                     <div class="w-full md:w-2/3 p-8 md:p-12 flex flex-col justify-center text-center md:text-left">
-                        <h2 class="text-4xl md:text-6xl p-4 text-black font-bold mb-8">Matej Tóth</h2>
+                        <h2 class="font-[Kaushan] antialiased text-4xl md:text-6xl p-4 text-black font-bold mb-8">Matej
+                            Tóth</h2>
                         <p class="text-m md:text-2xl p-4 text-gray-800 leading-relaxed">
                             Matej Tóth je jeden z najvýznamnejších slovenských športovcov, špecialista na chôdzu na dlhé
                             trate, známy predovšetkým svojimi úspechmi na medzinárodných súťažiach. Počas svojej kariéry
                             získal množstvo medailí z majstrovstiev sveta, Európy aj Olympijských hier. Jeho disciplína,
                             vytrvalosť a odhodlanie robia z neho vzor pre mladých športovcov, ktorí sa chcú učiť, že
                             pravidelný tréning, obetavosť a srdce pre šport prinášajú výnimočné výsledky. Okrem športu
-                            sa
-                            venuje aj motivácii mladých ľudí a šíreniu povedomia o zdravom životnom štýle.
+                            sa venuje aj motivácii mladých ľudí a šíreniu povedomia o zdravom životnom štýle.
                         </p>
                     </div>
                 </div>
@@ -70,7 +97,7 @@
                     <div
                         class="animate__animated animate__backInUp animate__slow max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                         <div class="mt-6 content-center">
-                            <h2 class="text-6xl font-bold mb-12">Prečo vznikla táto kniha?</h2>
+                            <h2 class="antialiased text-6xl font-bold mb-12">Prečo vznikla táto kniha?</h2>
                             <p class="text-2xl text-black mb-12">
                                 Spojením odbornosti O2 Športovej akadémie Mateja Tótha a tvorivého pera známeho
                                 spisovateľa

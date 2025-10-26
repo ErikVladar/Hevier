@@ -85,28 +85,28 @@
             <div class="w-full relative bg-cover bg-center px-20 mt-12 items-center justify-center text-center">
                 <section id="about" class="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-screen">
                     <div id="title" class="flex flex-col h-full p-12 items-center text-center space-y-12">
-                
+
                         <div x-data="{ editing: false }" class="w-full relative mb-6">
                             <div x-show="!editing" class="relative flex flex-col items-center justify-center">
                                 @auth
-                                <div class="absolute -top-4 -right-4 z-10">
-                                    <button @click.prevent="editing=true"
-                                        class="p-2 bg-white text-black rounded-full shadow hover:bg-gray-200">
-                                        ✏️
-                                    </button>
-                                </div>
+                                    <div class="absolute -top-4 -right-4 z-10">
+                                        <button @click.prevent="editing=true"
+                                            class="p-2 bg-white text-black rounded-full shadow hover:bg-gray-200">
+                                            ✏️
+                                        </button>
+                                    </div>
                                 @endauth
-                        
-                                <h1 class="text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInLeft animate__slow"
+
+                                <h1 class="font-[Kaushan] antialiased text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInLeft animate__slow"
                                     style="transform: rotate(-2deg); transform-origin: left;">
                                     {{ $content['about']['title_1'] }}
                                 </h1>
-                                <h1 class="text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInRight animate__slow"
+                                <h1 class="font-[Kaushan] antialiased text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInRight animate__slow"
                                     style="transform: rotate(-2deg); transform-origin: right;">
                                     {{ $content['about']['title_2'] }}
                                 </h1>
                             </div>
-                        
+
                             <div x-show="editing">
                                 <form method="POST" action="{{ route('content.update') }}" class="flex flex-col gap-2">
                                     @csrf
@@ -117,7 +117,7 @@
                                     <input type="text" name="title_2"
                                         value="{{ old('title_2', $content['about']['title_2']) }}"
                                         class="w-full text-4xl font-bold border rounded px-2 py-1 text-center">
-                        
+
                                     <div class="flex gap-2 mt-2 justify-center">
                                         <button type="submit"
                                             class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Uložiť</button>
@@ -127,13 +127,27 @@
                                 </form>
                             </div>
                         </div>
-                        
                         <div x-data="{ editing: false }" class="w-full relative">
-                            <div x-show="!editing" class="relative flex justify-center items-center">
+                            <div x-show="!editing" class="relative flex flex-col items-center text-center">
+
                                 <p class="text-gray-800 text-3xl animate__animated animate__slideInUp animate__slow"
                                     style="transform: rotate(-1deg); transform-origin: left;">
                                     {{ $content['about']['body'] }}
                                 </p>
+
+                                <!-- Centered YouTube link -->
+                                <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="animate__animated animate__slideInUp animate__slow mt-6 inline-flex items-center justify-center bg-white rounded-full p-3 shadow hover:bg-gray-100 transition group">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="w-6 h-6 text-red-600 group-hover:scale-110 transition-transform duration-200"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 18V5l12-2v13" />
+                                        <circle cx="6" cy="18" r="3" />
+                                        <circle cx="18" cy="16" r="3" />
+                                    </svg>
+                                </a>
+
                                 @auth
                                     <div class="absolute -top-4 -right-4">
                                         <button @click.prevent="editing=true"
@@ -142,65 +156,41 @@
                                         </button>
                                     </div>
                                 @endauth
-                            </div>
-                
-                            <div x-show="editing">
-                                <form method="POST" action="{{ route('content.update') }}" class="flex flex-col gap-2">
-                                    @csrf
-                                    <input type="hidden" name="field" value="body">
-                                    <textarea name="body"
-                                        class="w-full border rounded px-2 py-1 text-center">{{ old('body', $content['about']['body']) }}</textarea>
-                                    <div class="flex gap-2 mt-2 justify-center">
-                                        <button type="submit"
-                                            class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Uložiť</button>
-                                        <button type="button" @click.prevent="editing=false"
-                                            class="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500">Zrušiť</button>
-                                    </div>
-                                </form>
+
                             </div>
                         </div>
-                
+
                     </div>
-                    
+
                     <div id="cover" class="flex flex-col h-full mt-32 w-full items-center justify-center">
-                        <div id="book-cover"
-                            class="animate__animated animate__zoomIn animate__slow cursor-pointer transition-transform hover:scale-105">
+                        {{-- <div id="book-cover" --}}
+                        <div class="animate__animated animate__zoomIn animate__slow"> {{-- cursor-pointer transition-transform hover:scale-105"> --}}
                             <img src="storage/imgs/TITULKA.jpg" alt="Book Cover"
                                 style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
                         </div>
-                
-            <a href="https://shop.hevi.sk/" target="_blank" rel="noopener noreferrer" class="cta-button-black mt-12 mb-32">
+
+                        <a href="https://shop.hevi.sk/" target="_blank" rel="noopener noreferrer"
+                            class="cta-button-black mt-12 mb-32">
                             Kúpiť
-                    </a>
+                        </a>
                     </div>
                 </section>
-                
+
             </div>
 
         </div>
     </x-foreground>
-    <div class="relative overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('storage/imgs/merch.JPG');">
-        </div>
 
-        <div class="absolute inset-0 bg-black/50"></div>
+    <x-eshop/>
 
-        <div class="relative z-10 flex flex-col items-center justify-center min-h-[400px] space-y-6 p-8">
-            <a href="https://shop.hevi.sk/" target="_blank" rel="noopener noreferrer" class="cta-button"
-                data-aos="zoom-in">
-                E-shop merch
-            </a>
-        </div>
-    </div>
-    
-    <section id="reviews" class="w-full bg-white/60 py-12">
-        <h2 class="text-6xl font-bold text-center mb-20 text-black">Recenzie</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto mb-6 px-20">
-            @foreach ($reviews as $review)
-                <x-review-card :review="$review" />
-            @endforeach
-        </div>
-        @auth
+        <section id="reviews" class="w-full bg-white/60 py-12">
+            <h2 class="text-6xl font-bold text-center mb-20 text-black">Odporúčanie</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto mb-6 px-20">
+                @foreach ($reviews as $review)
+                    <x-review-card :review="$review" />
+                @endforeach
+            </div>
+            @auth
                 <div class="text-center">
                     <a href="{{ route('reviews.create') }}"
                         class="inline-block px-8 py-4 bg-green-600 text-white text-lg font-semibold rounded-2xl shadow-lg transform hover:scale-105 hover:bg-green-700">
@@ -208,5 +198,5 @@
                     </a>
                 </div>
             @endauth
-    </section>
+        </section>
 </x-app-layout>

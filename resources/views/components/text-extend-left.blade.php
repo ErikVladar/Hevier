@@ -1,4 +1,4 @@
-<div class="flex items-center text-black justify-center">
+<div class="animate__animated animate__pulse animate__infinite animate__slower font-[Kaushan] antialiased flex items-center text-black justify-center">
     <div class="trigger-left text-4xl content-justify font-semibold text-right w-64 h-32 flex-shrink-0">
         {{ $title }}
     </div>

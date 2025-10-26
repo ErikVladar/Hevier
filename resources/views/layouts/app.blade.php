@@ -34,7 +34,7 @@
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.3.0/dist/flowbite.min.js"></script>
 </head>
 
-<body class="font-[Kaushan] antialiased">
+<body class="font-[Helvetica] antialiased">
     <button id="scrollToTopBtn"
         class="fixed bottom-16 right-6 z-50 w-12 h-12 bg-gray-800 text-white text-xl rounded-full shadow-lg 
      opacity-0 pointer-events-none hover:opacity-100 transition-opacity duration-300 
@@ -53,7 +53,6 @@
             {{ $slot }}
         </main>
     </div>
-
 
     <x-footer />
 </body>

@@ -13,10 +13,10 @@
     <div class="pt-24 px-12">
         <a href="/" class="block py-3 hover:text-gray-500">Domov</a>
         <a href="/about" class="block py-3 hover:text-gray-500">O knihe</a>
-        <a href="/collab" class="block py-3 hover:text-gray-500">Spolupráca</a>
-        <a href="/more" class="block py-3 hover:text-gray-500">Chcem Viac</a>
-        <a href="/stats" class="block py-3 hover:text-gray-500">Štatistika</a>
-        <a href="/partners" class="block py-3 hover:text-gray-500">Partneri</a>
+        <a href="/collab" class="block py-3 hover:text-gray-500">O autoroch</a>
+        <a href="/more" class="block py-3 hover:text-gray-500">Ambasádori pohybu</a>
+        <a href="/stats" class="block py-3 hover:text-gray-500">Pohyb v číslach</a>
+        {{-- <a href="/partners" class="block py-3 hover:text-gray-500">Partneri</a> --}}
         <a href="/gallery" class="block py-3 hover:text-gray-500">Galéria</a>
         @auth
             <form method="POST" action="{{ route('logout') }}">

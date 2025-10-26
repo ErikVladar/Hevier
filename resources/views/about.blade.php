@@ -7,157 +7,200 @@
                     <div class="p-8">
                         <section>
                             <div class="space-y-16 max-w-7xl mx-auto px-6">
-
-                                <div class="text-center mb-20">
-                                    <p
-                                        class="animate__animated animate__slideInLeft animate__slow text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-black">
-                                        STRÁŽCOVIA <span class="text-blue-800">POHYBU</span>
-                                    </p>
-                                    <p class="animate__animated animate__slideInRight animate__slow mt-4 text-lg md:text-xl text-black max-w-2xl mx-auto">
-                                        Interaktívna detská kniha, ktorá spája príbeh, pohyb a hodnoty — navrhnutá tak,
-                                        aby dieťa aj rodič získali návod na spoločné aktivity.
-                                    </p>
-                                </div>
-
-
+                            
                                 <div class="animate__animated animate__zoomIn animate__slow space-y-6 p-8 rounded-2xl">
-                                    <h2 class="text-3xl md:text-4xl font-bold text-black">O čom je kniha</h2>
-                                    <p class="text-xl md:text-2xl text-black leading-relaxed">
-                                        „Strážcovia pohybu“ je interaktívna dobrodružná kniha pre deti (6–12 rokov),
-                                        ktorá premieňa čítanie na výzvu k pohybu.
-                                        Každá kapitola má svoj príbeh aj jednoduchú aktivitu, ktorú môže dieťa
-                                        vyskúšať doma alebo vonku — beh, skákanie,
-                                        prekážková dráha či tímová hra. Kniha učí, že pohyb je radosť, nástroj
-                                        sebapoznania a cesta k budovaniu odvahy a spolupráce.
-                                    </p>
+                                    <div x-data="{ editing: false }" class="relative w-full">
+                                        <div x-show="!editing">
+                                            <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">{{ $content['about']['about_section_title'] ?: 'O čom je kniha' }}</h2>
+                                            @auth
+                                                <button @click.prevent="editing = true"
+                                                    class="absolute -top-4 -right-4 p-2 bg-white text-black rounded-full shadow hover:bg-gray-200 z-10">✏️</button>
+                                            @endauth
+                                        </div>
+                                        <div x-show="editing">
+                                            <form method="POST" action="{{ route('content.update') }}">
+                                                @csrf
+                                                <input type="hidden" name="field" value="about_section_title">
+                                                <input type="text" name="about_section_title" value="{{ old('about_section_title', $content['about']['about_section_title']) }}"
+                                                    class="w-full border rounded px-2 py-1 text-center text-3xl font-bold mb-2">
+                                                <div class="flex gap-2 mt-2 justify-center">
+                                                    <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Uložiť</button>
+                                                    <button type="button" @click.prevent="editing=false" class="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500">Zrušiť</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                            
+                                    <div x-data="{ editing: false }" class="relative w-full">
+                                        <div x-show="!editing">
+                                            <p class="text-xl text-justify md:text-2xl text-black leading-relaxed">{{ $content['about']['about_section_body'] }}</p>
+                                            @auth
+                                                <button @click.prevent="editing = true"
+                                                    class="absolute -top-4 -right-4 p-2 bg-white text-black rounded-full shadow hover:bg-gray-200 z-10">✏️</button>
+                                            @endauth
+                                        </div>
+                                        <div x-show="editing">
+                                            <form method="POST" action="{{ route('content.update') }}">
+                                                @csrf
+                                                <input type="hidden" name="field" value="about_section_body">
+                                                <textarea name="about_section_body" class="w-full border rounded px-2 py-1 text-center">{{ old('about_section_body', $content['about']['about_section_body']) }}</textarea>
+                                                <div class="flex gap-2 mt-2 justify-center">
+                                                    <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Uložiť</button>
+                                                    <button type="button" @click.prevent="editing=false" class="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500">Zrušiť</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
-
-
+                            
                                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                                     <div class="animate__animated animate__slideInLeft animate__slow p-8 rounded-2xl">
-                                        <h2 class="text-3xl md:text-4xl font-semibold text-black mb-4">Pre koho je určená</h2>
-                                        <ul class="list-disc list-inside text-black space-y-2">
-                                            <li>Deti 6–12 rokov, ktoré milujú príbehy a dobrodružstvo.</li>
-                                            <li>Rodičia, ktorí chcú aktívne tráviť čas s deťmi a znižovať čas pri
-                                                obrazovkách.</li>
-                                            <li>Učitelia, tréneri a animátori hľadajúci jednoduché nápady na pohybové
-                                                aktivity viazané k príbehu.</li>
-                                        </ul>
+                                        <div x-data="{ editing: false }" class="relative w-full">
+                                            <div x-show="!editing">
+                                                <h2 class="text-3xl md:text-4xl font-semibold text-black mb-4">Pre koho je určená</h2>
+                                                <ul class="list-disc text-justify list-inside text-black space-y-2">
+                                                    <li>{{ $content['about']['for_whom_1'] ?? '' }}</li>
+                                                    <li>{{ $content['about']['for_whom_2'] ?? '' }}</li>
+                                                    <li>{{ $content['about']['for_whom_3'] ?? '' }}</li>
+                                                </ul>
+                                                @auth
+                                                    <button @click.prevent="editing = true" class="absolute -top-4 -right-4 p-2 bg-white text-black rounded-full shadow hover:bg-gray-200 z-10">✏️</button>
+                                                @endauth
+                                            </div>
+                            
+                                            <div x-show="editing">
+                                                <form method="POST" action="{{ route('content.update') }}" class="flex flex-col gap-2">
+                                                    @csrf
+                                                    <input type="hidden" name="field" value="for_whom">
+                                                    <input type="text" name="for_whom_1" value="{{ old('for_whom_1', $content['about']['for_whom_1'] ?? '') }}" class="w-full border rounded px-2 py-1 text-center mb-1">
+                                                    <input type="text" name="for_whom_2" value="{{ old('for_whom_2', $content['about']['for_whom_2'] ?? '') }}" class="w-full border rounded px-2 py-1 text-center mb-1">
+                                                    <input type="text" name="for_whom_3" value="{{ old('for_whom_3', $content['about']['for_whom_3'] ?? '') }}" class="w-full border rounded px-2 py-1 text-center">
+                                                    <div class="flex gap-2 mt-2 justify-center">
+                                                        <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Uložiť</button>
+                                                        <button type="button" @click.prevent="editing=false" class="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500">Zrušiť</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
-
+                            
                                     <div class="animate__animated animate__slideInRight animate__slow flex items-center justify-center">
-                                        <img src="storage/imgs/artwork.png"
-                                            alt="Ilustrácia: Strážcovia pohybu — kniha a deti v pohybe"
-                                            class="rounded-2xl shadow-md h-full mt-8 max-w-sm object-cover">
+                                        <img src="storage/imgs/artwork.png" alt="Ilustrácia: Strážcovia pohybu — kniha a deti v pohybe" class="rounded-2xl shadow-md h-full mt-8 max-w-sm object-cover">
                                     </div>
-
                                 </div>
-
-
+                            
                                 <div class="animate__animated animate__zoomIn animate__slow lg:col-span-2 space-y-2 p-8 rounded-2xl">
-                                    <h2 class="text-3xl md:text-4xl font-semibold text-black mb-4">Prečo kúpiť</h2>
-                                    <p class="text-xl md:text-2xl text-black leading-relaxed">
-                                        Nie je to len kniha — je to nástroj pre rodičov: prepojí čítanie s reálnou
-                                        aktivitou, formuje návyky a posilňuje sebavedomie.
-                                        Každá kapitola prináša konkrétnu aktivitu, ktorú rodič môže jednoducho
-                                        zrealizovať bez špeciálneho vybavenia.
-                                    </p>
-                                </div>
-
-                                {{-- <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-                                    <div class="p-6 bg-white rounded-2xl shadow hover:shadow-md transition">
-                                        <h4 class="text-lg font-bold text-black mb-2">Pohyb = Energia a radosť</h4>
-                                        <p class="text-sm text-gray-700 leading-relaxed">
-                                            Príbehy znázorňujú pohyb ako prirodzený zdroj radosti a energie — nie ako
-                                            povinnosť. Deti sa učia, že pohyb zlepšuje náladu, sústredenie a zdravie.
-                                        </p>
-                                    </div>
-
-                                    <div class="p-6 bg-white rounded-2xl shadow hover:shadow-md transition">
-                                        <h4 class="text-lg font-bold text-black mb-2">Sila priateľstva a spolupráce</h4>
-                                        <p class="text-sm text-gray-700 leading-relaxed">
-                                            Hrdinovia riešia úlohy spoločne. Dôraz je na tímovej práci, vzájomnej
-                                            podpore a empatii — jednoduché lekcie, ktoré dieťa môže praktizovať v hre.
-                                        </p>
-                                    </div>
-
-                                    <div class="p-6 bg-white rounded-2xl shadow hover:shadow-md transition">
-                                        <h4 class="text-lg font-bold text-black mb-2">Odvaha a prekonávanie strachu</h4>
-                                        <p class="text-sm text-gray-700 leading-relaxed">
-                                            Každá výzva v knihe rozpráva o odvahu v malých krokoch — ako čeliť obavám,
-                                            skúšať nové veci a rásť cez skúsenosť.
-                                        </p>
-                                    </div>
-
-                                    <div class="p-6 bg-white rounded-2xl shadow hover:shadow-md transition">
-                                        <h4 class="text-lg font-bold text-black mb-2">Rodinné prepojenie cez hru</h4>
-                                        <p class="text-sm text-gray-700 leading-relaxed">
-                                            Kniha obsahuje jednoduché aktivity a otázky pre rodičov, ktoré podporujú
-                                            rozhovor po čítaní a budovanie spoločných spomienok.
-                                        </p>
-                                    </div>
-                                </div> --}}
-
-                                <div class="animate__animated animate__zoomIn animate__slow mt-10 bg-gradient-to-r p-6 rounded-2xl">
-                                    <div class="max-w-4xl mx-auto text-center">
-                                        <p class="text-xl md:text-2xl text-black leading-relaxed">
-                                            Každá kapitola = príbeh + jednoduchá aktivita. Premeňte čítanie na spoločnú
-                                            hru bez obrazoviek.
-                                        </p>
+                                    <div x-data="{ editing: false }" class="relative w-full">
+                                        <div x-show="!editing">
+                                            <h2 class="text-3xl md:text-4xl font-semibold text-black mb-4">Prečo kúpiť</h2>
+                                            <p class="text-xl text-justify md:text-2xl text-black leading-relaxed">{{ $content['about']['why_buy_body'] }}</p>
+                                            @auth
+                                                <button @click.prevent="editing = true" class="absolute -top-4 -right-4 p-2 bg-white text-black rounded-full shadow hover:bg-gray-200 z-10">✏️</button>
+                                            @endauth
+                                        </div>
+                                        <div x-show="editing">
+                                            <form method="POST" action="{{ route('content.update') }}">
+                                                @csrf
+                                                <input type="hidden" name="field" value="why_buy">
+                                                <input type="text" name="why_buy_title" value="{{ old('why_buy_title', $content['about']['why_buy_title'] ?? '') }}" class="w-full border rounded px-2 py-1 text-center mb-1">
+                                                <textarea name="why_buy_body" class="w-full border rounded px-2 py-1 text-center">{{ old('why_buy_body', $content['about']['why_buy_body'] ?? '') }}</textarea>
+                                                <div class="flex gap-2 mt-2 justify-center">
+                                                    <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Uložiť</button>
+                                                    <button type="button" @click.prevent="editing=false" class="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500">Zrušiť</button>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
-
-                            </div>
+                    
                         </section>
                     </div>
-                    <div class="flex flex-col items-center space-y-8 mt-24 mb-12 w-full">
+                    <h3
+                        class="animate__animated animate__zoomIn animate__slow text-5xl text-black font-semibold mt-12 mb-12">
+                        Prečo to ocenia rodičia?
+                    </h3>
+                    <div class="relative flex flex-col items-center space-y-8 mt-24 mb-12 w-full">
 
-                        <h3 class="animate__animated animate__zoomIn animate__slow text-5xl text-black font-semibold mt-12 mb-12">Prečo to ocenia rodičia?
-                        </h3>
-
-                        <x-text-extend-left title="Zdravý vzor"
+                        <div class="absolute inset-0 flex justify-center pointer-events-none">
+                            <svg class="h-full w-32 text-yellow-400"
+                                viewBox="0 0 40 200" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                <path
+                                    d="M20 0 
+                                       L10 30 
+                                       L25 30 
+                                       L15 70 
+                                       L30 70 
+                                       L18 120 
+                                       L28 120 
+                                       L15 170 
+                                       L25 170 
+                                       L20 200"
+                                    stroke="currentColor"
+                                    stroke-width="6"
+                                    stroke-linejoin="round"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    
+                        <x-text-extend-left
+                            title="Zdravý vzor"
                             description="Nie je to suché moralizovanie, ale napínavý príbeh, v ktorom sa deti učia nenápadne – cez emócie a zážitky." />
-
-                        <x-text-extend-right title="Dobrodružstvo + ponaučenie"
+                    
+                        <x-text-extend-right
+                            title="Dobrodružstvo + ponaučenie"
                             description="Príbeh, ktorý deti vtiahne a zároveň ich vedie k pohybu a zdraviu." />
-
-                        <x-text-extend-left title="Spojenie rodiny"
+                    
+                        <x-text-extend-left
+                            title="Spojenie rodiny"
                             description="Kniha vytvára priestor na rozhovory o zdravom životnom štýle, pohybe a hodnotách." />
                     </div>
-                    <div class="flex flex-col items-center space-y-8 mt-24 mb-12 w-full">
-                        <h3 class="text-5xl text-black font-semibold mt-12 mb-12">Kľúčové témy
-                        </h3>
+                    
+                    <h3 class="text-5xl text-black font-semibold mt-32">Kľúčové témy
+                    </h3>
 
-                        <x-text-extend-right title="Energia a radosť"
-                            description="Príbehy znázorňujú pohyb ako prirodzený zdroj radosti a energie — nie ako
-                            povinnosť. Deti sa učia, že pohyb zlepšuje náladu, sústredenie a zdravie." />
+                    <div class="relative flex flex-col items-center space-y-8 mt-24 mb-12 w-full">
 
-                        <x-text-extend-left title="Sila priateľstva"
-                            description=" Hrdinovia riešia úlohy spoločne. Dôraz je na tímovej práci, vzájomnej
-                            podpore a empatii — jednoduché lekcie, ktoré dieťa môže praktizovať v hre." />
-
-                        <x-text-extend-right title="Prekonávanie strachu"
-                            description="Každá výzva v knihe rozpráva o odvahu v malých krokoch — ako čeliť obavám,
-                            skúšať nové veci a rásť cez skúsenosť." />
-
-                        <x-text-extend-left title="Rodinné prepojenie"
-                            description="Kniha obsahuje jednoduché aktivity a otázky pre rodičov, ktoré podporujú
-                            rozhovor po čítaní a budovanie spoločných spomienok." />
+                        <div class="absolute inset-0 flex justify-center pointer-events-none">
+                            <svg class="h-full w-32 text-yellow-400"
+                                viewBox="0 0 40 200" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                <path
+                                    d="M20 0 
+                                       L10 30 
+                                       L25 30 
+                                       L15 70 
+                                       L30 70 
+                                       L18 120 
+                                       L28 120 
+                                       L15 170 
+                                       L25 170 
+                                       L20 200"
+                                    stroke="currentColor"
+                                    stroke-width="6"
+                                    stroke-linejoin="round"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    
+                        <x-text-extend-right
+                            title="Energia a radosť"
+                            description="Príbehy znázorňujú pohyb ako prirodzený zdroj radosti a energie — nie ako povinnosť. Deti sa učia, že pohyb zlepšuje náladu, sústredenie a zdravie." />
+                    
+                        <x-text-extend-left
+                            title="Sila priateľstva"
+                            description="Hrdinovia riešia úlohy spoločne. Dôraz je na tímovej práci, vzájomnej podpore a empatii — jednoduché lekcie, ktoré dieťa môže praktizovať v hre." />
+                    
+                        <x-text-extend-right
+                            title="Prekonávanie strachu"
+                            description="Každá výzva v knihe rozpráva o odvahu v malých krokoch — ako čeliť obavám, skúšať nové veci a rásť cez skúsenosť." />
+                    
+                        <x-text-extend-left
+                            title="Rodinné prepojenie"
+                            description="Kniha obsahuje jednoduché aktivity a otázky pre rodičov, ktoré podporujú rozhovor po čítaní a budovanie spoločných spomienok." />
                     </div>
+                    
                 </section>
             </section>
         </section>
     </x-foreground>
-    <div class="relative overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('storage/imgs/merch.JPG');">
-        </div>
-        <div class="absolute inset-0 bg-black/50"></div>
-        <div class="relative z-10 flex flex-col items-center justify-center min-h-[400px] space-y-6 p-8">
-            <a href="https://shop.hevi.sk/" target="_blank" rel="noopener noreferrer" class="cta-button"
-                data-aos="zoom-in">
-                E-shop merch
-            </a>
-        </div>
-    </div>
+    <x-eshop />
 </x-app-layout>

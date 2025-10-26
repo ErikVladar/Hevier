@@ -34,20 +34,37 @@
         <x-foreground>
             <section class="py-20">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                    <h2 class="animate__animated animate__zoomIn animate__slow text-6xl font-bold text-center mb-12 text-black">Galéria</h2>
-
-                    <div class="animate__animated animate__slideInUp animate__slow grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-                        @foreach ($images as $index => $image)
-                            <a href="#" @click.prevent="activeIndex={{ $index }}; isOpen=true"
-                                class="block overflow-hidden rounded-xl aspect-square">
-                                <img src="{{ $image->path }}" alt="{{ $image->title }}"
-                                    class="w-full h-full object-cover hover:opacity-80 transition duration-300">
-                            </a>
-                        @endforeach
-                    </div>
+        
+                    <h2 class="animate__animated animate__zoomIn animate__slow text-6xl font-bold text-center mb-12 text-black">
+                        Galéria
+                    </h2>
+        
+                    @if($images->count())
+                        @php
+                            $cover = $images->first();
+                            $extraCount = $images->count() - 1;
+                            $galleryName = 'Tvorcovia knihy';
+                        @endphp
+        
+                        <a href="#" @click.prevent="activeIndex=0; isOpen=true"
+                            class="relative block w-full max-w-3xl mx-auto rounded-xl overflow-hidden cursor-pointer shadow-lg">
+        
+                            <img src="{{ $cover->path }}" alt="{{ $cover->title }}"
+                                class="w-full h-96 object-cover transition-transform duration-300 hover:scale-105">
+        
+                            @if($extraCount > 0)
+                                <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center">
+                                    <span class="text-white text-2xl font-semibold mb-2">{{ $galleryName }}</span>
+                                    <span class="text-white text-4xl font-bold">+{{ $extraCount }}</span>
+                                </div>
+                            @endif
+                        </a>
+                    @endif
+        
                 </div>
             </section>
         </x-foreground>
+        
+
     </div>
 </x-app-layout>

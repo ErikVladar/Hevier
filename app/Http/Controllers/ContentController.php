@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 class ContentController extends Controller
 {
-    // Show page with content (frontend or admin)
     public function show()
     {
         $content = json_decode(
@@ -14,7 +13,6 @@ class ContentController extends Controller
             true
         );
 
-        // For frontend
         return view('welcome', compact('content'));
     }
 
@@ -34,8 +32,6 @@ class ContentController extends Controller
         return view('about', compact('content', 'reviews'));
     }
 
-
-    // Show admin form
     public function admin()
     {
         $content = json_decode(
@@ -46,7 +42,6 @@ class ContentController extends Controller
         return view('admin', compact('content'));
     }
 
-    // Handle saving updates
     public function update(Request $request)
     {
         $content = json_decode(file_get_contents(resource_path('content.json')), true);
@@ -57,7 +52,7 @@ class ContentController extends Controller
                 $content['about']['title_2'] = $request->input('title_2');
                 break;
 
-                
+
 
             case 'body':
                 $content['about']['body'] = $request->input('body');
@@ -73,6 +68,28 @@ class ContentController extends Controller
 
             case 'reviews':
                 $content['about']['reviews'] = $request->input('reviews');
+                break;
+            case 'about_section_title':
+                $content['about']['about_section_title'] = $request->input('about_section_title');
+                break;
+
+            case 'about_section_body':
+                $content['about']['about_section_body'] = $request->input('about_section_body');
+                break;
+
+            case 'for_whom':
+                $content['about']['for_whom_1'] = $request->input('for_whom_1');
+                $content['about']['for_whom_2'] = $request->input('for_whom_2');
+                $content['about']['for_whom_3'] = $request->input('for_whom_3');
+                break;
+
+            case 'why_buy':
+                $content['about']['why_buy_title'] = $request->input('why_buy_title');
+                $content['about']['why_buy_body'] = $request->input('why_buy_body');
+                break;
+
+            case 'cta_text':
+                $content['about']['cta_text'] = $request->input('cta_text');
                 break;
         }
 

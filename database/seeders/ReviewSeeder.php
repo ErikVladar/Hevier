@@ -15,20 +15,20 @@ class ReviewSeeder extends Seeder
 {
     $reviews = [
         [
-            'photo' => 'review2.png',
-            'name' => 'Mária Nováková',
-            'rating' => 4.5,
+            'photo' => 'review1.png',
+            'name' => 'Daniel Hevier',
+            'rating' => 5,
             'text' => 'Táto kniha úplne zmenila prístup môjho dieťaťa k pohybu – teraz sa teší na každý deň!',
         ],
         [
-            'photo' => 'review1.png',
-            'name' => 'Peter Horváth',
+            'photo' => 'review2.png',
+            'name' => 'Matej Tóth',
             'rating' => 4,
             'text' => 'Úžasný príbeh a inšpirácia pre deti, aby sa hýbali a objavovali nové aktivity.',
         ],
         [
-            'photo' => 'lara.png',
-            'name' => 'Lara Kováčová',
+            'photo' => 'review3.png',
+            'name' => 'Mária Polákovičová',
             'rating' => 5,
             'text' => 'Skvelá kniha',
         ],
