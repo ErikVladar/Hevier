@@ -62,7 +62,7 @@
                     uspech5="Líder v bodoch na majstrovstvách sveta (2003)" />
 
                 <div class="w-full py-16 px-6" data-aos="fade-up">
-                    <h2 class="font-[Kaushan] antialiased text-4xl font-bold text-blue-800 mb-24 text-center">Ako ti
+                    <h2 class="text-4xl font-bold text-blue-800 mb-24 text-center">Ako ti
                         pohyb pomáha</h2>
 
                     <div class="max-w-4xl space-y-4 mx-auto">

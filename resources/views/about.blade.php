@@ -58,7 +58,7 @@
                                         <div x-data="{ editing: false }" class="relative w-full">
                                             <div x-show="!editing">
                                                 <h2 class="text-3xl md:text-4xl font-semibold text-black mb-4">Pre koho je určená</h2>
-                                                <ul class="list-disc text-justify list-inside text-black space-y-2">
+                                                <ul class="text-xl md:text-2xl list-disc text-justify list-inside text-black space-y-2">
                                                     <li>{{ $content['about']['for_whom_1'] ?? '' }}</li>
                                                     <li>{{ $content['about']['for_whom_2'] ?? '' }}</li>
                                                     <li>{{ $content['about']['for_whom_3'] ?? '' }}</li>
