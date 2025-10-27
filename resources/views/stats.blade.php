@@ -7,43 +7,43 @@
                     class="animate__animated animate__zoomIn animate__slow text-6xl font-bold text-center mb-12 text-black">
                     Pohyb v číslach</h2>
 
-                <div class="grid md:grid-cols-1 place-items-center gap-10 min-h-screen">
+                {{-- <div class="grid md:grid-cols-1 place-items-center gap-10 min-h-screen">
                     <div class="bg-white/90 rounded-2xl w-1/2 shadow-lg">
                         <img src="storage/imgs/STAT67.jpg" alt="Matej Tóth" class="w-full rounded-2xl h-full object-cover">
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="grid md:grid-cols-2 gap-10">
-                    <div class="bg-white/90 rounded-2xl shadow-lg">
-                        <img src="storage/imgs/STAT68.jpg" alt="Matej Tóth"
-                            class="w-full rounded-2xl h-full object-cover">
-                        {{-- <a href="{{ route('stats.show', 'activity') }}">
+                    <div class="bg-white/90 rounded-2xl shadow-lg p-8">
+                        {{-- <img src="storage/imgs/STAT68.jpg" alt="Matej Tóth"
+                            class="w-full rounded-2xl h-full object-cover"> --}}
+                        <a href="{{ route('stats.show', 'activity') }}">
                             <h2 class="text-3xl font-semibold mb-6 text-gray-800">Priemerný denný pohyb detí</h2>
                             <canvas id="activityChart"></canvas>
                             <p class="mt-4 text-gray-600 text-lg">
                                 Väčšina detí sa k odporúčaným 60 minútam denne nepribližuje.
                             </p>
-                        </a> --}}
+                        </a>
                     </div>
 
-                    <div class="bg-white/90 rounded-2xl shadow-lg">
-                        <img src="storage/imgs/STAT69.jpg" alt="Matej Tóth"
-                            class="w-full rounded-2xl h-full object-cover">
-                        {{-- <a href="{{ route('stats.show', 'screen-time') }}">
+                    <div class="bg-white/90 rounded-2xl shadow-lg p-8">
+                        {{-- <img src="storage/imgs/STAT69.jpg" alt="Matej Tóth"
+                            class="w-full rounded-2xl h-full object-cover"> --}}
+                        <a href="{{ route('stats.show', 'screen-time') }}">
                             <h2 class="text-3xl font-semibold mb-6 text-gray-800">Čas pred obrazovkou</h2>
                             <canvas id="screenTimeChart"></canvas>
                             <p class="mt-4 text-gray-600 text-lg">
                                 Deti trávia viac času pred obrazovkou, než v pohybe.
                             </p>
-                        </a> --}}
+                        </a>
                     </div>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-10">
-                    <div class="bg-white/90 rounded-2xl shadow-lg overflow-x-auto">
-                        <img src="storage/imgs/STAT70.jpg" alt="Matej Tóth"
-                            class="w-full rounded-2xl h-full object-cover">
-                        {{-- <a href="{{ route('stats.show', 'favorite-sports') }}">
+                    <div class="bg-white/90 rounded-2xl shadow-lg overflow-x-auto p-8">
+                        {{-- <img src="storage/imgs/STAT70.jpg" alt="Matej Tóth"
+                            class="w-full rounded-2xl h-full object-cover"> --}}
+                        <a href="{{ route('stats.show', 'favorite-sports') }}">
                             <h2 class="text-3xl font-semibold mb-6 text-gray-800">Najobľúbenejšie športy</h2>
                             <table class="min-w-full text-left border-collapse text-base">
                                 <thead class="bg-blue-200 text-gray-800">
@@ -87,32 +87,32 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </a> --}}
+                        </a>
                     </div>
 
-                    <div class="bg-white/90 rounded-2xl shadow-lg">
-                        <img src="storage/imgs/STAT71.jpg" alt="Matej Tóth"
-                            class="w-full rounded-2xl h-full object-cover">
-                        {{-- <a href="{{ route('stats.show', 'recommendations') }}">
+                    <div class="bg-white/90 rounded-2xl shadow-lg  p-8">
+                        {{-- <img src="storage/imgs/STAT71.jpg" alt="Matej Tóth"
+                            class="w-full rounded-2xl h-full object-cover"> --}}
+                        <a href="{{ route('stats.show', 'recommendations') }}">
                             <h2 class="text-3xl font-semibold mb-6 text-gray-800">Koľko detí spĺňa odporúčania</h2>
                             <canvas id="pieChart" class="w-full h-[300px]"></canvas>
-                        </a> --}}
+                        </a>
                     </div>
                 </div>
 
-                <div class="grid md:grid-cols-1 place-items-center gap-10 min-h-screen">
+                {{-- <div class="grid md:grid-cols-1 place-items-center gap-10 min-h-screen">
                     <div class="bg-white/90 rounded-2xl w-1/2 shadow-lg">
                         <img src="storage/imgs/STAT72.jpg" alt="Matej Tóth"
                             class="w-full rounded-2xl h-full object-cover">
-                        {{-- <a href="{{ route('stats.show', 'activity') }}">
+                        <a href="{{ route('stats.show', 'activity') }}">
                                 <h2 class="text-3xl font-semibold mb-6 text-gray-800">Priemerný denný pohyb detí</h2>
                                 <canvas id="activityChart"></canvas>
                                 <p class="mt-4 text-gray-600 text-lg">
                                     Väčšina detí sa k odporúčaným 60 minútam denne nepribližuje.
                                 </p>
-                            </a> --}}
+                            </a>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="max-w-2xl mx-auto my-12">
                     <div class="bg-gray-50 text-center rounded-2xl shadow-inner overflow-hidden
