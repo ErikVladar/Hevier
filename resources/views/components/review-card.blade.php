@@ -20,7 +20,8 @@
         <h3 class="text-lg font-bold mt-4">{{ $review->name }}</h3>
         <div class="flex mt-1 text-yellow-400">
             @for ($i = 1; $i <= 5; $i++)
-                <i class="bi {{ $i <= $review->rating ? 'bi-star-fill' : 'bi-star' }}"></i>
+            <i class="bi {{ $i <= 5 ? 'bi-star-fill' : 'bi-star' }}"></i>
+            {{-- <i class="bi {{ $i <= $review->rating ? 'bi-star-fill' : 'bi-star' }}"></i> --}}
             @endfor
         </div>
     </div>
