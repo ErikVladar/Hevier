@@ -115,7 +115,7 @@
                 </div>
 
                 <div class="max-w-2xl mx-auto my-12">
-                    <div class="bg-gray-50 text-center rounded-2xl shadow-inner cursor-pointer overflow-hidden
+                    <div class="bg-gray-50 text-center rounded-2xl shadow-inner overflow-hidden
                                transition-all duration-500 p-8"
                         :class="open ? 'max-w-4xl' : 'max-w-2xl'">
                         <h3 class="text-5xl font-extrabold mb-4">Zhrnutie</h3>

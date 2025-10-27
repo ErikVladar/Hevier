@@ -47,7 +47,7 @@
                         @endphp
         
                         <a href="#" @click.prevent="activeIndex=0; isOpen=true"
-                            class="relative block w-full max-w-3xl mx-auto rounded-xl overflow-hidden cursor-pointer shadow-lg">
+                            class="animate__animated animate__zoomIn animate__slow relative block w-full max-w-3xl mx-auto rounded-xl overflow-hidden cursor-pointer shadow-lg">
         
                             <img src="{{ $cover->path }}" alt="{{ $cover->title }}"
                                 class="w-full h-96 object-cover transition-transform duration-300 hover:scale-105">
