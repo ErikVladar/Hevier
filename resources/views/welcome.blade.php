@@ -97,11 +97,11 @@
                                     </div>
                                 @endauth
 
-                                <h1 class="font-[Kaushan] antialiased text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInLeft animate__slow"
+                                <h1 class="font-[Franklin] antialiased text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInLeft animate__slow"
                                     style="transform: rotate(-2deg); transform-origin: left;">
                                     {{ $content['about']['title_1'] }}
                                 </h1>
-                                <h1 class="font-[Kaushan] antialiased text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInRight animate__slow"
+                                <h1 class="font-[Franklin] antialiased text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInRight animate__slow"
                                     style="transform: rotate(-2deg); transform-origin: right;">
                                     {{ $content['about']['title_2'] }}
                                 </h1>
@@ -129,13 +129,12 @@
                         </div>
                         <div x-data="{ editing: false }" class="w-full relative">
                             <div x-show="!editing" class="relative flex flex-col items-center text-center">
-
+{{-- 
                                 <p class="text-gray-800 text-3xl animate__animated animate__slideInUp animate__slow"
                                     style="transform: rotate(-1deg); transform-origin: left;">
                                     {{ $content['about']['body'] }}
-                                </p>
+                                </p> --}}
 
-                                <!-- Centered YouTube link -->
                                 <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank"
                                     rel="noopener noreferrer"
                                     class="animate__animated animate__slideInUp animate__slow mt-6 inline-flex items-center justify-center bg-white rounded-full p-3 shadow hover:bg-gray-100 transition group">
@@ -148,14 +147,14 @@
                                     </svg>
                                 </a>
 
-                                @auth
+                                {{-- @auth
                                     <div class="absolute -top-4 -right-4">
                                         <button @click.prevent="editing=true"
                                             class="p-2 bg-white text-black rounded-full shadow hover:bg-gray-200 z-10">
                                             ✏️
                                         </button>
                                     </div>
-                                @endauth
+                                @endauth --}}
 
                             </div>
                         </div>
@@ -163,10 +162,12 @@
                     </div>
 
                     <div id="cover" class="flex flex-col h-full mt-32 w-full items-center justify-center">
-                        {{-- <div id="book-cover" --}}
-                        <div class="animate__animated animate__zoomIn animate__slow"> {{-- cursor-pointer transition-transform hover:scale-105"> --}}
-                            <img src="storage/imgs/TITULKA.jpg" alt="Book Cover"
-                                style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
+                        <div class="animate__animated animate__pulse animate__infinite animate__slower">
+                            <div id="book-cover"
+                                class="animate__animated animate__zoomIn animate__slow cursor-pointer transition-transform hover:scale-105">
+                                <img src="storage/imgs/TITULKA.jpg" alt="Book Cover"
+                                    style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
+                            </div>
                         </div>
 
                         <a href="https://shop.hevi.sk/" target="_blank" rel="noopener noreferrer"
@@ -181,22 +182,22 @@
         </div>
     </x-foreground>
 
-    <x-eshop/>
+    <x-eshop />
 
-        <section id="reviews" class="w-full bg-white/60 py-12">
-            <h2 class="text-6xl font-bold text-center mb-20 text-black">Odporúčanie</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto mb-6 mx-4 px-4 xl:px-16">
-                @foreach ($reviews as $review)
-                    <x-review-card :review="$review" />
-                @endforeach
+    <section id="reviews" class="w-full bg-white/60 py-12">
+        <h2 class="text-6xl font-bold text-center mb-20 text-black">Odporúčanie</h2>
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-12 max-w-7xl mx-auto mb-6 mx-4 px-4 xl:px-64">
+            @foreach ($reviews as $review)
+                <x-review-card :review="$review" />
+            @endforeach
+        </div>
+        @auth
+            <div class="text-center">
+                <a href="{{ route('reviews.create') }}"
+                    class="inline-block px-8 py-4 bg-green-600 text-white text-lg font-semibold rounded-2xl shadow-lg transform hover:scale-105 hover:bg-green-700">
+                    Pridať
+                </a>
             </div>
-            @auth
-                <div class="text-center">
-                    <a href="{{ route('reviews.create') }}"
-                        class="inline-block px-8 py-4 bg-green-600 text-white text-lg font-semibold rounded-2xl shadow-lg transform hover:scale-105 hover:bg-green-700">
-                        Pridať
-                    </a>
-                </div>
-            @endauth
-        </section>
+        @endauth
+    </section>
 </x-app-layout>

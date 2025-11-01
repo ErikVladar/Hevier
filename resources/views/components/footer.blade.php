@@ -109,10 +109,15 @@
 
 
         <div class="text-center">
-            <h3 class="font-bold mb-7 text-black">GENERÁLNY PARTNER</h3>
+            <h3 class="font-bold mb-3 text-black">GENERÁLNY PARTNER</h3>
             <a href="/partners/o2-slovakia" class="relative flex flex-col group" data-aos="zoom-in">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/O2-Logo.svg" alt="O2"
                     class="w-20 object-cover transition-transform duration-300 group-hover:scale-105 mx-auto">
+            </a>
+            <h3 class="font-bold mb-3 mt-8 text-black">HLAVNÝ PARTNER</h3>
+            <a href="/partners/veolia" class="relative flex flex-col group" data-aos="zoom-in">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Veolia_logo.svg/2560px-Veolia_logo.svg.png" alt="O2"
+                    class="w-24 object-cover transition-transform duration-300 group-hover:scale-105 mx-auto">
             </a>
         </div>
 

@@ -16,7 +16,7 @@
 
     <div class="relative text-left flex-shrink-0 md:w-1/3 flex flex-col items-center z-0">
         <img src="{{ asset('storage/imgs/' . $review->photo) }}" alt="{{ $review->name }}"
-            class="w-24 h-24 rounded-xl object-cover shadow-md -mt-10 md:-mt-12 md:ml-[-1rem]">
+            class="w-48 h-48 rounded-xl object-cover shadow-md -mt-10 md:-mt-12 md:ml-[-1rem]">
         <h3 class="text-lg font-bold mt-4">{{ $review->name }}</h3>
         {{-- <div class="flex mt-1 text-yellow-400">
             @for ($i = 1; $i <= 5; $i++)
@@ -26,7 +26,7 @@
         </div> --}}
     </div>
 
-    <div class="mt-4 md:mt-0 md:ml-6 md:w-2/3 text-justify z-0">
+    <div class="mt-4 p-6 md:mt-0 md:ml-6 md:w-2/3 text-left z-0">
         <p class="text-gray-700 text-lg leading-relaxed">
             {{ $review->text }}
         </p>

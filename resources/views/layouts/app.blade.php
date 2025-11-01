@@ -32,13 +32,14 @@
         href="https://unpkg.com/photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css">
 
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.3.0/dist/flowbite.min.js"></script>
-    
+
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
 </head>
 
 <body class="font-[Helvetica] antialiased">
+
     <button id="scrollToTopBtn"
         class="fixed bottom-16 right-6 z-50 w-12 h-12 bg-gray-800 text-white text-xl rounded-full shadow-lg 
      opacity-0 pointer-events-none hover:opacity-100 transition-opacity duration-300 
@@ -50,15 +51,35 @@
             <x-navbar />
         </nav>
     </div>
+    <div id="ghost-container">
 
-    <div class="min-h-screen bg-fixed bg-cover bg-center bg-no-repeat bg-white/30 items-center [@media(min-width:1080px)]:px-32 [@media(min-width:1080px)]:pt-20"
-        style="background-image: url('{{ asset('storage/imgs/bg.png') }}'); background-attachment: fixed;">
-        <main>
-            {{ $slot }}
-        </main>
+        <div class="min-h-screen bg-fixed bg-cover bg-center bg-no-repeat bg-white/30 items-center [@media(min-width:1080px)]:px-32 [@media(min-width:1080px)]:pt-20"
+            style="background-image: url('{{ asset('storage/imgs/bg.png') }}'); background-attachment: fixed;">
+            <main>
+                {{ $slot }}
+            </main>
+        </div>
     </div>
 
     <x-footer />
 </body>
 
 </html>
+
+{{-- <script>
+    function spawnGhost() {
+        const ghost = document.createElement('img');
+        ghost.src = 'storage/imgs/ghost.PNG';
+        ghost.classList.add('ghost');
+
+        const top = Math.random() * window.innerHeight * 0.8;
+        const duration = 5 + Math.random() * 5;
+        ghost.style.top = `${top}px`;
+        ghost.style.animationDuration = `${duration}s`;
+
+        document.body.appendChild(ghost);
+        ghost.addEventListener('animationend', () => ghost.remove());
+    }
+
+    setInterval(spawnGhost, 3000 + Math.random() * 2000);
+</script> --}}

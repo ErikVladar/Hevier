@@ -181,6 +181,14 @@
         font-display: swap;
     }
 
+    @font-face {
+        font-family: 'Franklin';
+        src: url('/Franklin/Franklin Gothic Heavy Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
     #bio {
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
@@ -233,3 +241,21 @@
         padding: 2rem;
       }
       
+      .ghost {
+        position: fixed;
+        width: 100px;
+        opacity: 0.8;
+        animation: flyAcross linear forwards;
+        pointer-events: none;
+        z-index: 40;
+      }
+    
+      @keyframes flyAcross {
+        from {
+          transform: translateX(-150px);
+        }
+        to {
+          transform: translateX(100vw);
+          opacity: 0;
+        }
+      }
