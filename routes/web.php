@@ -14,7 +14,7 @@ Route::view('/', 'welcome');
 Route::view('about', 'about')->name('about');
 Route::view('collab', 'collab')->name('collab');
 Route::view('more', 'more')->name('more');
-Route::view('stats', 'stats')->name('stats');
+Route::get('stats', [StatsController::class, 'index'])->name('stats');
 Route::get('/stats/{type}', [StatsController::class, 'show'])->name('stats.show');
 
 

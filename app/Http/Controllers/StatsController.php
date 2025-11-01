@@ -6,6 +6,20 @@ use Illuminate\Http\Request;
 
 class StatsController extends Controller
 {
+    public function index()
+    {
+        // TODO: Add the urls
+        // Array[array[str]]
+        // slideShows[slidesUrl["/images/..."]]
+
+        $slides = array();
+
+        return view("stats", [
+            'slides' => $slides,
+        ]);
+    }
+
+
     public function show($type)
     {
         $charts = [
