@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <div class="w-full md:w-2/3 md:px-16 flex flex-col mt-12 text-center md:text-left">
+    <div class="w-full md:w-2/3 px-4 md:px-16 flex flex-col mt-12 text-center md:text-left">
         <h2 class="antialiased text-5xl md:text-6xl text-black font-bold mb-6">{{ $name }}</h2>
         <p class="text-xl md:text-2xl text-gray-800 text-justify break-words max-w-prose mb-6">
             {{ $bio }}
