@@ -185,7 +185,7 @@
 
         <section id="reviews" class="w-full bg-white/60 py-12">
             <h2 class="text-6xl font-bold text-center mb-20 text-black">Odporúčanie</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto mb-6 px-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto mb-6 mx-4 px-4 xl:px-16">
                 @foreach ($reviews as $review)
                     <x-review-card :review="$review" />
                 @endforeach
