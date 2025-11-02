@@ -2,20 +2,23 @@
 
 namespace App\View\Components;
 
+use Closure;
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class SlideShow extends Component
 {
-    public $slidesUrls;
-
-    public function __construct($slidesUrls = [])
-    {
-        $this->slidesUrls = $slidesUrls;
+    
+    public function __construct(
+        
+        public array $slidesUrls,
+        public int $slideCount
+    ) {
+        
     }
 
-    public function render()
+    public function render(): View|Closure|string
     {
         return view('components.slide-show');
     }
 }
-

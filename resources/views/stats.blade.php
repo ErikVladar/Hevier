@@ -11,7 +11,7 @@
                     <li>Koľko nás stojí detská obezita</li>
                     @foreach ($slides as $index => $slideUrls)
                         @php dump($index, $slideUrls); @endphp
-                        <x-slide-show :slideUrls="$slideUrls" />
+                        <x-slide-show :slideUrls="{{ $slideUrls }}" />
                     @endforeach
                 </ol>
             </div>

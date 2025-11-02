@@ -23,7 +23,7 @@ class StatsController extends Controller
             $images=scandir($dir_path);
             $images=array_slice($images, 2);
 
-            $images = array_map(fn($item) => $dir_path . "/" . $item, $images);
+            // $images = array_map(fn($item) => $dir_path . "/" . $item, $images);
 
             $slides[$dir]=$images;
 

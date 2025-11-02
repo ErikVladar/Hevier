@@ -14,7 +14,7 @@
     <div class="flex">
         @foreach ($slideUrls as $url)
             <section class="flex-shrink-0 w-full">
-                <img src="{{ $url }}" alt="slide" class="w-full h-auto object-cover">
+                <img src="asset('storage/slides/{{ $url }}/{{ $url }}')" alt="slide" class="w-full h-auto object-cover">
             </section>
         @endforeach
     </div>
