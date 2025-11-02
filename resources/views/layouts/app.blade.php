@@ -38,7 +38,7 @@
 
 </head>
 
-<body class="font-[Helvetica] antialiased">
+<body class="font-[Helvetica] antialiased bg-cover bg-center bg-fixed" style="background-image: url('{{ asset('storage/imgs/bg.png') }}'); ">
 
     <button id="scrollToTopBtn"
         class="fixed bottom-16 right-6 z-50 w-12 h-12 bg-gray-800 text-white text-xl rounded-full shadow-lg 
@@ -51,16 +51,10 @@
             <x-navbar />
         </nav>
     </div>
-    <div id="ghost-container">
 
-        <div class="min-h-screen bg-fixed bg-cover bg-center bg-no-repeat bg-white/30 items-center [@media(min-width:1080px)]:px-32 [@media(min-width:1080px)]:pt-20"
-            style="background-image: url('{{ asset('storage/imgs/bg.png') }}'); background-attachment: fixed;">
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </div>
-
+    <main class="bg-white/60 backdrop-blur min-h-screen mt-40 mx-32 rounded-t-3xl" id="foreground">
+        {{ $slot }}
+    </main>
     <x-footer />
 </body>
 
