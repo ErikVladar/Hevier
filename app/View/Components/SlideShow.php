@@ -8,14 +8,11 @@ use Illuminate\View\Component;
 
 class SlideShow extends Component
 {
-    
+
     public function __construct(
-        
-        public array $slidesUrls,
+        public array $urls,
         public int $slideCount
-    ) {
-        
-    }
+    ) {}
 
     public function render(): View|Closure|string
     {

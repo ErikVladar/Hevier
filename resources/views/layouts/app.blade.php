@@ -36,15 +36,16 @@
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
+    <meta name="robots" content="noindex">
+
 </head>
 
-<body class="font-[Helvetica] antialiased bg-cover bg-center bg-fixed" style="background-image: url('{{ asset('storage/imgs/bg.png') }}'); ">
+<body class="font-[Helvetica] antialiased bg-cover bg-center bg-fixed"
+    style="background-image: url('{{ asset('storage/imgs/bg.png') }}'); ">
 
-    <button id="scrollToTopBtn"
-        class="fixed bottom-16 right-6 z-50 w-12 h-12 bg-gray-800 text-white text-xl rounded-full shadow-lg 
+    <button id="scrollToTopBtn" class="fixed bottom-16 right-6 z-50 w-12 h-12 bg-gray-800 text-white text-xl rounded-full shadow-lg 
      opacity-0 pointer-events-none hover:opacity-100 transition-opacity duration-300 
-     flex items-center justify-center"
-        aria-label="Scroll to top">↑</button>
+     flex items-center justify-center" aria-label="Scroll to top">↑</button>
 
     <div class="min-h-full">
         <nav id="navbar" class="fixed top-0 z-30 w-full text-xl transition-all duration-300">

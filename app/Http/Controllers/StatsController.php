@@ -10,32 +10,34 @@ class StatsController extends Controller
 {
     public function index()
     {
-
-        $slides = array();
-        $base_url=storage_path("app/public/slides");
-        $slides_dir = scandir($base_url);
-
-        $slides_dir=array_slice($slides_dir, 2);
-
-        foreach($slides_dir as $dir){
-
-            $dir_path=$base_url."/".$dir;
-            $images=scandir($dir_path);
-            $images=array_slice($images, 2);
-
-            // $images = array_map(fn($item) => $dir_path . "/" . $item, $images);
-
-            $slides[$dir]=$images;
-
-        }
-
-        // dd($slides);
-
         return view("stats", [
-            'slides' => $slides,
+            'slides' => $this->generateSlideShowUrls(),
         ]);
     }
 
+    private function generateSlideShowUrls()
+    {
+
+        $slides = array();
+        $base_url = storage_path("app/public/slides");
+        $slides_dir = scandir($base_url);
+
+        $slides_dir = array_slice($slides_dir, 2);
+
+        foreach ($slides_dir as $dir) {
+
+            $dir_path = $base_url . "/" . $dir;
+            $images = scandir($dir_path);
+            $images = array_slice($images, 2);
+
+            $images_urls = array_map(function ($item) use ($dir) {
+                return asset("storage/slides/{$dir}/{$item}");
+            }, $images);
+            $slides[$dir] = $images_urls;
+        }
+
+        return $slides;
+    }
 
     public function show($type)
     {

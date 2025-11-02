@@ -7,14 +7,14 @@
                     Pohyb v číslach
                 </h2>
 
-                <ol>
-                    <li>Koľko nás stojí detská obezita</li>
-                    @foreach ($slides as $index => $slideUrls)
-                        @php dump($index, $slideUrls); @endphp
-                        <x-slide-show :slideUrls="{{ $slideUrls }}" />
-                    @endforeach
-                </ol>
+                <li>Koľko nás stojí detská obezita</li>
+                <x-slide-show :urls="$slides[1]" :slideCount="count($slides[1])" />
             </div>
         </section>
+
+        <script src="{{ Vite::asset('resources/js/slideshow.js') }}"></script>
+        <link rel="stylesheet" href="{{ Vite::asset('resources/css/slideshow.css') }}">
+        </link>
+
     </x-foreground>
 </x-app-layout>
