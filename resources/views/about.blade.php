@@ -3,10 +3,10 @@
         <section class="relative w-full min-h-screenitems-center justify-center text-center rounded-t-3xl">
             <div class="w-full relative bg-cover bg-centerm-32 items-center justify-center"> </div>
             <section class="relative w-full overflow-hidden">
-                <section class="text-gray-900 py-12 px-6">
-                    <div class="p-8">
+                <section class="text-gray-900 py-12">
+                    <div class="py-4 md:px-8">
                         <section>
-                            <div class="space-y-16 max-w-7xl mx-auto px-6">
+                            <div class="space-y-16 max-w-7xl">
 
                                 <div class="animate__animated animate__zoomIn animate__slow space-y-6 p-8 rounded-2xl">
                                     <div x-data="{ editing: false }" class="relative w-full">
@@ -154,25 +154,38 @@
                     </h3>
                     <div class="relative flex flex-col items-center space-y-8 mt-24 mb-12 w-full">
                         <div class="absolute inset-0 flex justify-center pointer-events-none">
-                            <svg class="h-full w-96 text-gray-700" viewBox="0 0 100 200" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                            <div class="relative w-96 h-full">
+                                <svg class="absolute inset-0 w-full h-full text-blue-700" viewBox="0 0 100 200"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                    <path d="M50 0
+                                           C50 20, 48 50, 50 80
+                                           C52 110, 49 140, 50 170
+                                           C51 185, 50 200, 50 200" stroke="currentColor" stroke-width="6"
+                                        stroke-linecap="round" fill="none" />
+                                    <path d="M50 20 C35 25, 30 35, 20 48" stroke="currentColor" stroke-width="5"
+                                        stroke-linecap="round" />
+                                    <path d="M50 70 C65 75, 70 90, 80 110" stroke="currentColor" stroke-width="5"
+                                        stroke-linecap="round" />
+                                    <path d="M50 100 C35 115, 30 130, 20 160" stroke="currentColor" stroke-width="5"
+                                        stroke-linecap="round" />
+                                </svg>
 
-                                <path d="M50 0
-                                       C50 20, 48 50, 50 80
-                                       C52 110, 49 140, 50 170
-                                       C51 185, 50 200, 50 200" stroke="currentColor" stroke-width="6"
-                                    stroke-linecap="round" fill="none" />
-
-                                    
-                                <path d="M50 20 C35 25, 30 35, 20 48" stroke="currentColor" stroke-width="5"
-                                    stroke-linecap="round" />
-                                <path d="M50 70 C65 75, 70 90, 80 110" stroke="currentColor" stroke-width="5"
-                                    stroke-linecap="round" />
-                                <path d="M50 100 C35 115, 30 130, 20 160" stroke="currentColor" stroke-width="5"
-                                    stroke-linecap="round" />
-                            </svg>
+                                <svg class="absolute inset-0 w-full h-full text-gray-300" viewBox="0 0 100 200"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                    <path d="M50 0
+                                           C50 20, 48 50, 50 80
+                                           C52 110, 49 140, 50 170
+                                           C51 185, 50 200, 50 200" stroke="currentColor" stroke-width="4"
+                                        stroke-linecap="round" fill="none" />
+                                    <path d="M50 20 C35 25, 30 35, 20 48" stroke="currentColor" stroke-width="3"
+                                        stroke-linecap="round" />
+                                    <path d="M50 70 C65 75, 70 90, 80 110" stroke="currentColor" stroke-width="3"
+                                        stroke-linecap="round" />
+                                    <path d="M50 100 C35 115, 30 130, 20 160" stroke="currentColor" stroke-width="3"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </div>
                         </div>
-
 
                         <x-text-extend-left title="Zdravý vzor"
                             description="Nie je to suché moralizovanie, ale napínavý príbeh, v ktorom sa deti učia nenápadne – cez emócie a zážitky." />
@@ -189,24 +202,42 @@
 
                     <div class="relative flex flex-col items-center space-y-8 mt-24 mb-12 w-full">
                         <div class="absolute inset-0 flex justify-center pointer-events-none">
-                            <svg class="h-full w-96 text-gray-700" viewBox="0 0 100 200" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                            <div class="relative w-96 h-full">
+                                <svg class="absolute inset-0 w-full h-full text-blue-700" viewBox="0 0 100 200"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                    <path d="M50 0
+                                           C50 20, 48 50, 50 80
+                                           C52 110, 49 140, 50 170
+                                           C51 185, 50 200, 50 200" stroke="currentColor" stroke-width="6"
+                                        stroke-linecap="round" fill="none" />
+                                    <path d="M50 15 C65 25, 65 35, 83 45" stroke="currentColor" stroke-width="5"
+                                        stroke-linecap="round" />
+                                    <path d="M50 40 C35 50, 25 65, 20 85" stroke="currentColor" stroke-width="5"
+                                        stroke-linecap="round" />
+                                    <path d="M50 85 C65 75, 70 90, 83 125" stroke="currentColor" stroke-width="5"
+                                        stroke-linecap="round" />
+                                    <path d="M50 130 C35 135, 30 150, 20 175" stroke="currentColor" stroke-width="5"
+                                        stroke-linecap="round" />
+                                </svg>
 
-                                <path d="M50 0
-                                       C50 20, 48 50, 50 80
-                                       C52 110, 49 140, 50 170
-                                       C51 185, 50 200, 50 200" stroke="currentColor" stroke-width="6"
-                                    stroke-linecap="round" fill="none" />
+                                <svg class="absolute inset-0 w-full h-full text-gray-300" viewBox="0 0 100 200"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                    <path d="M50 0
+                                           C50 20, 48 50, 50 80
+                                           C52 110, 49 140, 50 170
+                                           C51 185, 50 200, 50 200" stroke="currentColor" stroke-width="4"
+                                        stroke-linecap="round" fill="none" />
+                                    <path d="M50 15 C65 25, 65 35, 83 45" stroke="currentColor" stroke-width="3"
+                                        stroke-linecap="round" />
+                                    <path d="M50 40 C35 50, 25 65, 20 85" stroke="currentColor" stroke-width="3"
+                                        stroke-linecap="round" />
+                                    <path d="M50 85 C65 75, 70 90, 83 125" stroke="currentColor" stroke-width="3"
+                                        stroke-linecap="round" />
+                                    <path d="M50 130 C35 135, 30 150, 20 175" stroke="currentColor" stroke-width="3"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </div>
 
-                                <path d="M50 15 C65 25, 65 35, 83 45" stroke="currentColor" stroke-width="5"
-                                    stroke-linecap="round" />
-                                <path d="M50 40 C35 50, 25 65, 20 85" stroke="currentColor" stroke-width="5"
-                                    stroke-linecap="round" />
-                                <path d="M50 85 C65 75, 70 90, 83 125" stroke="currentColor" stroke-width="5"
-                                    stroke-linecap="round" />
-                                <path d="M50 130 C35 135, 30 150, 20 175" stroke="currentColor" stroke-width="5"
-                                    stroke-linecap="round" />
-                            </svg>
                         </div>
 
                         <x-text-extend-right title="Energia a radosť"

@@ -1,6 +1,6 @@
 <x-app-layout>
     <div
-        class="relative w-full min-h-screen rounded-3xl grid grid-cols-1 md:grid-cols-1 gap-10 items-center justify-center text-center rounded-t-3xl">
+        class="bg-white/60 backdrop-blur relative w-full min-h-screen grid grid-cols-1 md:grid-cols-1 gap-10 items-center justify-center text-center rounded-t-3xl">
         <div class="w-full relative bg-cover bg-center px-20 mt-12 items-center justify-center text-center">
             <section id="about" class="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-screen">
                 <div id="title" class="flex flex-col h-full p-12 items-center text-center space-y-12">
@@ -48,11 +48,11 @@
                     </div>
                     <div x-data="{ editing: false }" class="w-full relative">
                         <div x-show="!editing" class="relative flex flex-col items-center text-center">
-                            {{--
+                            
                                 <p class="text-gray-800 text-3xl animate__animated animate__slideInUp animate__slow"
                                     style="transform: rotate(-1deg); transform-origin: left;">
                                     {{ $content['about']['body'] }}
-                            </p> --}}
+                            </p>
 
                             <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank"
                                 rel="noopener noreferrer"
@@ -66,14 +66,14 @@
                                 </svg>
                             </a>
 
-                            {{-- @auth
+                            @auth
                                     <div class="absolute -top-4 -right-4">
                                         <button @click.prevent="editing=true"
                                             class="p-2 bg-white text-black rounded-full shadow hover:bg-gray-200 z-10">
                                             ✏️
                                         </button>
                                     </div>
-                                @endauth --}}
+                                @endauth
 
                         </div>
                     </div>
@@ -102,8 +102,8 @@
 
     <x-eshop />
 
-    <section class="w-full py-12">
-        <h2 class="text-6xl font-bold text-center mb-20 text-black">Odporúčanie</h2>
+    <section class="bg-white/60 backdrop-blur w-full py-12">
+        <h2 class="text-6xl font-bold text-center mb-20 text-black">Čo o knihe povedali</h2>
         <div class="grid grid-cols-1 md:grid-cols-1 gap-12 space-y-8 max-w-7xl mx-auto mb-6 mx-4 px-4 xl:px-64">
             @foreach ($reviews as $review)
             <x-review-card :review="$review" />

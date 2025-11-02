@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\File;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\StatsController;
 use App\Models\GalleryPhoto;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 Route::view('/', 'welcome');
 Route::view('about', 'about')->name('about');
@@ -16,6 +18,34 @@ Route::view('collab', 'collab')->name('collab');
 Route::view('more', 'more')->name('more');
 Route::get('stats', [StatsController::class, 'index'])->name('stats');
 Route::get('/stats/{type}', [StatsController::class, 'show'])->name('stats.show');
+
+
+Route::middleware('auth')->group(function () {
+
+    Route::post('/gallery-upload', function (Request $request) {
+        $request->validate([
+            'folder' => 'required|string',
+            'photo'  => 'required|image|max:5120',
+        ]);
+
+        $folder = trim($request->folder, '/');
+        $path = $request->file('photo')->store("public/{$folder}");
+        $relativePath = str_replace('public/', 'storage/', $path);
+
+        return response()->json(['path' => $relativePath]);
+    });
+
+    Route::delete('/gallery-delete', function (Request $request) {
+        $request->validate(['path' => 'required|string']);
+        $storagePath = str_replace('storage/', 'public/', $request->path);
+        if (Storage::exists($storagePath)) {
+            Storage::delete($storagePath);
+        }
+        return response()->noContent();
+    });
+
+});
+
 
 
 Route::get('/partners', function () {

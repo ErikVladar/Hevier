@@ -64,7 +64,5 @@
                 </div>
             </section>
         </x-foreground>
-        
-
     </div>
 </x-app-layout>

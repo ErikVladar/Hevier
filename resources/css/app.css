@@ -144,7 +144,6 @@
     height: 100%;
 }
 
-/* --- ANIMATIONS --- */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
@@ -249,4 +248,13 @@
         transform: translateX(100vw);
         opacity: 0;
     }
+}
+.slideshow-container {
+    display: flex;
+    width: 600vw;
+    height: 100%;
+}
+
+.slideshow-panel {
+    width: 100vw;
 }
