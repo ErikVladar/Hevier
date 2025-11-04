@@ -108,7 +108,7 @@
                 </a>
                 <a href="/partners/veolia" class="relative flex flex-col group" data-aos="zoom-in">
                     <img src="storage/imgs/vszp.png" alt="VSZP"
-                        class="w-24 object-cover transition-transform duration-300 group-hover:scale-105 mx-auto">
+                        class="w-20 object-cover transition-transform duration-300 group-hover:scale-105 mx-auto">
                 </a>
             </div>
         </div>
@@ -117,6 +117,6 @@
     <div
         class="border-t border-gray-700 mt-10 pt-4 px-6 flex flex-col md:flex-row justify-between items-center text-center text-xs text-gray-500">
         <p>© Copyright 2025</p>
-        <p class="mt-2 md:mt-0">Design by Erik Vladár</p>
+        <p class="mt-2 md:mt-0"></p>
     </div>
 </footer>

@@ -31,7 +31,7 @@
                     Pohyb v číslach
                 </h2>
 
-                {{-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     @foreach ($slides as $i => $group)
                         @php $first = $group[0] ?? null; @endphp
                         @if ($first)
@@ -40,9 +40,57 @@
                             </div>
                         @endif
                     @endforeach
-                </div> --}}
+                </div>
 
 
+                <div class="w-full py-16 px-6" data-aos="fade-up">
+                    <h2 class="text-4xl font-bold text-black mb-24 text-center">Ako ti
+                        pohyb pomáha</h2>
+
+                    <div class="max-w-4xl space-y-4 mx-auto">
+                        <div
+                            class="bg-gradient-to-r from-blue-100 to-blue-200 p-6 shadow-lg flex items-start gap-4 transform transition hover:scale-105 rounded-xl">
+                            <div class="text-4xl">😄</div>
+                            <div>
+                                <p class="font-semibold text-lg text-blue-700">Zlepšuje náladu</p>
+                                <p class="text-gray-700 mt-1">Krátka dávka pohybu denne zvyšuje produkciu endorfínov
+                                    a robí deň veselším.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-gradient-to-r from-green-100 to-green-200 p-6 shadow-lg flex items-start gap-4 transform transition hover:scale-105 rounded-xl">
+                            <div class="text-4xl">❤️</div>
+                            <div>
+                                <p class="font-semibold text-lg text-green-700">Silné srdce</p>
+                                <p class="text-gray-700 mt-1 text-lg">Pravidelný pohyb zlepšuje obeh a učí deti starať
+                                    sa o
+                                    svoje telo.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-gradient-to-r from-yellow-100 to-yellow-200 p-6 shadow-lg flex items-start gap-4 transform transition hover:scale-105 rounded-xl">
+                            <div class="text-4xl">⚡</div>
+                            <div>
+                                <p class="font-semibold text-lg text-yellow-700">Zvyšuje energiu</p>
+                                <p class="text-gray-700 mt-1 text-lg">Krátke cvičenie ráno naštartuje telo aj myseľ na
+                                    celý
+                                    deň.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-gradient-to-r from-red-100 to-red-200 p-6 shadow-lg flex items-start gap-4 transform transition hover:scale-105 rounded-xl">
+                            <div class="text-4xl">🧠</div>
+                            <div>
+                                <p class="font-semibold text-lg text-red-700">Zlepšuje sústredenie</p>
+                                <p class="text-gray-700 mt-1 text-lg">Pohyb podporuje koncentráciu a učenie sa v škole.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </section>

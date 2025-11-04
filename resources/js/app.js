@@ -12,7 +12,8 @@ const modules = import.meta.glob([
     "./stats/stats.js",
     "./partners/partners.js",
     "./gallery/gallery.js",
-    "./slideshow.js"
+    "./slideshow.js",
+    "./bio-gallery,js"
 ]);
 
 Object.values(modules).forEach(async (importModule) => {
