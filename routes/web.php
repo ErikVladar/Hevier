@@ -32,9 +32,11 @@ Route::get('/gallery-images', function (\Illuminate\Http\Request $request) {
     return response()->json($files);
 });
 
-Route::middleware('auth')->group(function () {
-    Route::post('/ambGallery/upload', [AmbGalleryController::class, 'upload'])->name('gallery.upload');
-    Route::delete('/ambGallery/delete', [AmbGalleryController::class, 'delete'])->name('gallery.delete');
+Route::middleware('auth')->group(function () { 
+
+    Route::get("ambGallery-upload", [AmbGalleryController::class, 'index']);
+    Route::post("ambGallery-upload", [AmbGalleryController::class, 'store'])->name('ambGallery.upload.store');
+    Route::post("ambGallery-delete", [AmbGalleryController::class, 'delete'])->name('ambGallery.delete');
 });
 
 Route::get('/partners', function () {

@@ -24,9 +24,19 @@
 
             @auth
                 <div class="absolute bottom-2 left-2 flex gap-2 z-20 bg-white/70 p-2 rounded-lg">
-                    <input type="file" x-ref="uploadFile" class="hidden" @change="upload($event)">
-                    <button @click="$refs.uploadFile.click()" class="px-3 py-1 bg-green-600 text-white rounded">Add</button>
-                    <button @click="deleteCurrent()" class="px-3 py-1 bg-red-600 text-white rounded">Delete</button>
+                    <form action="{{ route('ambGallery.upload.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div>
+                            <input style="display: none"  type="text" name="folder" class="form-control" value="{{ $img }}">
+                            <input type="file" name="image" class="form-control pb-2">
+                        </div>
+                        <div>
+                            <button type="submit" name="submit"
+                                class="px-3 py-1 bg-green-600 text-white rounded">Add</button>
+                            <button @click="deleteCurrent(images[currentIndex])"
+                                class="px-3 py-1 bg-red-600 text-white rounded">Delete</button>
+                        </div>
+                    </form>
                 </div>
             @endauth
         </div>
@@ -46,29 +56,50 @@
 
 <script>
     document.addEventListener('alpine:init', () => {
-        Alpine.data('gallery', (imgPath) => ({
-            images: [],
-            currentIndex: 0,
+                Alpine.data('gallery', (imgPath) => ({
+                        images: [],
+                        currentIndex: 0,
 
-            init() {
-                fetch(`/gallery-images?folder=${encodeURIComponent(imgPath)}`)
-                    .then(res => res.json())
-                    .then(data => {
-                        this.images = data;
-                        console.log('Gallery images:', this.images);
-                    })
-                    .catch(console.error);
-            },
-            next() {
-                if (!this.images.length) return;
-                this.currentIndex = (this.currentIndex + 1) % this.images.length;
-            },
+                        init() {
+                            fetch(`/gallery-images?folder=${encodeURIComponent(imgPath)}`)
+                                .then(res => res.json())
+                                .then(data => {
+                                    this.images = data;
+                                    console.log('Gallery images:', this.images);
+                                })
+                                .catch(console.error);
+                        },
+                        next() {
+                            if (!this.images.length) return;
+                            this.currentIndex = (this.currentIndex + 1) % this.images.length;
+                        },
 
-            prev() {
-                if (!this.images.length) return;
-                this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images
-                    .length;
-            }
-        }));
-    });
+                        prev() {
+                            if (!this.images.length) return;
+                            this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images
+                                .length;
+                        },
+                        deleteCurrent(path) {
+                            if (!path) return;
+                            fetch('/ambGallery-delete', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')
+                                            .content
+                                    },
+                                    body: JSON.stringify({
+                                        image: path
+                                    })
+                                })
+                                .then(res => res.json())
+                                .then(() => {
+                                    // Remove deleted image from local array
+                                    this.images.splice(this.currentIndex, 1);
+                                    if (this.currentIndex >= this.images.length) this.currentIndex = 0;
+                                })
+                                .catch(console.error);
+                        },
+                    ));
+                });
 </script>

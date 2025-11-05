@@ -1,29 +1,29 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
+
 
 class AmbGalleryController extends Controller
 {
-    public function upload(Request $request)
+    public function index(Request $request){
+        //
+    }
+
+    public function store(Request $request)
     {
         $request->validate([
-            'file' => 'required|image|max:5120', // max 5MB
+            'image' => 'required|image',
             'folder' => 'required|string'
         ]);
 
-        $folder = trim($request->folder, '/');
+        $imagePath = $request->image->store($request->folder, "public");
 
-        // Convert to relative storage path
-        $folder = str_replace('storage/', '', $folder);
+        dd($imagePath);
 
-        $path = $request->file('file')->store("public/{$folder}");
-
-        return response()->json([
-            'success' => true,
-            'path' => Storage::url($path)
-        ]);
     }
 
     public function delete(Request $request)
@@ -32,15 +32,29 @@ class AmbGalleryController extends Controller
             'image' => 'required|string'
         ]);
 
-        $image = str_replace('/storage/', 'public/', $request->image);
+        $imageUrl = $request->image;
 
-        if (Storage::exists($image)) {
-            Storage::delete($image);
+        // Extract only the path part (no domain)
+        $imagePath = parse_url($imageUrl, PHP_URL_PATH);
+
+        // Remove the public URL prefix "/storage/"
+        $relativePath = str_replace('/storage/', '', $imagePath);
+
+        // Log for sanity check
+        Log::info('Deleting image', [
+            'url' => $imageUrl,
+            'relativePath' => $relativePath,
+            'exists' => Storage::disk('public')->exists($relativePath),
+        ]);
+
+        if (Storage::disk('public')->exists($relativePath)) {
+            Storage::disk('public')->delete($relativePath);
             return response()->json(['success' => true]);
         }
 
-        return response()->json(['success' => false, 'message' => 'File not found'], 404);
+        return response()->json([
+            'success' => false,
+            'message' => 'File not found: ' . $relativePath
+        ], 404);
     }
 }
-
-
