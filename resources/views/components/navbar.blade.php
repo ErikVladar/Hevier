@@ -41,12 +41,12 @@
 
             if (open) {
                 menu.style.transform = 'translateX(0)';
-                toggle.classList.remove('text-white');
-                toggle.classList.add('text-black');
+                toggle.classList.remove('md:text-white');
+                toggle.classList.add('md:text-black');
             } else {
                 menu.style.transform = 'translateX(-100%)';
-                toggle.classList.remove('text-black');
-                toggle.classList.add('text-white');
+                toggle.classList.remove('md:text-black');
+                toggle.classList.add('md:text-white');
             }
         });
     });
