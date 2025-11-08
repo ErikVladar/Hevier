@@ -35,7 +35,9 @@
                     @foreach ($slides as $i => $group)
                         @php $first = $group[0] ?? null; @endphp
                         @if ($first)
-                            <div style="border:8px solid rgb(122, 122, 122)" class="cursor-pointer rounded-xl hover:scale-[1.025]" onclick="openModal({{ $i }})">
+                            <div style="border:8px solid rgb(122, 122, 122)"
+                                class="cursor-pointer rounded-xl hover:scale-[1.025]"
+                                onclick="openModal({{ $i }})">
                                 <img src="{{ $first }}" class="w-full h-full object-cover">
                             </div>
                         @endif
@@ -94,8 +96,8 @@
 
             </div>
         </section>
-        <script src="{{ Vite::asset('resources/js/slideshow.js') }}"></script>
-        <link rel="stylesheet" href="{{ Vite::asset('resources/css/slideshow.css') }}">
+        @vite('resources/css/slideshow.css')
+        @vite('resources/js/slideshow.js')
     </x-foreground>
 </x-app-layout>
 
