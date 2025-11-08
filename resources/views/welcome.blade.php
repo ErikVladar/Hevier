@@ -56,11 +56,15 @@
 
                             <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank"
                                 rel="noopener noreferrer"
-                                class="inline-flex mt-12 items-center justify-center bg-[#FF0000] rounded-[1.5rem] px-6 py-4 shadow-lg hover:scale-105 transition-transform">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-white" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path d="M8 17V7l10 5-10 5z" />
-                                </svg>
+                                class="animate__animated animate__pulse animate__infinite animate__slow
+                                        inline-flex mt-12 items-center justify-center 
+                                        text-black bg-gradient-to-br from-white to-gray-100 
+                                        hover:from-gray-200 hover:to-gray-400 hover:text-white
+                                        rounded-full w-24 h-24 
+                                        shadow-sm hover:shadow-lg
+                                        border border-gray-300 hover:border-gray-500
+                                        hover:scale-110 transition-all duration-300 ease-out active:scale-95">
+                                <span class="text-7xl leading-none font-[Noto_Music] drop-shadow-md">𝄞</span>
                             </a>
 
 
@@ -82,7 +86,7 @@
                     <div class="text-center space-y-4">
                         <div id="book-cover"
                             class="relative animate__animated animate__zoomIn animate__slow cursor-pointer transition-transform duration-150 hover:scale-105 inline-block">
-                            <img src="storage/imgs/TITULKA.jpg" alt="Book Cover"
+                            <img src="storage/imgs/front.jpg" alt="Book Cover"
                                 style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
 
                             <div
@@ -129,16 +133,24 @@
 <div id="book-modal"
     class="fixed inset-0 hidden justify-center items-center bg-black bg-opacity-70 z-50 transition-opacity duration-300">
 
+
+
+    <div
+        class="absolute top-12 right-12 inline-flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-gray-800 text-sm z-50 font-semibold shadow-md">
+        <span>Potiahnite roh pre otvorenie</span>
+        <img src="storage/imgs/cursor.png" alt="Cursor icon" class="absolute -top-7 -left-7 w-12 pointer-events-none" />
+    </div>
+
+
     <button id="close-book" class="absolute top-6 right-8 text-white text-4xl font-bold z-[60] hover:text-gray-300">
         ×
     </button>
 
-    <div id="flipbook" class="shadow-2xl" style="width:900px; height:650px;">
+    <div id="flipbook" class="shadow-2xl" >
 
         <div class="hard">
-            <img src="storage/imgs/TITULKA.jpg" class="w-full h-full object-cover" />
+            <img src="storage/imgs/front.jpg" class="w-full h-full object-cover" />
         </div>
-
         <div class="bg-gray-200 hard"></div>
 
         <div class="bg-white w-full h-full overflow-hidden text-gray-900">
@@ -202,6 +214,7 @@
                 <p class="text-right text-sm italic text-gray-600 mt-6">— Koniec ukážky —</p>
             </div>
         </div>
-        <div class="bg-gray-200 hard"></div>
+        <div class="bg-gray-200 hard">
+            <img src="storage/imgs/back.jpg" class="w-full h-full object-cover" /></div>
     </div>
 </div>

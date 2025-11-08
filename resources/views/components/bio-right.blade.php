@@ -3,7 +3,7 @@
 
     <div x-data="gallery('{{ $img }}')" x-init="init()"
         class="relative w-full md:w-1/3 bg-gray-200 flex flex-col items-center">
-        <div class="relative w-full h-3/5 mb-6 overflow-hidden">
+        <div class="relative w-full h-[70vh] mb-6 overflow-hidden">
             <template x-if="images.length">
                 <img :src="images[currentIndex]"
                     class="absolute inset-0 w-full h-full object-cover transition-all duration-300 z-0">

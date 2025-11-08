@@ -13,6 +13,7 @@ class TextExtend extends Component
      * Create a new component instance.
      */
     public function __construct(
+        public $color,
         public $title,
         public $description
     ) {

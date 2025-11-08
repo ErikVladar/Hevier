@@ -35,8 +35,8 @@
                     @foreach ($slides as $i => $group)
                         @php $first = $group[0] ?? null; @endphp
                         @if ($first)
-                            <div class="cursor-pointer" onclick="openModal({{ $i }})">
-                                <img src="{{ $first }}" class="w-full h-full object-cover rounded-lg">
+                            <div style="border:8px solid rgb(122, 122, 122)" class="cursor-pointer rounded-xl hover:scale-[1.025]" onclick="openModal({{ $i }})">
+                                <img src="{{ $first }}" class="w-full h-full object-cover">
                             </div>
                         @endif
                     @endforeach
@@ -44,7 +44,7 @@
 
 
                 <div class="w-full py-16 px-6" data-aos="fade-up">
-                    <h2 class="text-4xl font-bold text-black mb-24 text-center">Ako ti
+                    <h2 class="text-4xl font-bold text-black mb-12 text-center">Ako ti
                         pohyb pomáha</h2>
 
                     <div class="max-w-4xl space-y-4 mx-auto">
@@ -115,11 +115,11 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         window.openModal = function(i) {
-            document.getElementById(`modal-${i}`).classList.remove('hidden');
+            document.getElementById(`modal-${i}n`).classList.remove('hidden');
         }
 
         window.closeModal = function(i) {
-            document.getElementById(`modal-${i}`).classList.add('hidden');
+            document.getElementById(`modal-${i}n`).classList.add('hidden');
         }
     });
 </script>

@@ -139,10 +139,10 @@
     background-color: #ccc;
 }
 
-#flipbook > div {
+/* #flipbook > div {
     width: 100%;
     height: 100%;
-}
+} */
 
 .animate-on-scroll {
     opacity: 0;
@@ -173,7 +173,7 @@
 
 @font-face {
     font-family: "Franklin";
-    src: url("/Franklin/Franklin Gothic Heavy Regular.ttf") format("truetype");
+    src: url("/Franklin/FranklinGothicHeavyRegular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -218,7 +218,7 @@
 }
 
 .card {
-    position: sticky;
+    /* position: sticky; */
     top: 0;
 }
 

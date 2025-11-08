@@ -56,7 +56,7 @@
                                     <h2 class="antialiased text-4xl md:text-6xl p-4 text-black font-bold mb-8">Daniel
                                         Hevier
                                     </h2>
-                                    <p class="text-m md:text-2xl p-4 text-gray-800 leading-relaxed">
+                                    <p class="text-m md:text-2xl text-justify p-4 text-gray-800 leading-relaxed">
                                         Daniel Hevier je jeden z najvýznamnejších slovenských spisovateľov, známy
                                         predovšetkým
                                         svojou tvorbou pre deti a mládež. Počas svojej bohatej kariéry napísal desiatky
@@ -104,7 +104,7 @@
                                     class="w-full md:w-2/3 p-8 md:p-12 flex flex-col justify-center text-center md:text-left">
                                     <h2 class="text-4xl md:text-6xl p-4 text-black font-bold mb-8">Matej
                                         Tóth</h2>
-                                    <p class="text-m md:text-2xl p-4 text-gray-800 leading-relaxed">
+                                    <p class="text-m md:text-2xl p-4 text-justify text-gray-800 leading-relaxed">
                                         Matej Tóth je jeden z najvýznamnejších slovenských športovcov, špecialista na
                                         chôdzu na
                                         dlhé
@@ -132,7 +132,7 @@
                         class="animate__animated animate__backInUp animate__slow max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                         <div class="mt-6 content-center">
                             <h2 class="antialiased text-6xl font-bold mb-12">Prečo vznikla táto kniha?</h2>
-                            <p class="text-2xl text-black mb-12">
+                            <p class="text-2xl text-justify text-black mb-12">
                                 Spojením odbornosti O2 Športovej akadémie Mateja Tótha a tvorivého pera známeho
                                 spisovateľa
                                 Daniela Heviera vznikol pútavý a motivačný príbeh, ktorý hravou formou približuje deťom

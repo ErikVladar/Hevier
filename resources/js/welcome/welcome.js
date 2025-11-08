@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 $("#flipbook").turn({
-    width: 900,
+    width: 1040,
     height: 650,
     autoCenter: true,
 });
