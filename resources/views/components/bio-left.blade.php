@@ -11,16 +11,25 @@
     <div x-data="gallery('{{ $img }}')" x-init="init()"
         class="relative w-full md:w-1/3 bg-gray-200 flex flex-col items-center">
         <div class="relative w-full h-[70vh] mb-6 overflow-hidden">
-            <template x-if="images.length">
-                <img :src="images[currentIndex]"
-                    class="absolute inset-0 w-full h-full object-cover transition-all duration-300 z-0">
-            </template>
+            <template x-for="(image, index) in images" :key="index">
+                <img
+                  x-show="index === currentIndex"
+                  x-transition:enter="transition ease-out duration-500"
+                  x-transition:enter-start="opacity-0 scale-105"
+                  x-transition:enter-end="opacity-100 scale-100"
+                  x-transition:leave="transition ease-in duration-500"
+                  x-transition:leave-start="opacity-100 scale-100"
+                  x-transition:leave-end="opacity-0 scale-95"
+                  :src="image"
+                  class="absolute inset-0 w-full h-full object-cover z-0"
+                >
+              </template>              
 
             <button @click="prev" style="border:1px solid black"
-                class="absolute left-2 top-1/2 -translate-y-1/2 bg-gray-800/10 text-black p-2 rounded-full hover:bg-gray-800 hover:text-white z-10">‹</button>
+                class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/50 text-black p-2 rounded-full hover:bg-gray-800 hover:text-white z-10">‹</button>
 
             <button @click="next" style="border:1px solid black"
-                class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-800/10 text-black p-2 rounded-full hover:bg-gray-800 hover:text-white z-10">›</button>
+                class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/50 text-black p-2 rounded-full hover:bg-gray-800 hover:text-white z-10">›</button>
 
             @auth
                 <div class="absolute bottom-2 left-2 flex gap-2 z-20 bg-white/70 p-2 rounded-lg">
