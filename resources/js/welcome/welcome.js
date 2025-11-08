@@ -17,9 +17,23 @@ document.addEventListener("DOMContentLoaded", () => {
         .forEach((el) => observer.observe(el));
 });
 
+const ratio = 1040 / 650; // aspect ratio
+
+const maxWidth = window.innerWidth * 0.9;
+const maxHeight = window.innerHeight * 0.9;
+
+let width = maxWidth;
+let height = width / ratio;
+
+// if height would exceed 90vh, cap by height instead
+if (height > maxHeight) {
+    height = maxHeight;
+    width = height * ratio;
+}
+
 $("#flipbook").turn({
-    width: 1040,
-    height: 650,
+    width: width,
+    height: height,
     autoCenter: true,
 });
 

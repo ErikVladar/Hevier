@@ -150,7 +150,7 @@
                                                     class="absolute -top-2 -left-2 w-5 h-5 bg-yellow-500 rounded-full shadow-md border border-yellow-700 z-10">
                                                 </div> --}}
 
-                                                <img src=""
+                                                <img src="storage/imgs/Frenki.png"
                                                     alt="Frenki"
                                                     class="rounded-2xl max-w-sm object-cover" />
                                             </div>

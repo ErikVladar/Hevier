@@ -136,9 +136,8 @@
 
 
     <div
-        class="absolute top-12 right-12 inline-flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-gray-800 text-sm z-50 font-semibold shadow-md">
-        <span>Potiahnite roh pre otvorenie</span>
-        <img src="storage/imgs/cursor.png" alt="Cursor icon" class="absolute -top-7 -left-7 w-12 pointer-events-none" />
+        class="absolute top-16 right-0 inline-flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-gray-800 text-sm z-50 font-semibold shadow-md">
+        <span>Potiahnite roh pre listovanie</span>
     </div>
 
 
@@ -146,7 +145,7 @@
         ×
     </button>
 
-    <div id="flipbook" class="shadow-2xl" >
+    <div id="flipbook" class="shadow-2xl">
 
         <div class="hard">
             <img src="storage/imgs/front.jpg" class="w-full h-full object-cover" />
@@ -155,18 +154,18 @@
 
         <div class="bg-white w-full h-full overflow-hidden text-gray-900">
             <div class="p-10">
-                <h2 class="text-4xl font-bold text-center mb-6 text-blue-900">Úvod</h2>
+                <h2 class="text-md md:text-4xl font-bold text-center mb-6 text-blue-900">Úvod</h2>
                 <p class="text-lg leading-relaxed mb-4">
                     Vitaj, mladý strážca! Pred tebou sa otvára cesta, na ktorej objavíš, že
                     <span class="font-semibold text-green-700">pohyb je viac než len hra alebo šport</span>.
                     Je to energia, ktorá prebúdza tvoju silu, odvahu a radosť zo života.
                 </p>
-                <p class="text-lg leading-relaxed mb-4">
+                <p class="text-xs md:text-lg leading-relaxed mb-4">
                     Každý krok, každý skok a každý pád ťa učí niečo nové. V tejto knihe sa stretneš s priateľmi,
                     ktorí ti ukážu,
                     že aj malé víťazstvá majú veľký význam – ak sa na ne pozeráš s otvoreným srdcom.
                 </p>
-                <p class="text-lg leading-relaxed italic text-gray-700">
+                <p class="text-xs md:text-lg leading-relaxed italic text-gray-700">
                     Si pripravený pridať sa k Strážcom pohybu? Potom otoč stránku… dobrodružstvo sa začína.
                 </p>
             </div>
@@ -215,6 +214,7 @@
             </div>
         </div>
         <div class="bg-gray-200 hard">
-            <img src="storage/imgs/back.jpg" class="w-full h-full object-cover" /></div>
+            <img src="storage/imgs/back.jpg" class="w-full h-full object-cover" />
+        </div>
     </div>
 </div>
