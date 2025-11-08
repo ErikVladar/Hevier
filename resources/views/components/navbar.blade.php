@@ -1,6 +1,6 @@
 <div class="navbar fixed top-0 left-0 w-full flex items-center justify-between h-20 px-4 z-50">
     <button id="nav-menu-toggle"
-        class="fixed top-4 left-8 p-2 rounded-md text-white hover:text-gray-300 z-50 transition-colors duration-300">
+        class="fixed top-4 left-8 p-2 rounded-md text-black md:text-white hover:text-gray-300 z-50 transition-colors duration-300">
         <span class="sr-only">Open menu</span>
         <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
