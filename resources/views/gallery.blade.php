@@ -3,12 +3,20 @@
         <div x-show="isOpen" x-transition.opacity x-cloak @click.self="isOpen=false"
             class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 text-white">
 
-            <button @click="isOpen=false" class="absolute top-6 right-8 text-4xl hover:text-red-400">&times;</button>
+            <button @click="isOpen=false" class="absolute top-6 right-8 text-4xl hover:text-red-400 bg-black/40 md:bg-transparent rounded-full p-4 md:p-0 backdrop-blur-sm">&times;</button>
 
             <button @click="activeIndex = (activeIndex - 1 + {{ $images->count() }}) % {{ $images->count() }}"
-                class="absolute left-6 text-5xl font-bold hover:text-blue-400">&lt;</button>
+                class="absolute bottom-6 left-6 md:bottom-1/2 text-3xl md:text-5xl font-bold hover:text-blue-400 z-20
+           bg-black/40 md:bg-transparent rounded-full p-4 md:p-0 backdrop-blur-sm">
+                &lt;
+            </button>
+
             <button @click="activeIndex = (activeIndex + 1) % {{ $images->count() }}"
-                class="absolute right-6 text-5xl font-bold hover:text-blue-400">&gt;</button>
+                class="absolute bottom-6 right-6 md:bottom-1/2 text-3xl md:text-5xl font-bold hover:text-blue-400 z-20
+           bg-black/40 md:bg-transparent rounded-full p-4 md:p-0 backdrop-blur-sm">
+                &gt;
+            </button>
+
 
             <div class="relative flex flex-col md:flex-row items-center justify-center gap-8 w-full max-w-7xl px-6">
 
@@ -34,33 +42,35 @@
         <x-foreground>
             <section class="py-20">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-                    <h2 class="animate__animated animate__zoomIn animate__slow text-6xl font-bold text-center mb-12 text-black">
+
+                    <h2
+                        class="animate__animated animate__zoomIn animate__slow text-6xl font-bold text-center mb-12 text-black">
                         Galéria
                     </h2>
-        
-                    @if($images->count())
+
+                    @if ($images->count())
                         @php
                             $cover = $images->first();
                             $extraCount = $images->count() - 1;
                             $galleryName = 'Tvorcovia knihy';
                         @endphp
-        
+
                         <a href="#" @click.prevent="activeIndex=0; isOpen=true"
                             class="animate__animated animate__zoomIn animate__slow relative block w-full max-w-3xl mx-auto rounded-xl overflow-hidden cursor-pointer shadow-lg">
-        
+
                             <img src="{{ $cover->path }}" alt="{{ $cover->title }}"
                                 class="w-full h-96 object-cover transition-transform duration-300 hover:scale-105">
-        
-                            @if($extraCount > 0)
-                                <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center">
+
+                            @if ($extraCount > 0)
+                                <div
+                                    class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center">
                                     <span class="text-white text-2xl font-semibold mb-2">{{ $galleryName }}</span>
                                     <span class="text-white text-4xl font-bold">+{{ $extraCount }}</span>
                                 </div>
                             @endif
                         </a>
                     @endif
-        
+
                 </div>
             </section>
         </x-foreground>

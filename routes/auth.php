@@ -8,13 +8,11 @@ use Livewire\Volt\Volt;
 
 // Guest routes
 Route::middleware('guest')->group(function () {
-    // Volt pages (display forms)
     Volt::route('register', 'pages.auth.register')->name('register');
     Volt::route('login', 'pages.auth.login')->name('login');
     Volt::route('forgot-password', 'pages.auth.forgot-password')->name('password.request');
     Volt::route('reset-password/{token}', 'pages.auth.reset-password')->name('password.reset');
 
-    // Blade POST login handler
     Route::post('/login', function (Request $request) {
         $credentials = $request->validate([
             'email' => ['required', 'email'],
@@ -29,9 +27,8 @@ Route::middleware('guest')->group(function () {
 
         $request->session()->regenerate();
 
-        // Always redirect to welcome page
         return redirect('/'); 
-    })->name('login.post'); // separate name to avoid route name conflict
+    })->name('login.post');
 });
 
 // Authenticated routes

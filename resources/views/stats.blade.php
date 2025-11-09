@@ -33,10 +33,14 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     @foreach ($slides as $i => $group)
-                        @php $first = $group[0] ?? null; @endphp
+                        @php
+                            $first = $group[0] ?? null;
+                            $delay = (float) $i * 0.2;
+                        @endphp
+
                         @if ($first)
-                            <div style="border:8px solid rgb(122, 122, 122)"
-                                class="cursor-pointer rounded-xl hover:scale-[1.025]"
+                            <div style="border:8px solid rgb(122,122,122); animation-delay: {{ $delay }}s;"
+                                class="relative animate__animated animate__zoomIn animate__slow cursor-pointer rounded-xl transition-transform duration-300 hover:scale-105"
                                 onclick="openModal({{ $i }})">
                                 <img src="{{ $first }}" class="w-full h-full object-cover">
                             </div>
@@ -115,13 +119,28 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', () => {
+        const html = document.documentElement;
+        const body = document.body;
+
         window.openModal = function(i) {
-            document.getElementById(`modal-${i}n`).classList.remove('hidden');
-        }
+            const modal = document.getElementById(`modal-${i}n`);
+            if (!modal) return;
+
+            modal.classList.remove('hidden');
+
+            html.style.overflow = 'hidden';
+            body.style.overflow = 'hidden';
+        };
 
         window.closeModal = function(i) {
-            document.getElementById(`modal-${i}n`).classList.add('hidden');
-        }
+            const modal = document.getElementById(`modal-${i}n`);
+            if (!modal) return;
+
+            modal.classList.add('hidden');
+
+            html.style.overflow = '';
+            body.style.overflow = '';
+        };
     });
 </script>

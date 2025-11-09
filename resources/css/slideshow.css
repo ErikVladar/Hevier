@@ -5,22 +5,29 @@
     overflow-x: auto;
     overflow-y: hidden;
 }
-
-.slideshow-panel {
-    flex: 0 0 40vw;  
-    height: 90vh;
-    display: flex;
+  
+  .slideshow-panel {
+    display: inline-flex;         
+    flex: 0 0 auto;              
     align-items: center;
     justify-content: center;
-    scroll-snap-align: start;
-}
-
-.slideshow-panel img {
-    height: 90vh;     
-    width: auto;
-    object-fit: contain;
+    scroll-snap-align: center;
+    padding-inline: 2vw;              
+    width: auto;                  
+    height: auto;                   
+    box-sizing: border-box;
+  }
+  
+  .slideshow-panel img {
     display: block;
-}
+    width: auto;               
+    height: auto;
+    max-width: 90vw;                 
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 0.5rem;
+  }
+  
 
 
 .fullscreen-modal {
