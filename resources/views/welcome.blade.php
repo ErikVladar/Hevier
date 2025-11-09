@@ -132,12 +132,10 @@
 <div id="book-modal"
     class="fixed inset-0 hidden justify-center items-center bg-black bg-opacity-70 z-50 transition-opacity duration-300">
 
-
-
     <div
         class="absolute top-16 right-0 inline-flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-gray-800 text-sm z-50 font-semibold shadow-md">
         <img src="storage/imgs/cursor.png" alt="Cursor icon"
-        class="animate__animated animate__slideInRight animate__slower animate__infinite absolute -top-7 -left-20 w-12 pointer-events-none" />
+        class="animate__animated animate__pulse animate__slower animate__infinite absolute -top-7 -left-7 w-12 pointer-events-none" />
         <span>Potiahnite roh pre listovanie</span>
     </div>
 
@@ -219,3 +217,4 @@
         </div>
     </div>
 </div>
+

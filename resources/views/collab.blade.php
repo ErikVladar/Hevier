@@ -41,7 +41,7 @@
                             <div
                                 class="relative animate__animated animate__slideInLeft animate__slow max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row transition-transform duration-300">
 
-                                <div id="hevier-card" class="absolute top-4 right-4 z-20">
+                                {{-- <div id="hevier-card" class="absolute top-4 right-4 z-20">
                                     <div
                                         class="flex cursor-pointer hover:scale-[1.05]  items-center justify-center w-12 h-12 bg-black/70 rounded-full shadow-lg">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white"
@@ -49,7 +49,7 @@
                                             <path d="M8 5v14l11-7z" />
                                         </svg>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div
                                     class="w-full md:w-2/3 p-8 md:p-12 flex flex-col justify-center text-center md:text-left">

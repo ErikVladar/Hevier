@@ -3,7 +3,8 @@
         <div x-show="isOpen" x-transition.opacity x-cloak @click.self="isOpen=false"
             class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 text-white">
 
-            <button @click="isOpen=false" class="absolute top-6 right-8 text-4xl hover:text-red-400 bg-black/40 md:bg-transparent rounded-full p-4 md:p-0 backdrop-blur-sm">&times;</button>
+            <button @click="isOpen=false"
+                class="absolute top-6 right-8 text-4xl hover:text-red-400 bg-black/40 md:bg-transparent rounded-full p-4 md:p-0 backdrop-blur-sm">&times;</button>
 
             <button @click="activeIndex = (activeIndex - 1 + {{ $images->count() }}) % {{ $images->count() }}"
                 class="absolute bottom-6 left-6 md:bottom-1/2 text-3xl md:text-5xl font-bold hover:text-blue-400 z-20
@@ -48,7 +49,7 @@
                         Galéria
                     </h2>
 
-                    @if ($images->count())
+                    {{-- @if ($images->count())
                         @php
                             $cover = $images->first();
                             $extraCount = $images->count() - 1;
@@ -69,10 +70,62 @@
                                 </div>
                             @endif
                         </a>
-                    @endif
+                    @endif --}}
+{{-- 
+                    <div class="flex flex-col items-center justify-center min-h-screen px-4 space-y-6">
+                        <div class="w-full max-w-full overflow-hidden flex justify-between gap-4 flex-wrap z-30">
+
+                            <!-- Left iframe: hidden on mobile -->
+                            <iframe src="https://www.instagram.com/reel/DQuAjb7DZcR/embed" width="100%" height="340"
+                                frameborder="0" scrolling="no" allowtransparency="true"
+                                class="bg-transparent xl:flex-1 w-full rounded-md shadow-md"></iframe>
+
+                            <!-- Middle iframe: full width on mobile, one-third on md+ -->
+                            <iframe src="https://www.instagram.com/p/DQrW0c5jd67/embed" width="100%" height="475"
+                                frameborder="0" scrolling="no" allowtransparency="true"
+                                class="bg-transparent xl:flex-1 w-full rounded-md shadow-md"></iframe>
+
+                            <!-- Right iframe: hidden on mobile -->
+                            <iframe src="https://www.instagram.com/p/DQpDd95jexD/embed" width="100%" height="565"
+                                frameborder="0" scrolling="no" allowtransparency="true"
+                                class="bg-transparent xl:flex-1 w-full rounded-md shadow-md"></iframe>
+
+                        </div>
+                    </div> --}}
+
+                    <div class="flex flex-col items-center justify-center space-y-6 max-w-2xl mx-auto px-4">
+
+                        <div class="w-full" style="aspect-ratio: 340/340;"> 
+                            <iframe src="https://www.instagram.com/reel/DQuAjb7DZcR/embed"
+                                class="w-full h-full rounded-md shadow-md"
+                                frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                        </div>
+                    
+                        <div class="w-full" style="aspect-ratio: 100/140;">
+                            <iframe src="https://www.instagram.com/p/DQrW0c5jd67/embed"
+                                class="w-full h-full rounded-md shadow-md"
+                                frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                        </div>
+                    
+                        <div class="w-full" style="aspect-ratio: 100/165;">
+                            <iframe src="https://www.instagram.com/p/DQpDd95jexD/embed"
+                                class="w-full h-full rounded-md shadow-md"
+                                frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                        </div>   
+                    </div>
+                    
 
                 </div>
             </section>
         </x-foreground>
     </div>
 </x-app-layout>
+
+<script async src="//www.instagram.com/embed.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.instgrm) {
+            window.instgrm.Embeds.process();
+        }
+    });
+</script>
