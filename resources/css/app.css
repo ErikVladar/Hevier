@@ -261,7 +261,4 @@
     width: 100vw;
 }
 
-.cursor-glow:hover {
-    cursor: url('/icons/cursor-glow.png'), pointer;
-  }
   
