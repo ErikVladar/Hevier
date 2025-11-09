@@ -39,7 +39,7 @@
             <ul class="space-y-3">
 
                 <li>
-                    <a href="https://www.facebook.com/akademiamatejatotha/" target="_blank" rel="noopener noreferrer"
+                    <a href="https://www.facebook.com/share/1Yhp9WJ7XN/" target="_blank" rel="noopener noreferrer"
                         class="group flex items-center gap-2 transition text-gray-700 hover:text-blue-500">
                         <svg class="w-8 h-8 text-gray-400 transition group-hover:text-blue-500" fill="currentColor"
                             viewBox="0 0 24 24">
@@ -53,7 +53,7 @@
                 </li>
 
                 <li>
-                    <a href="https://www.instagram.com/sportovaakademiamatejatotha?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    <a href="https://www.instagram.com/strazcoviapohybu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                         target="_blank" rel="noopener noreferrer"
                         class="group flex items-center gap-2 transition text-gray-700 hover:text-pink-500">
                         <svg class="w-8 h-8 text-gray-400 transition group-hover:text-pink-500" fill="currentColor"
@@ -68,7 +68,7 @@
                 </li>
 
                 <li>
-                    <a href="https://www.youtube.com/@akademiamatejatotha3227" target="_blank" rel="noopener noreferrer"
+                    <a href="https://youtube.com/@strazcoviapohybu?si=zS3xwfofZIPZ3-pD" target="_blank" rel="noopener noreferrer"
                         class="group flex items-center gap-2 transition text-gray-700 hover:text-red-600">
                         <svg class="w-8 h-8 text-gray-400 transition group-hover:text-red-600" fill="currentColor"
                             viewBox="0 0 24 24">
@@ -82,7 +82,7 @@
                 </li>
 
                 <li>
-                    <a href="https://www.tiktok.com/@sportov.akadmia.mt" target="_blank" rel="noopener noreferrer"
+                    <a href="https://www.tiktok.com/@strazcoviapohybu?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer"
                         class="group flex items-center gap-2 transition text-gray-700 hover:text-black">
                         <svg class="w-8 h-8 text-gray-400 transition group-hover:text-black"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"

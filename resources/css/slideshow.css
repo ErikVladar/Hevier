@@ -1,7 +1,7 @@
 .slideshow-container {
     display: flex;
     height: 100%;
-    width: 600vw;
+    padding-bottom: 10vh;
 }
   
   .slideshow-panel {
@@ -19,7 +19,7 @@
     display: block;
     width: auto;               
     height: auto;
-    max-width: 90vw;                 
+    max-width: 80vw;                 
     max-height: 90vh;
     object-fit: contain;
     border-radius: 0.5rem;
@@ -31,11 +31,11 @@
     position: fixed;
     inset: 0;
     width: 100vw;
-    height: 100vh;          
+    height: 110vh;          
     z-index: 9999;
     background-color: rgba(0,0,0);
     align-items: center;
     justify-content: flex-start;
-    overflow-x: hidden;
+    overflow-x: scroll;
     overflow-y: hidden;
 }

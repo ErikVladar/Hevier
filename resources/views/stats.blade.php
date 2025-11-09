@@ -110,7 +110,23 @@
         <button class="fixed top-4 right-4 text-white text-3xl z-50"
             onclick="closeModal({{ $i }})">&times;</button>
 
+        <button id="scrollL"
+            class="fixed text-white left-3 bottom-1/2 text-3xl md:text-5xl font-bold hover:text-blue-400 z-50
+       bg-black/40 md:bg-transparent rounded-full p-4 md:p-0 backdrop-blur-sm"
+            onclick="scrollL({{ $i }})">
+            &lt;
+        </button>
+
+        <button id="scrollR"
+            class="fixed text-white right-3 bottom-1/2 text-3xl md:text-5xl font-bold hover:text-blue-400 z-50
+       bg-black/40 md:bg-transparent rounded-full p-4 md:p-0 backdrop-blur-sm"
+            onclick="scrollR({{ $i }})">
+            &gt;
+        </button>
+
+        <div class="relative pt-10">
             <x-slide-show :urls="$group" :slideCount="count($group)" />
+        </div>
     </div>
 @endforeach
 
@@ -142,6 +158,28 @@
             body.style.overflow = '';
 
 
+        };
+
+        window.scrollR = function(i) {
+            const modal = document.getElementById(`modal-${i}n`);
+            if (!modal) return;
+
+            modal.scrollBy({
+                left: window.innerWidth,
+                behavior: 'smooth'
+            });
+
+
+        };
+
+        window.scrollL = function(i) {
+            const modal = document.getElementById(`modal-${i}n`);
+            if (!modal) return;
+
+            modal.scrollBy({
+                left: -window.innerWidth,
+                behavior: 'smooth'
+            });
         };
     });
 </script>

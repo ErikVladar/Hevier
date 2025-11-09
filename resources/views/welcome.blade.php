@@ -16,11 +16,11 @@
                                 </div>
                             @endauth
 
-                            <h1 class="font-[Franklin] antialiased text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInLeft animate__slow"
+                            <h1 class="font-[Franklin] antialiased text-black text-6xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl mb-2 animate__animated animate__slideInLeft animate__slow"
                                 style="transform: rotate(-2deg); transform-origin: left;">
                                 {{ $content['about']['title_1'] }}
                             </h1>
-                            <h1 class="font-[Franklin] antialiased text-black text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl mb-2 animate__animated animate__slideInRight animate__slow"
+                            <h1 class="font-[Franklin] antialiased text-black text-6xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl mb-2 animate__animated animate__slideInRight animate__slow"
                                 style="transform: rotate(-2deg); transform-origin: right;">
                                 {{ $content['about']['title_2'] }}
                             </h1>
@@ -54,7 +54,7 @@
                                 {{ $content['about']['body'] }}
                             </p>
 
-                            <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank"
+                            <a href="https://youtube.com/@strazcoviapohybu?si=zS3xwfofZIPZ3-pD" target="_blank"
                                 rel="noopener noreferrer"
                                 class="animate__animated animate__pulse animate__infinite animate__slow
                                         inline-flex mt-12 items-center justify-center 
@@ -86,7 +86,8 @@
                     <div class="text-center space-y-4">
                         <div id="book-cover"
                             class="relative animate__animated animate__zoomIn animate__slow cursor-pointer inline-block">
-                            <img src="storage/imgs/front.jpg" alt="Book Cover" class="transition-transform duration-150 hover:scale-105"
+                            <img src="storage/imgs/front.jpg" alt="Book Cover"
+                                class="transition-transform duration-150 hover:scale-105"
                                 style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
                             <div
                                 class="absolute -bottom-12 -right-12 inline-flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-gray-800 text-lg font-semibold shadow-md">
@@ -132,15 +133,22 @@
 <div id="book-modal"
     class="fixed inset-0 hidden justify-center items-center bg-black bg-opacity-70 z-50 transition-opacity duration-300">
 
-    <div
-        class="absolute top-16 right-0 inline-flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-gray-800 text-sm z-50 font-semibold shadow-md">
+    <div x-data="{ visible: true }" x-show="visible" @click="visible = false"
+        class="absolute top-16 right-0 inline-flex items-center gap-2 bg-white/90 backdrop-blur px-6 py-3
+           rounded-full text-gray-800 text-xs md:text-sm z-50 font-semibold shadow-md cursor-pointer
+           transition-opacity duration-500"
+        x-transition.opacity style="pointer-events: auto;">
+
         <img src="storage/imgs/cursor.png" alt="Cursor icon"
-        class="animate__animated animate__pulse animate__slower animate__infinite absolute -top-7 -left-7 w-12 pointer-events-none" />
-        <span>Potiahnite roh pre listovanie</span>
+            class="hidden md:block animate__animated animate__slideInRight animate__slower animate__infinite 
+                absolute -top-7 -left-14 w-12" />
+
+        <span class="text-xs md:text-sm select-none">Potiahnite roh pre listovanie</span>
     </div>
 
 
-    <button id="close-book" class="absolute top-6 right-8 text-white text-4xl font-bold z-[60] hover:text-gray-300">
+    <button id="close-book"
+        class="absolute top-6 right-8 text-white text-3xl md:text-4xl font-bold z-[60] hover:text-gray-300">
         ×
     </button>
 
@@ -151,70 +159,69 @@
         </div>
         <div class="bg-gray-200 hard"></div>
 
+        <!-- Page 1 -->
         <div class="bg-white w-full h-full overflow-hidden text-gray-900">
-            <div class="p-10">
-                <h2 class="text-md md:text-4xl font-bold text-center mb-6 text-blue-900">Úvod</h2>
-                <p class="text-lg leading-relaxed mb-4">
+            <div class="p-6 md:p-10">
+                <h2 class="text-lg md:text-4xl font-bold text-center mb-4 md:mb-6 text-blue-900">Úvod</h2>
+                <p class="text-xs md:text-lg leading-relaxed mb-2 md:mb-4">
                     Vitaj, mladý strážca! Pred tebou sa otvára cesta, na ktorej objavíš, že
                     <span class="font-semibold text-green-700">pohyb je viac než len hra alebo šport</span>.
                     Je to energia, ktorá prebúdza tvoju silu, odvahu a radosť zo života.
                 </p>
-                <p class="text-xs md:text-lg leading-relaxed mb-4">
+                <p class="text-[10px] md:text-lg leading-relaxed mb-2 md:mb-4">
                     Každý krok, každý skok a každý pád ťa učí niečo nové. V tejto knihe sa stretneš s priateľmi,
-                    ktorí ti ukážu,
-                    že aj malé víťazstvá majú veľký význam – ak sa na ne pozeráš s otvoreným srdcom.
+                    ktorí ti ukážu, že aj malé víťazstvá majú veľký význam – ak sa na ne pozeráš s otvoreným srdcom.
                 </p>
-                <p class="text-xs md:text-lg leading-relaxed italic text-gray-700">
+                <p class="text-[10px] md:text-lg leading-relaxed italic text-gray-700">
                     Si pripravený pridať sa k Strážcom pohybu? Potom otoč stránku… dobrodružstvo sa začína.
                 </p>
             </div>
         </div>
 
+        <!-- Page 2 -->
         <div class="bg-blue-50 w-full h-full overflow-hidden text-gray-900">
-            <div class="p-10">
-                <h2 class="text-3xl font-bold mb-4 text-blue-800">Kapitola 1: Volanie lesa</h2>
-                <p class="text-lg leading-relaxed mb-4">
-                    Slnečné lúče sa predierali cez koruny stromov. Eliáš stál na začiatku úzkej lesnej cesty a v
-                    ruke
+            <div class="p-6 md:p-10">
+                <h2 class="text-lg md:text-3xl font-bold mb-2 md:mb-4 text-blue-800">Kapitola 1: Volanie lesa</h2>
+                <p class="text-[10px] md:text-lg leading-relaxed mb-2 md:mb-4">
+                    Slnečné lúče sa predierali cez koruny stromov. Eliáš stál na začiatku úzkej lesnej cesty a v ruke
                     držal starú mapu.
                     Na jej okraji bolo napísané:
                     <span class="italic text-green-700">„Kto sa hýbe, nájde, čo hľadá.“</span>
                 </p>
-                <p class="text-lg leading-relaxed mb-4">
-                    Zhlboka sa nadýchol a vykročil. Každý krok v lese znel ako šepot – akoby ho stromy vítali späť.
-                    Po chvíli uvidel medzi papradím niečo zvláštne – malé svetielko, ktoré sa hýbalo ako živé.
+                <p class="text-[10px] md:text-lg leading-relaxed mb-2 md:mb-4">
+                    Zhlboka sa nadýchol a vykročil. Každý krok v lese znel ako šepot – akoby ho stromy vítali späť. Po
+                    chvíli uvidel medzi papradím malé svetielko, ktoré sa hýbalo ako živé.
                 </p>
-                <p class="text-lg leading-relaxed">
+                <p class="text-[10px] md:text-lg leading-relaxed">
                     „Poď za mnou,“ ozvalo sa tichým hlasom. Eliáš sa usmial. Dobrodružstvo sa práve začalo.
                 </p>
-                <p class="text-right text-sm italic text-gray-600 mt-6">Pokračovanie na ďalšej strane →</p>
+                <p class="text-right text-[10px] md:text-sm italic text-gray-600 mt-4 md:mt-6">Pokračovanie na ďalšej
+                    strane →</p>
             </div>
         </div>
 
+        <!-- Page 3 -->
         <div class="bg-green-50 w-full h-full overflow-hidden text-gray-900">
-            <div class="p-10">
-                <h2 class="text-3xl font-bold mb-4 text-green-800">Kapitola 1: Strážca lúky</h2>
-                <p class="text-lg leading-relaxed mb-4">
-                    Svetielko ho priviedlo na lúku plnú motýľov. Uprostred stál starý dub a pri ňom sedela dievčina
-                    s
-                    prútenou paličkou.
-                    Keď ho zbadala, usmiala sa: „Volám sa Mira. Strážim pohyb – aby nezmizol zo sveta.“
+            <div class="p-6 md:p-10">
+                <h2 class="text-lg md:text-3xl font-bold mb-2 md:mb-4 text-green-800">Kapitola 1: Strážca lúky</h2>
+                <p class="text-[10px] md:text-lg leading-relaxed mb-2 md:mb-4">
+                    Svetielko ho priviedlo na lúku plnú motýľov. Uprostred stál starý dub a pri ňom sedela dievčina s
+                    prútenou paličkou. Keď ho zbadala, usmiala sa: „Volám sa Mira. Strážim pohyb – aby nezmizol zo
+                    sveta.“
                 </p>
-                <p class="text-lg leading-relaxed mb-4">
-                    Eliáš nechápal. „Ako môže pohyb zmiznúť?“
-                    Mira sa postavila a spravila krok vpred. Zem pod nimi sa zablysla – a na okamih všetko ožilo:
-                    vietor, tráva, dokonca aj kamene.
+                <p class="text-[10px] md:text-lg leading-relaxed mb-2 md:mb-4">
+                    Eliáš nechápal. „Ako môže pohyb zmiznúť?“ Mira sa postavila a spravila krok vpred. Zem pod nimi sa
+                    zablysla – a na okamih všetko ožilo: vietor, tráva, dokonca aj kamene.
                 </p>
-                <p class="text-lg leading-relaxed">
-                    „Pretože ľudia zabúdajú hýbať sa srdcom,“ odpovedala.
-                    „A práve preto si tu ty. Nauč ich to znova.“
+                <p class="text-[10px] md:text-lg leading-relaxed">
+                    „Pretože ľudia zabúdajú hýbať sa srdcom,“ odpovedala. „A práve preto si tu ty. Nauč ich to znova.“
                 </p>
-                <p class="text-right text-sm italic text-gray-600 mt-6">— Koniec ukážky —</p>
+                <p class="text-right text-[10px] md:text-sm italic text-gray-600 mt-4 md:mt-6">— Koniec ukážky —</p>
             </div>
         </div>
+
         <div class="bg-gray-200 hard">
             <img src="storage/imgs/back.jpg" class="w-full h-full object-cover" />
         </div>
     </div>
 </div>
-
