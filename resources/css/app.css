@@ -253,7 +253,6 @@
 }
 .slideshow-container {
     display: flex;
-    width: 600vw;
     height: 100%;
 }
 

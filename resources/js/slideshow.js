@@ -7,6 +7,7 @@ if (gsap) {
 gsap.registerPlugin(ScrollTrigger);
 
 let horizontalSections = gsap.utils.toArray(".slideshow-container");
+console.log(horizontalSections);
 horizontalSections.forEach((container) => {
     let sections = container.querySelectorAll(".slideshow-panel");
     console.log(sections);
@@ -15,7 +16,8 @@ horizontalSections.forEach((container) => {
         scrollTrigger: {
             trigger: horizontalSections,
             scrub: 1,
-            // base vertical scrolling on how wide the container is so it feels more natural.
         },
     });
 });
+
+// gsap.to(".slideshow-container", {x:-6000})
