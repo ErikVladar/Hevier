@@ -131,7 +131,7 @@
 </x-app-layout>
 
 <div id="book-modal"
-    class="fixed inset-0 hidden justify-center items-center bg-black bg-opacity-70 z-50 transition-opacity duration-300">
+    class="fixed inset-0 hidden justify-center items-center bg-black z-50 transition-opacity duration-300">
 
     <div x-data="{ visible: true }" x-show="visible" @click="visible = false"
         class="absolute top-16 right-0 inline-flex items-center gap-2 bg-white/90 backdrop-blur px-6 py-3

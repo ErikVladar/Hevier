@@ -124,7 +124,7 @@
             &gt;
         </button>
 
-        <div class="relative pt-10">
+        <div class="flex h-full">
             <x-slide-show :urls="$group" :slideCount="count($group)" />
         </div>
     </div>
@@ -183,44 +183,3 @@
         };
     });
 </script>
-
-{{-- <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const html = document.documentElement;
-        const body = document.body;
-
-        window.openModal = function(i) {
-            const modal = document.getElementById(`modal-${i}n`);
-            if (!modal) return;
-
-            modal.classList.remove('hidden');
-            html.style.overflow = 'hidden';
-            body.style.overflow = 'hidden';
-
-            const slideshow = modal.querySelector('.slideshow-container') || modal;
-            if (!slideshow) return;
-
-            slideshow.addEventListener('wheel', horizontalScrollHandler, {
-                passive: false
-            });
-        };
-
-        window.closeModal = function(i) {
-            const modal = document.getElementById(`modal-${i}n`);
-            if (!modal) return;
-
-            modal.classList.add('hidden');
-            html.style.overflow = '';
-            body.style.overflow = '';
-
-            const slideshow = modal.querySelector('.slideshow-container') || modal;
-            if (slideshow)
-                slideshow.removeEventListener('wheel', horizontalScrollHandler);
-        };
-
-        function horizontalScrollHandler(e) {
-            e.preventDefault();
-            this.scrollLeft += e.deltaY;
-        }
-    });
-</script> --}}
