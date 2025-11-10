@@ -150,8 +150,7 @@
                                                     class="absolute -top-2 -left-2 w-5 h-5 bg-yellow-500 rounded-full shadow-md border border-yellow-700 z-10">
                                                 </div> --}}
 
-                                                <img src="storage/imgs/Frenki.png"
-                                                    alt="Frenki"
+                                                <img src="storage/imgs/Frenki.png" alt="Frenki"
                                                     class="rounded-2xl max-w-sm object-cover" />
                                             </div>
                                         </div>
@@ -159,16 +158,17 @@
                                     </div>
 
 
-                                    <div class="flex flex-col-reverse md:flex-row gap-8 p-4 items-center ">
+                                    <div class="flex flex-col-reverse md:flex-row gap-8 p-6 items-center ">
 
-                                        
+
                                         <div
                                             class="animate__animated animate__slideInRight animate__slow flex items-center justify-center transform -rotate-2">
-                                            <div class="relative inline-block">
+                                            <div class="relative w-full inline-block">
 
                                                 <img src="storage/imgs/artwork_o.png"
                                                     alt="Ilustrácia: Strážcovia pohybu — kniha a deti v pohybe"
-                                                    class="rounded-2xl w-64 md:max-w-sm object-cover" />
+                                                    class="rounded-2xl w-screen object-cover" />
+
                                             </div>
                                         </div>
                                         <div
