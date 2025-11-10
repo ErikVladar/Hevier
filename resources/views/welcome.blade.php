@@ -3,7 +3,7 @@
         class="bg-white/60 backdrop-blur relative w-full min-h-screen grid grid-cols-1 md:grid-cols-1 gap-10 items-center justify-center text-center rounded-t-3xl">
         <div class="w-full relative bg-cover bg-center px-20 mt-12 items-center justify-center text-center">
             <section id="about" class="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-screen">
-                <div id="title" class="flex flex-col h-full p-12 items-center text-center space-y-12">
+                <div id="title" class="flex flex-col h-full pt-12 md:p-12 items-center text-center space-y-12">
 
                     <div x-data="{ editing: false }" class="w-full relative mb-6">
                         <div x-show="!editing" class="relative flex flex-col items-center justify-center">
@@ -49,8 +49,7 @@
                     <div x-data="{ editing: false }" class="w-full relative">
                         <div x-show="!editing" class="relative flex flex-col items-center text-center">
 
-                            <p class="text-gray-800 text-3xl animate__animated animate__slideInUp animate__slow"
-                                style="transform: rotate(-1deg); transform-origin: left;">
+                            <p class="text-gray-800 text-3xl animate__animated animate__slideInUp animate__slow">
                                 {{ $content['about']['body'] }}
                             </p>
 
@@ -140,10 +139,10 @@
         x-transition.opacity style="pointer-events: auto;">
 
         <img src="storage/imgs/cursor.png" alt="Cursor icon"
-            class="hidden md:block animate__animated animate__slideInRight animate__slower animate__infinite 
-                absolute -top-7 -left-14 w-12" />
+            class="hidden md:block animate__animated animate__pulse animate__slow animate__infinite 
+                absolute -top-7 -left-7 w-12" />
 
-        <span class="text-xs md:text-sm select-none">Potiahnite roh pre listovanie</span>
+        <span class="text-xs md:text-sm select-none">Kliknite roh pre listovanie</span>
     </div>
 
 
