@@ -159,17 +159,12 @@
                                     </div>
 
 
-                                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
+                                    <div class="flex flex-col-reverse md:flex-row gap-8 items-center ">
 
+                                        
                                         <div
                                             class="animate__animated animate__slideInRight animate__slow flex items-center justify-center transform -rotate-2">
                                             <div class="relative inline-block">
-                                                {{-- <div
-                                                    class="absolute -top-2 -right-2 w-5 h-5 bg-yellow-500 rounded-full shadow-md border border-yellow-700 z-10">
-                                                </div>
-                                                <div
-                                                    class="absolute -top-2 -left-2 w-5 h-5 bg-yellow-500 rounded-full shadow-md border border-yellow-700 z-10">
-                                                </div> --}}
 
                                                 <img src="storage/imgs/artwork_o.png"
                                                     alt="Ilustrácia: Strážcovia pohybu — kniha a deti v pohybe"
