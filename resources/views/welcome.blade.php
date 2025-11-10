@@ -163,16 +163,16 @@
         <div class="bg-white w-full h-full overflow-hidden text-gray-900">
             <div class="p-6 md:p-10">
                 <h2 class="text-md md:text-4xl font-bold text-center mb-4 md:mb-6 text-blue-900">Úvod</h2>
-                <p class="text-xs md:text-lg leading-relaxed mb-2 md:mb-4">
+                <p class="text-[6px] md:text-lg leading-relaxed mb-2 md:mb-4">
                     Vitaj, mladý strážca! Pred tebou sa otvára cesta, na ktorej objavíš, že
                     <span class="font-semibold text-green-700">pohyb je viac než len hra alebo šport</span>.
                     Je to energia, ktorá prebúdza tvoju silu, odvahu a radosť zo života.
                 </p>
-                <p class="text-[8px] md:text-lg leading-relaxed mb-2 md:mb-4">
+                <p class="text-[6px] md:text-lg leading-relaxed mb-2 md:mb-4">
                     Každý krok, každý skok a každý pád ťa učí niečo nové. V tejto knihe sa stretneš s priateľmi,
                     ktorí ti ukážu, že aj malé víťazstvá majú veľký význam – ak sa na ne pozeráš s otvoreným srdcom.
                 </p>
-                <p class="text-[8px] md:text-lg leading-relaxed italic text-gray-700">
+                <p class="text-[6px] md:text-lg leading-relaxed italic text-gray-700">
                     Si pripravený pridať sa k Strážcom pohybu? Potom otoč stránku… dobrodružstvo sa začína.
                 </p>
             </div>
@@ -182,17 +182,17 @@
         <div class="bg-blue-50 w-full h-full overflow-hidden text-gray-900">
             <div class="p-6 md:p-10">
                 <h2 class="text-md md:text-3xl font-bold mb-2 md:mb-4 text-blue-800">Kapitola 1: Volanie lesa</h2>
-                <p class="text-[8px] md:text-lg leading-relaxed mb-2 md:mb-4">
+                <p class="text-[6px] md:text-lg leading-relaxed mb-2 md:mb-4">
                     Slnečné lúče sa predierali cez koruny stromov. Eliáš stál na začiatku úzkej lesnej cesty a v ruke
                     držal starú mapu.
                     Na jej okraji bolo napísané:
                     <span class="italic text-green-700">„Kto sa hýbe, nájde, čo hľadá.“</span>
                 </p>
-                <p class="text-[8px] md:text-lg leading-relaxed mb-2 md:mb-4">
+                <p class="text-[6px] md:text-lg leading-relaxed mb-2 md:mb-4">
                     Zhlboka sa nadýchol a vykročil. Každý krok v lese znel ako šepot – akoby ho stromy vítali späť. Po
                     chvíli uvidel medzi papradím malé svetielko, ktoré sa hýbalo ako živé.
                 </p>
-                <p class="text-[8px] md:text-lg leading-relaxed">
+                <p class="text-[6px] md:text-lg leading-relaxed">
                     „Poď za mnou,“ ozvalo sa tichým hlasom. Eliáš sa usmial. Dobrodružstvo sa práve začalo.
                 </p>
                 <p class="text-right text-[8px] md:text-sm italic text-gray-600 mt-4 md:mt-6">Pokračovanie na ďalšej
@@ -204,16 +204,16 @@
         <div class="bg-green-50 w-full h-full overflow-hidden text-gray-900">
             <div class="p-6 md:p-10">
                 <h2 class="text-md md:text-3xl font-bold mb-2 md:mb-4 text-green-800">Kapitola 1: Strážca lúky</h2>
-                <p class="text-[8px] md:text-lg leading-relaxed mb-2 md:mb-4">
+                <p class="text-[6px] md:text-lg leading-relaxed mb-2 md:mb-4">
                     Svetielko ho priviedlo na lúku plnú motýľov. Uprostred stál starý dub a pri ňom sedela dievčina s
                     prútenou paličkou. Keď ho zbadala, usmiala sa: „Volám sa Mira. Strážim pohyb – aby nezmizol zo
                     sveta.“
                 </p>
-                <p class="text-[8px] md:text-lg leading-relaxed mb-2 md:mb-4">
+                <p class="text-[6px] md:text-lg leading-relaxed mb-2 md:mb-4">
                     Eliáš nechápal. „Ako môže pohyb zmiznúť?“ Mira sa postavila a spravila krok vpred. Zem pod nimi sa
                     zablysla – a na okamih všetko ožilo: vietor, tráva, dokonca aj kamene.
                 </p>
-                <p class="text-[8px] md:text-lg leading-relaxed">
+                <p class="text-[6px] md:text-lg leading-relaxed">
                     „Pretože ľudia zabúdajú hýbať sa srdcom,“ odpovedala. „A práve preto si tu ty. Nauč ich to znova.“
                 </p>
                 <p class="text-right text-[10px] md:text-sm italic text-gray-600 mt-4 md:mt-6">— Koniec ukážky —</p>
