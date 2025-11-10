@@ -162,7 +162,7 @@
         <!-- Page 1 -->
         <div class="bg-white w-full h-full overflow-hidden text-gray-900">
             <div class="p-6 md:p-10">
-                <h2 class="text-lg md:text-4xl font-bold text-center mb-4 md:mb-6 text-blue-900">Úvod</h2>
+                <h2 class="text-md md:text-4xl font-bold text-center mb-4 md:mb-6 text-blue-900">Úvod</h2>
                 <p class="text-xs md:text-lg leading-relaxed mb-2 md:mb-4">
                     Vitaj, mladý strážca! Pred tebou sa otvára cesta, na ktorej objavíš, že
                     <span class="font-semibold text-green-700">pohyb je viac než len hra alebo šport</span>.
@@ -181,7 +181,7 @@
         <!-- Page 2 -->
         <div class="bg-blue-50 w-full h-full overflow-hidden text-gray-900">
             <div class="p-6 md:p-10">
-                <h2 class="text-lg md:text-3xl font-bold mb-2 md:mb-4 text-blue-800">Kapitola 1: Volanie lesa</h2>
+                <h2 class="text-md md:text-3xl font-bold mb-2 md:mb-4 text-blue-800">Kapitola 1: Volanie lesa</h2>
                 <p class="text-[8px] md:text-lg leading-relaxed mb-2 md:mb-4">
                     Slnečné lúče sa predierali cez koruny stromov. Eliáš stál na začiatku úzkej lesnej cesty a v ruke
                     držal starú mapu.
@@ -203,7 +203,7 @@
         <!-- Page 3 -->
         <div class="bg-green-50 w-full h-full overflow-hidden text-gray-900">
             <div class="p-6 md:p-10">
-                <h2 class="text-lg md:text-3xl font-bold mb-2 md:mb-4 text-green-800">Kapitola 1: Strážca lúky</h2>
+                <h2 class="text-md md:text-3xl font-bold mb-2 md:mb-4 text-green-800">Kapitola 1: Strážca lúky</h2>
                 <p class="text-[8px] md:text-lg leading-relaxed mb-2 md:mb-4">
                     Svetielko ho priviedlo na lúku plnú motýľov. Uprostred stál starý dub a pri ňom sedela dievčina s
                     prútenou paličkou. Keď ho zbadala, usmiala sa: „Volám sa Mira. Strážim pohyb – aby nezmizol zo
