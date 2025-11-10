@@ -41,13 +41,10 @@ const modal = document.getElementById("book-modal");
 const closeBtn = document.getElementById("close-book");
 
 cover.addEventListener("click", () => {
-    if (window.innerWidth < 768) return;
-  
     modal.classList.remove("hidden");
     modal.classList.add("flex", "opacity-100");
     document.body.style.overflow = "hidden";
-  });
-  
+});
 
 closeBtn.addEventListener("click", () => {
     modal.classList.remove("opacity-100");
