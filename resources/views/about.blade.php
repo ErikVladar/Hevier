@@ -6,12 +6,12 @@
                 <section class="text-gray-900 py-12">
                     <div style="border:12px solid rgb(122, 122, 122)"
                         class="relative flex flex-col items-center space-y-8 mt-12 mb-12 w-full bg-stone-100 rounded-2xl">
-                        <div class="py-4 md:px-8">
+                        <div class="py-4 px-4 md:px-8">
                             <section>
                                 <div class="space-y-16 mt-12 mx-4 max-w-7xl">
 
                                     <div
-                                        class="animate__animated animate__zoomIn animate__slow p-10 rounded-2xl bg-gradient-to-br">
+                                        class="animate__animated animate__zoomIn animate__slow p-4 rounded-2xl bg-gradient-to-br">
                                         <div class="">
 
                                             <div x-data="{ editing: false }" class="relative transform -mt-20">
@@ -84,9 +84,9 @@
 
 
 
-                                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ">
+                                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-4 items-center ">
                                         <div
-                                            class="animate__animated animate__slideInLeft animate__slow p-8 rounded-2xl bg-gradient-to-br">
+                                            class="animate__animated animate__slideInLeft animate__slow rounded-2xl bg-gradient-to-br">
                                             {{--  from-blue-100 to-blue-200"> --}}
                                             <div x-data="{ editing: false }" class="-mt-12 relative w-full">
                                                 <div x-show="!editing">
@@ -141,7 +141,7 @@
                                         </div>
 
                                         <div
-                                            class="animate__animated animate__slideInRight animate__slow flex items-center justify-center transform -rotate-2">
+                                            class="animate__animated animate__slideInRight animate__slow p-10 flex items-center justify-center transform -rotate-2">
                                             <div class="relative inline-block">
                                                 {{-- <div
                                                     class="absolute -top-2 -right-2 w-5 h-5 bg-yellow-500 rounded-full shadow-md border border-yellow-700 z-10">
@@ -159,7 +159,7 @@
                                     </div>
 
 
-                                    <div class="flex flex-col-reverse md:flex-row gap-8 items-center ">
+                                    <div class="flex flex-col-reverse md:flex-row gap-8 p-4 items-center ">
 
                                         
                                         <div
@@ -168,11 +168,11 @@
 
                                                 <img src="storage/imgs/artwork_o.png"
                                                     alt="Ilustrácia: Strážcovia pohybu — kniha a deti v pohybe"
-                                                    class="rounded-2xl max-w-sm object-cover" />
+                                                    class="rounded-2xl w-64 md:max-w-sm object-cover" />
                                             </div>
                                         </div>
                                         <div
-                                            class="animate__animated animate__zoomIn animate__slow space-y-2 p-8 rounded-2xl bg-gradient-to-br">
+                                            class="animate__animated animate__zoomIn animate__slow space-y-2 rounded-2xl bg-gradient-to-br">
                                             <div x-data="{ editing: false }" class="relative w-full -mt-12">
                                                 <div x-show="!editing">
                                                     <div

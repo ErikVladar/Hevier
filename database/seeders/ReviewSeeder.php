@@ -24,11 +24,11 @@ class ReviewSeeder extends Seeder
             'photo' => 'review2.png',
             'name' => 'Matej Tóth',
             'rating' => 4,
-            'text' => 'Kniha Strážcovia pohybu je ďalším skvelým dielom Daniela Heviere. Spája v sebe pútavý, napínavý príbeh so silnou, v dnešnej dobe veľmi potrebnou, myšlienkou- aby sa deti viac hýbali, aby športovali a cítili sa tak lepšie. Verím, že čitateľov nie je len zaujme, ale aj motivuje.',
+            'text' => 'Kniha Strážcovia pohybu je ďalším skvelým dielom Daniela Heviera. Spája v sebe pútavý, napínavý príbeh so silnou, v dnešnej dobe veľmi potrebnou, myšlienkou- aby sa deti viac hýbali, aby športovali a cítili sa tak lepšie. Verím, že čitateľov nie je len zaujme, ale aj motivuje.',
         ],
         [
             'photo' => 'review3.png',
-            'name' => 'Mária Polákovičová',
+            'name' => 'Mária Polakovičová',
             'rating' => 5,
             'text' => 'Kniha plná dobrodružstva, z pera autora, ktorý oslovil svojimi príbehmi generácie detí. Jazykom, ktorému rozumie aj tá dnešná, odkrýva príbeh, ktorý so sebou nesie hlboké myšlienky. Kniha Strážcovia pohybu je pre všetky deti, ktoré milujú príbehy a rodičov, ktorí chcú dať deťom zmysluplné čítanie.',
         ],
