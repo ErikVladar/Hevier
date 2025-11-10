@@ -1,27 +1,3 @@
-{{-- <x-app-layout>
-    <x-foreground>
-        <section class="py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-8 lg:px-8">
-                <h2
-                    class="animate__animated animate__zoomIn animate__slow text-6xl font-bold text-center mb-12 text-black">
-                    Pohyb v číslach
-                </h2>
-
-                <x-slide-show :urls="$slides[1]" :slideCount="count($slides[1])" />
-                <x-slide-show :urls="$slides[2]" :slideCount="count($slides[2])" />
-                <x-slide-show :urls="$slides[3]" :slideCount="count($slides[3])" />
-                <x-slide-show :urls="$slides[4]" :slideCount="count($slides[4])" />
-                <x-slide-show :urls="$slides[5]" :slideCount="count($slides[5])" />
-                <x-slide-show :urls="$slides[6]" :slideCount="count($slides[6])" />
-            </div>
-        </section>
-
-        <script src="{{ Vite::asset('resources/js/slideshow.js') }}"></script>
-        <link rel="stylesheet" href="{{ Vite::asset('resources/css/slideshow.css') }}">
-        </link>
-
-    </x-foreground>
-</x-app-layout> --}}
 <x-app-layout>
     <x-foreground>
         <section class="py-20">
@@ -106,25 +82,25 @@
 </x-app-layout>
 
 @foreach ($slides as $i => $group)
-    <div id="modal-{{ $i }}" class="fullscreen-modal hidden relative">
+    <div id="modal-{{ $i }}" class="fullscreen-modal hidden fixed inset-0 hidden w-full h-screen justify-center items-center">
         <button class="fixed top-4 right-4 text-white text-3xl z-50"
             onclick="closeModal({{ $i }})">&times;</button>
 
         <button id="scrollL"
-            class="fixed text-white left-3 bottom-1/2 text-3xl md:text-5xl font-bold hover:text-blue-400 z-50
-       bg-black/40 md:bg-transparent rounded-full p-4 md:p-0 backdrop-blur-sm"
+            class="fixed text-white left-3 bottom-6 md:bottom-1/2 text-3xl md:text-5xl font-bold hover:text-blue-400 z-50
+       bg-gray-800 md:bg-transparent rounded-full p-4 md:p-0 backdrop-blur-sm"
             onclick="scrollL({{ $i }})">
             &lt;
         </button>
 
         <button id="scrollR"
-            class="fixed text-white right-3 bottom-1/2 text-3xl md:text-5xl font-bold hover:text-blue-400 z-50
-       bg-black/40 md:bg-transparent rounded-full p-4 md:p-0 backdrop-blur-sm"
+            class="fixed text-white right-3 bottom-6 md:bottom-1/2 text-3xl md:text-5xl font-bold hover:text-blue-400 z-50
+       bg-gray-800 md:bg-transparent rounded-full p-4 md:p-0 backdrop-blur-sm"
             onclick="scrollR({{ $i }})">
             &gt;
         </button>
 
-        <div class="flex h-full">
+        <div style="vertical-align: middle" class="flex h-full">
             <x-slide-show :urls="$group" :slideCount="count($group)" />
         </div>
     </div>
