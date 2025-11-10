@@ -5,10 +5,10 @@
             <section class="relative w-full overflow-hidden">
                 <section class="text-gray-900 py-12">
                     <div style="border:12px solid rgb(122, 122, 122)"
-                        class="relative flex flex-col items-center space-y-8 mt-12 mb-12 w-full bg-stone-100 rounded-2xl">
+                        class="relative flex flex-col items-center space-y-8 mt-12 mb-6 w-full bg-stone-100 rounded-2xl">
                         <div class="py-4 px-4 md:px-8">
                             <section>
-                                <div class="space-y-16 mt-12 mx-4 max-w-7xl">
+                                <div class="space-y-2 mt-12 mx-4 max-w-7xl">
 
                                     <div
                                         class="animate__animated animate__zoomIn animate__slow p-4 rounded-2xl bg-gradient-to-br">
@@ -158,7 +158,7 @@
                                     </div>
 
 
-                                    <div class="flex flex-col-reverse md:flex-row gap-8 p-6 items-center ">
+                                    <div class="flex flex-col-reverse md:flex-row gap-16 p-6 items-center ">
 
 
                                         <div
