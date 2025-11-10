@@ -17,24 +17,38 @@ document.addEventListener("DOMContentLoaded", () => {
         .forEach((el) => observer.observe(el));
 });
 
-const ratio = 1040 / 650; // aspect ratio
+function resizeBook() {
 
-const maxWidth = window.innerWidth * 0.9;
-const maxHeight = window.innerHeight * 0.9;
+	const ratio = 1040 / 650; // aspect ratio
 
-let width = maxWidth;
-let height = width / ratio;
+	const maxWidth = window.innerWidth * 0.9;
+	const maxHeight = window.innerHeight * 0.9;
 
-if (height > maxHeight) {
-    height = maxHeight;
-    width = height * ratio;
+	let width = maxWidth;
+	let height = width / ratio;
+
+	console.log("resizing book");
+	console.log(maxWidth, maxHeight);
+
+	if (height > maxHeight) {
+	    height = maxHeight;
+	    width = height * ratio;
+	}
+
+	$("#flipbook").turn({
+	    width: width,
+	    height: height,
+	    autoCenter: true,
+	});
+
 }
 
-$("#flipbook").turn({
-    width: width,
-    height: height,
-    autoCenter: true,
-});
+// After resizing the window, the book needs to recalculate its size
+document.addEventListener("resize", () => {
+	resizeBook();	
+}
+
+resizeBook();
 
 const cover = document.getElementById("book-cover");
 const modal = document.getElementById("book-modal");
@@ -76,3 +90,4 @@ toggleBtn.addEventListener("click", () => {
         menu.classList.remove("max-h-[1000px]");
     }
 });
+

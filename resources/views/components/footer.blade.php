@@ -101,12 +101,12 @@
 
         <div class="text-center">
             <h3 class="font-bold mb-8 text-black">PARTNERI</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 space-y-8 md:space-y-0">
-                <div class="relative flex flex-col group" data-aos="zoom-in">
+            <div class="grid grid-cols-2 md:space-y-0">
+                <div class="relative flex flex-col group justify-center" data-aos="zoom-in">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/O2-Logo.svg" alt="O2"
                         class="w-20 object-cover transition-transform duration-300 group-hover:scale-105 mx-auto">
                 </div>
-                <div class="relative flex flex-col group" data-aos="zoom-in">
+                <div class="relative flex flex-col group justify-center" data-aos="zoom-in">
                     <img src="storage/imgs/vszp.png" alt="VSZP"
                         class="w-20 object-cover transition-transform duration-300 group-hover:scale-105 mx-auto">
                 </div>

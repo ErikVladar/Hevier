@@ -5,7 +5,6 @@ import Alpine from "alpinejs";
 
 // Import all JS modules using glob
 const modules = import.meta.glob([
-    "./welcome/welcome.js",
     "./about/about.js",
     "./collab/collab.js",
     "./more/more.js",

@@ -139,16 +139,17 @@
     class="fixed inset-0 hidden justify-center items-center bg-black z-50 transition-opacity duration-300">
 
     <div x-data="{ visible: true }" x-show="visible" @click="visible = false"
-        class="absolute top-16 right-0 inline-flex items-center gap-2 bg-white/90 backdrop-blur px-6 py-3
-           rounded-full text-gray-800 text-xs md:text-sm z-50 font-semibold shadow-md cursor-pointer
-           transition-opacity duration-500"
+        class="absolute top-16 right-0 inline-flex items-center gap-2 "
         x-transition.opacity style="pointer-events: auto;">
 
         <img src="storage/imgs/cursor.png" alt="Cursor icon"
             class="hidden md:block animate__animated animate__pulse animate__slow animate__infinite 
-                absolute -top-7 -left-7 w-12" />
-
-        <span class="text-xs md:text-sm select-none">Kliknite roh pre listovanie</span>
+                absolute -top-7 -left-24 w-12" />
+	<div class="bg-white/90 backdrop-blur px-6 py-3
+           rounded-full text-gray-800 text-xs md:text-sm z-50 font-semibold shadow-md cursor-pointer
+           transition-opacity duration-500">
+		<span class="text-xs md:text-sm select-none">Kliknite roh pre listovanie</span>
+	</div>
     </div>
 
 
@@ -229,4 +230,7 @@
             <img src="storage/imgs/back.jpg" class="w-full h-full object-cover" />
         </div>
     </div>
+	
+
+	@vite("resources/js/welcome/welcome.js")
 </div>

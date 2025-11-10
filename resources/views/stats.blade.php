@@ -16,7 +16,7 @@
 
                         @if ($first)
                             <div style="border:8px solid rgb(122,122,122); animation-delay: {{ $delay }}s;"
-                                class="relative animate__animated animate__zoomIn cursor-pointer rounded-xl transition-transform duration-450 hover:scale-105"
+                                class="relative animate__animated animate__zoomIn cursor-pointer rounded-xl transition-all ease-in-out duration-300 hover:scale-105"
                                 onclick="openModal({{ $i }})">
                                 <img src="{{ $first }}" class="w-full h-full object-cover">
                             </div>
