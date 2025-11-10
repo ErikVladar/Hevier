@@ -138,18 +138,20 @@
 <div id="book-modal"
     class="fixed inset-0 hidden justify-center items-center bg-black z-50 transition-opacity duration-300">
 
-    <div x-data="{ visible: true }" x-show="visible" @click="visible = false"
-        class="absolute top-16 right-0 inline-flex items-center gap-2 "
+    <div x-data="{ visible: true }" x-show="visible" @click="visible = false" class="absolute top-16 right-0 z-50"
         x-transition.opacity style="pointer-events: auto;">
 
-        <img src="storage/imgs/cursor.png" alt="Cursor icon"
-            class="hidden md:block animate__animated animate__pulse animate__slow animate__infinite 
-                absolute -top-7 -left-24 w-12" />
-	<div class="bg-white/90 backdrop-blur px-6 py-3
-           rounded-full text-gray-800 text-xs md:text-sm z-50 font-semibold shadow-md cursor-pointer
-           transition-opacity duration-500">
-		<span class="text-xs md:text-sm select-none">Kliknite roh pre listovanie</span>
-	</div>
+        {{-- <div
+            class="relative inline-flex items-center gap-2 bg-white/90 backdrop-blur px-6 py-3
+                rounded-full text-gray-800 text-xs md:text-sm font-semibold shadow-md cursor-pointer
+                transition-opacity duration-500">
+
+            <img src="storage/imgs/cursor.png" alt="Cursor icon"
+                class="hidden md:block animate__animated animate__pulse animate__slow animate__infinite
+               absolute -top-6 -left-10 w-12" />
+
+            <span class="text-xs md:text-sm select-none">Kliknite roh pre listovanie</span>
+        </div> --}}
     </div>
 
 
@@ -160,7 +162,21 @@
 
     <div id="flipbook" class="shadow-2xl">
 
-        <div class="hard">
+
+        <div class="hard relative">
+            <div x-data="{ visible: true }" x-show="visible" @click="visible = false" class="absolute top-4 right-4 z-50"
+                x-transition.opacity style="pointer-events: auto;">
+                <div
+                    class="relative inline-flex items-center gap-2 bg-white/90 backdrop-blur px-6 py-1
+                        rounded-full text-gray-800 text-xs md:text-sm font-semibold shadow-md cursor-pointer
+                        transition-opacity duration-500">
+                    <img src="storage/imgs/cursor_flip.png" alt="Cursor icon"
+                        class="hidden md:block animate__animated animate__pulse animate__slow animate__infinite
+            absolute -top-6 -right-6 w-12 transform scale-x-[-1]" />
+
+                    <span class="text-xs md:text-sm select-none">Kliknite roh pre listovanie</span>
+                </div>
+            </div>
             <img src="storage/imgs/front.jpg" class="w-full h-full object-cover" />
         </div>
         <div class="bg-gray-200 hard"></div>
@@ -230,7 +246,7 @@
             <img src="storage/imgs/back.jpg" class="w-full h-full object-cover" />
         </div>
     </div>
-	
 
-	@vite("resources/js/welcome/welcome.js")
+
+    @vite('resources/js/welcome/welcome.js')
 </div>

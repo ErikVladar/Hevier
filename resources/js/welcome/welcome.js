@@ -18,37 +18,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function resizeBook() {
+    const ratio = 1040 / 650;
 
-	const ratio = 1040 / 650; // aspect ratio
+    const maxWidth = window.innerWidth * 0.9;
+    const maxHeight = window.innerHeight * 0.9;
 
-	const maxWidth = window.innerWidth * 0.9;
-	const maxHeight = window.innerHeight * 0.9;
+    let width = maxWidth;
+    let height = width / ratio;
 
-	let width = maxWidth;
-	let height = width / ratio;
+    if (height > maxHeight) {
+        height = maxHeight;
+        width = height * ratio;
+    }
 
-	console.log("resizing book");
-	console.log(maxWidth, maxHeight);
-
-	if (height > maxHeight) {
-	    height = maxHeight;
-	    width = height * ratio;
-	}
-
-	$("#flipbook").turn({
-	    width: width,
-	    height: height,
-	    autoCenter: true,
-	});
-
-}
-
-// After resizing the window, the book needs to recalculate its size
-document.addEventListener("resize", () => {
-	resizeBook();	
+    $("#flipbook").turn({
+        width: width,
+        height: height,
+        autoCenter: true,
+    });
 }
 
 resizeBook();
+
+// window.addEventListener("resize", resizeBook);
+
+
 
 const cover = document.getElementById("book-cover");
 const modal = document.getElementById("book-modal");
