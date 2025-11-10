@@ -71,7 +71,7 @@
                             @endif
                         </a>
                     @endif --}}
-{{-- 
+                    {{-- 
                     <div class="flex flex-col items-center justify-center min-h-screen px-4 space-y-6">
                         <div class="w-full max-w-full overflow-hidden flex justify-between gap-4 flex-wrap z-30">
 
@@ -93,29 +93,33 @@
                         </div>
                     </div> --}}
 
-                    <div class="flex flex-col items-center justify-center space-y-6 max-w-2xl mx-auto px-4">
+                    {{-- <div class="flex flex-col items-center justify-center space-y-6 max-w-2xl mx-auto px-4">
 
-                        <div class="w-full" style="aspect-ratio: 340/340;"> 
+                        <div class="w-full" style="aspect-ratio: 340/340;">
                             <iframe src="https://www.instagram.com/reel/DQuAjb7DZcR/embed"
-                                class="w-full h-full rounded-md shadow-md"
-                                frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                                class="w-full h-full rounded-md shadow-md" frameborder="0" scrolling="no"
+                                allowtransparency="true"></iframe>
                         </div>
-                    
+
                         <div class="w-full" style="aspect-ratio: 100/140;">
                             <iframe src="https://www.instagram.com/p/DQrW0c5jd67/embed"
-                                class="w-full h-full rounded-md shadow-md"
-                                frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                                class="w-full h-full rounded-md shadow-md" frameborder="0" scrolling="no"
+                                allowtransparency="true"></iframe>
                         </div>
-                    
+
                         <div class="w-full" style="aspect-ratio: 100/165;">
                             <iframe src="https://www.instagram.com/p/DQpDd95jexD/embed"
-                                class="w-full h-full rounded-md shadow-md"
-                                frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-                        </div>   
-                    </div>
-                    
+                                class="w-full h-full rounded-md shadow-md" frameborder="0" scrolling="no"
+                                allowtransparency="true"></iframe>
+                        </div>
+                    </div> --}}
+
+                    <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+                    <script src="https://elfsightcdn.com/platform.js" async></script>
+                    <div class="elfsight-app-9d6444a3-19bd-4638-b98a-d8a519ec76d4" data-elfsight-app-lazy></div>
 
                 </div>
+
             </section>
         </x-foreground>
     </div>
