@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" href="{{ asset('storage/favicon.ico') }}">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -57,7 +58,8 @@
     </div>
     <div id="ghost-container">
 
-        <div class="min-h-screen bg-fixed bg-cover bg-center bg-no-repeat bg-white/30 items-center [@media(min-width:1080px)]:px-32 [@media(min-width:1080px)]:pt-20"
+        <div class="min-h-screen bg-fixed bg-cover bg-center bg-no-repeat bg-white/30 items-center"
+        {{-- <div class="min-h-screen bg-fixed bg-cover bg-center bg-no-repeat bg-white/30 items-center [@media(min-width:1080px)]:px-32 [@media(min-width:1080px)]:pt-20" --}}
             style="background-image: url('{{ asset('storage/imgs/bg.png') }}'); background-attachment: fixed;">
             <main>
                 {{ $slot }}

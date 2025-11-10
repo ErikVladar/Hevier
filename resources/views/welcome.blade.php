@@ -1,61 +1,62 @@
 <x-app-layout>
-    <div
-        class="bg-white/60 backdrop-blur relative w-full min-h-screen grid grid-cols-1 md:grid-cols-1 gap-10 items-center justify-center text-center rounded-t-3xl">
-        <div class="w-full relative bg-cover bg-center px-20 mt-12 items-center justify-center text-center">
-            <section id="about" class="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-screen">
-                <div id="title" class="flex flex-col h-full pt-12 md:p-12 items-center text-center space-y-12">
+    <x-foreground>
+        <div
+            class="relative w-full min-h-screen grid grid-cols-1 md:grid-cols-1 gap-10 items-center justify-center text-center">
+            <div class="w-full relative bg-cover bg-center px-20 mt-12 items-center justify-center text-center">
+                <section id="about" class="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-screen">
+                    <div id="title" class="flex flex-col h-full pt-12 md:p-12 items-center text-center space-y-12">
 
-                    <div x-data="{ editing: false }" class="w-full relative mb-6">
-                        <div x-show="!editing" class="relative flex flex-col items-center justify-center">
-                            @auth
-                                <div class="absolute -top-4 -right-4 z-10">
-                                    <button @click.prevent="editing=true"
-                                        class="p-2 bg-white text-black rounded-full shadow hover:bg-gray-200">
-                                        ✏️
-                                    </button>
-                                </div>
-                            @endauth
+                        <div x-data="{ editing: false }" class="w-full relative mb-6">
+                            <div x-show="!editing" class="relative flex flex-col items-center justify-center">
+                                @auth
+                                    <div class="absolute -top-4 -right-4 z-10">
+                                        <button @click.prevent="editing=true"
+                                            class="p-2 bg-white text-black rounded-full shadow hover:bg-gray-200">
+                                            ✏️
+                                        </button>
+                                    </div>
+                                @endauth
 
-                            <h1 class="font-[Franklin] antialiased text-black text-6xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl mb-2 animate__animated animate__slideInLeft animate__slow"
-                                style="transform: rotate(-2deg); transform-origin: left;">
-                                {{ $content['about']['title_1'] }}
-                            </h1>
-                            <h1 class="font-[Franklin] antialiased text-black text-6xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl mb-2 animate__animated animate__slideInRight animate__slow"
-                                style="transform: rotate(-2deg); transform-origin: right;">
-                                {{ $content['about']['title_2'] }}
-                            </h1>
+                                <h1 class="font-[Franklin] antialiased text-black text-6xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl mb-2 animate__animated animate__slideInLeft animate__slow"
+                                    style="transform: rotate(-2deg); transform-origin: left;">
+                                    {{ $content['about']['title_1'] }}
+                                </h1>
+                                <h1 class="font-[Franklin] antialiased text-black text-6xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl mb-2 animate__animated animate__slideInRight animate__slow"
+                                    style="transform: rotate(-2deg); transform-origin: right;">
+                                    {{ $content['about']['title_2'] }}
+                                </h1>
+                            </div>
+
+                            <div x-show="editing">
+                                <form method="POST" action="{{ route('content.update') }}" class="flex flex-col gap-2">
+                                    @csrf
+                                    <input type="hidden" name="field" value="title">
+                                    <input type="text" name="title_1"
+                                        value="{{ old('title_1', $content['about']['title_1']) }}"
+                                        class="w-full text-4xl font-bold border rounded px-2 py-1 text-center">
+                                    <input type="text" name="title_2"
+                                        value="{{ old('title_2', $content['about']['title_2']) }}"
+                                        class="w-full text-4xl font-bold border rounded px-2 py-1 text-center">
+
+                                    <div class="flex gap-2 mt-2 justify-center">
+                                        <button type="submit"
+                                            class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Uložiť</button>
+                                        <button type="button" @click.prevent="editing=false"
+                                            class="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500">Zrušiť</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
+                        <div x-data="{ editing: false }" class="w-full relative">
+                            <div x-show="!editing" class="relative flex flex-col items-center text-center">
 
-                        <div x-show="editing">
-                            <form method="POST" action="{{ route('content.update') }}" class="flex flex-col gap-2">
-                                @csrf
-                                <input type="hidden" name="field" value="title">
-                                <input type="text" name="title_1"
-                                    value="{{ old('title_1', $content['about']['title_1']) }}"
-                                    class="w-full text-4xl font-bold border rounded px-2 py-1 text-center">
-                                <input type="text" name="title_2"
-                                    value="{{ old('title_2', $content['about']['title_2']) }}"
-                                    class="w-full text-4xl font-bold border rounded px-2 py-1 text-center">
+                                <p class="text-gray-800 text-3xl animate__animated animate__slideInUp animate__slow">
+                                    {{ $content['about']['body'] }}
+                                </p>
 
-                                <div class="flex gap-2 mt-2 justify-center">
-                                    <button type="submit"
-                                        class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Uložiť</button>
-                                    <button type="button" @click.prevent="editing=false"
-                                        class="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500">Zrušiť</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div x-data="{ editing: false }" class="w-full relative">
-                        <div x-show="!editing" class="relative flex flex-col items-center text-center">
-
-                            <p class="text-gray-800 text-3xl animate__animated animate__slideInUp animate__slow">
-                                {{ $content['about']['body'] }}
-                            </p>
-
-                            <a href="https://youtube.com/@strazcoviapohybu?si=zS3xwfofZIPZ3-pD" target="_blank"
-                                rel="noopener noreferrer"
-                                class="animate__animated animate__pulse animate__infinite animate__slow
+                                <a href="https://youtube.com/@strazcoviapohybu?si=zS3xwfofZIPZ3-pD" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="animate__animated animate__pulse animate__infinite animate__slow
                                         inline-flex mt-12 items-center justify-center 
                                         text-black bg-gradient-to-br from-white to-gray-100 
                                         hover:from-gray-200 hover:to-gray-400 hover:text-white
@@ -63,52 +64,57 @@
                                         shadow-sm hover:shadow-lg
                                         border border-gray-300 hover:border-gray-500
                                         hover:scale-110 transition-all duration-300 ease-out active:scale-95">
-                                <span class="text-7xl leading-none font-[Noto_Music] drop-shadow-md">𝄞</span>
-                            </a>
+                                    <span class="text-7xl leading-none font-[Noto_Music] drop-shadow-md">𝄞</span>
+                                </a>
 
 
-                            @auth
-                                <div class="absolute -top-4 -right-4">
-                                    <button @click.prevent="editing=true"
-                                        class="p-2 bg-white text-black rounded-full shadow hover:bg-gray-200 z-10">
-                                        ✏️
-                                    </button>
-                                </div>
-                            @endauth
+                                @auth
+                                    <div class="absolute -top-4 -right-4">
+                                        <button @click.prevent="editing=true"
+                                            class="p-2 bg-white text-black rounded-full shadow hover:bg-gray-200 z-10">
+                                            ✏️
+                                        </button>
+                                    </div>
+                                @endauth
 
-                        </div>
-                    </div>
-
-                </div>
-
-                <div id="cover" class="flex flex-col h-full mt-32 w-full items-center justify-center">
-                    <div class="text-center space-y-4">
-                        <div id="book-cover"
-                            class="relative animate__animated animate__zoomIn animate__slow cursor-pointer inline-block">
-                            <img src="storage/imgs/front.jpg" alt="Book Cover"
-                                class="transition-transform duration-150 hover:scale-105"
-                                style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
-                            <div
-                                class="hidden md:block absolute -bottom-12 -right-12 inline-flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-gray-800 text-lg font-semibold shadow-md">
-                                <span>Kliknite pre ukážku</span>
-                                <img src="storage/imgs/cursor.png" alt="Cursor icon"
-                                    class="animate__animated animate__bounce animate__slower animate__infinite absolute -top-7 -left-7 w-12 pointer-events-none" />
                             </div>
                         </div>
+
                     </div>
 
+                    <div id="cover" class="flex flex-col h-full mt-16 md:mt-32 w-full items-center justify-center">
+                        <div class="text-center space-y-4">
+                            <div id="book-cover"
+                                class="hidden md:block relative animate__animated animate__zoomIn animate__slow cursor-pointer inline-block">
+                                <img src="storage/imgs/front.jpg" alt="Book Cover"
+                                    class="transition-transform duration-150 hover:scale-105"
+                                    style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
+                                <div
+                                    class="hidden md:block absolute -bottom-12 -right-12 inline-flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-gray-800 text-lg font-semibold shadow-md">
+                                    <span>Kliknite pre ukážku</span>
+                                    <img src="storage/imgs/cursor.png" alt="Cursor icon"
+                                        class="animate__animated animate__bounce animate__slower animate__infinite absolute -top-7 -left-7 w-12 pointer-events-none" />
+                                </div>
+                            </div>
+                            <div
+                                class="block md:hidden relative animate__animated animate__zoomIn animate__slow inline-block">
+                                <img src="storage/imgs/front.jpg" alt="Book Cover"
+                                    style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
+                            </div>
+                        </div>
 
-                    <a href="https://shop.hevi.sk/" target="_blank" rel="noopener noreferrer"
-                        class="cta-button-black mt-12 mb-32">
-                        Kúpiť
-                    </a>
-                </div>
-            </section>
+
+                        <a href="https://shop.hevi.sk/" target="_blank" rel="noopener noreferrer"
+                            class="cta-button-black mt-12 mb-32">
+                            Kúpiť
+                        </a>
+                    </div>
+                </section>
+
+            </div>
 
         </div>
-
-    </div>
-
+    </x-foreground>
     <x-eshop />
 
     <section class="bg-white/60 backdrop-blur w-full py-12">
