@@ -79,7 +79,7 @@
 
                         <div class="card">
                             <div
-                                class="relative animate__animated animate__slideInRight animate__slow max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col md:flex-row transition-transform duration-300">
+                                class="relative animate__animated animate__slideInRight animate__slow max-w-7xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden m-12 flex flex-col-reverse md:flex-row transition-transform duration-300">
 
                                 <div id="toth-card" class="absolute top-4 left-4 z-20">
                                     <div
