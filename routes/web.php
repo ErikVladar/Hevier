@@ -43,6 +43,7 @@ Route::get('/partners', function () {
     $partners = Partner::latest()->get();
     return view('partners', compact('partners'));
 })->name('partners');
+
 Route::get('/partners/{partner:slug}', [PartnerController::class, 'show'])->name('partners.show');
 
 Route::get('/gallery', function () {

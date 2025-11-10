@@ -90,7 +90,7 @@
                                 class="transition-transform duration-150 hover:scale-105"
                                 style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
                             <div
-                                class="absolute -bottom-12 -right-12 inline-flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-gray-800 text-lg font-semibold shadow-md">
+                                class="hidden md:block absolute -bottom-12 -right-12 inline-flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-gray-800 text-lg font-semibold shadow-md">
                                 <span>Kliknite pre ukážku</span>
                                 <img src="storage/imgs/cursor.png" alt="Cursor icon"
                                     class="animate__animated animate__bounce animate__slower animate__infinite absolute -top-7 -left-7 w-12 pointer-events-none" />
