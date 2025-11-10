@@ -8,7 +8,7 @@
                         class="relative flex flex-col items-center space-y-8 mt-12 mb-6 w-full bg-stone-100 rounded-2xl">
                         <div class="py-4 px-4 md:px-8">
                             <section>
-                                <div class="space-y-2 mt-12 mx-4 max-w-7xl">
+                                <div class="space-y-16 md:space-y-2 mt-12 mx-4 max-w-7xl">
 
                                     <div
                                         class="animate__animated animate__zoomIn animate__slow p-4 rounded-2xl bg-gradient-to-br">
@@ -212,7 +212,7 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                </div>
                             </section>
                         </div>
                     </div>
