@@ -82,20 +82,21 @@
 </x-app-layout>
 
 @foreach ($slides as $i => $group)
-    <div id="modal-{{ $i }}" class="fullscreen-modal hidden fixed inset-0 hidden w-full h-screen justify-center items-center">
+    <div id="modal-{{ $i }}"
+        class="fullscreen-modal hidden fixed inset-0 hidden w-full h-screen justify-center items-center">
         <button class="fixed top-4 right-4 text-white text-3xl z-50"
             onclick="closeModal({{ $i }})">&times;</button>
 
-        <button id="scrollL"
-            class="fixed text-white left-3 bottom-6 md:bottom-1/2 text-3xl md:text-5xl font-bold hover:text-blue-400 z-50
-       bg-gray-800 md:bg-transparent rounded-full p-4 md:p-0 backdrop-blur-sm"
+        <button id="LeftScrollBtn"
+            class="fixed text-white left-3 bottom-6 md:bottom-1/2 text-3xl md:text-5xl font-bold hover:text-blue-400 z-40
+       bg-gray-800 md:bg-transparent rounded-full p-4 backdrop-blur-sm"
             onclick="scrollL({{ $i }})">
             &lt;
         </button>
 
-        <button id="scrollR"
-            class="fixed text-white right-3 bottom-6 md:bottom-1/2 text-3xl md:text-5xl font-bold hover:text-blue-400 z-50
-       bg-gray-800 md:bg-transparent rounded-full p-4 md:p-0 backdrop-blur-sm"
+        <button id="RightScrollBtn"
+            class="fixed text-white right-3 bottom-6 md:bottom-1/2 text-3xl md:text-5xl font-bold hover:text-blue-400 z-40
+       bg-gray-800 md:bg-transparent rounded-full p-4 backdrop-blur-sm"
             onclick="scrollR({{ $i }})">
             &gt;
         </button>
@@ -112,6 +113,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         const html = document.documentElement;
         const body = document.body;
+        let activeModalIndex = null;
 
         window.openModal = function(i) {
             const modal = document.getElementById(`modal-${i}n`);
@@ -121,6 +123,7 @@
 
             html.style.overflow = 'hidden';
             body.style.overflow = 'hidden';
+            activeModalIndex = i;
 
         };
 
@@ -144,8 +147,6 @@
                 left: window.innerWidth,
                 behavior: 'smooth'
             });
-
-
         };
 
         window.scrollL = function(i) {
@@ -157,5 +158,17 @@
                 behavior: 'smooth'
             });
         };
+
+        document.addEventListener('keydown', (e) => {
+            if (activeModalIndex === null) return;
+
+            if (e.key === 'ArrowRight') {
+                scrollR(activeModalIndex);
+            } else if (e.key === 'ArrowLeft') {
+                scrollL(activeModalIndex);
+            } else if (e.key === 'Escape') {
+                closeModal(activeModalIndex);
+            }
+        });
     });
 </script>

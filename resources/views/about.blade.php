@@ -297,7 +297,7 @@
                             description="Hrdinovia riešia úlohy spoločne. Dôraz je na tímovej práci, vzájomnej podpore a empatii — jednoduché lekcie, ktoré dieťa môže praktizovať v hre." />
 
                         <x-text-extend-right color="yellow" title="Prekonávanie strachu"
-                            description="Každá výzva v knihe rozpráva o odvahu v malých krokoch — ako čeliť obavám, skúšať nové veci a rásť cez skúsenosť." />
+                            description="Každá výzva v knihe rozpráva o odvahe v malých krokoch — ako čeliť obavám, skúšať nové veci a rásť cez skúsenosť." />
 
                         <x-text-extend-left color="red" title="Rodinné prepojenie"
                             description="Kniha obsahuje jednoduché aktivity a otázky pre rodičov, ktoré podporujú rozhovor po čítaní a budovanie spoločných spomienok." />

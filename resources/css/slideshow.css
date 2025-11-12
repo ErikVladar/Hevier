@@ -35,6 +35,6 @@
     background-color: rgba(0,0,0);
     align-items: center;
     justify-content: flex-start;
-    overflow-x: hidden;
+    overflow-x: scroll;
     overflow-y: hidden;
 }
