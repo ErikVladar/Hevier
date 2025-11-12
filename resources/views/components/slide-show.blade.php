@@ -6,7 +6,7 @@
             </section>
         @endforeach
 
-        <button id="LeftScrollBlock"
+        {{-- <button id="LeftScrollBlock"
             class="absolute text-black left-3 bottom-6 md:bottom-1/2 text-3xl md:text-5xl font-bold z-50
         bg-black rounded-full p-4 backdrop-blur-sm">
             &lt;
@@ -16,7 +16,7 @@
             class="absolute text-black right-3 bottom-6 md:bottom-1/2 opacity-0 pointer-events-none text-3xl md:text-5xl font-bold z-50
         bg-black rounded-full p-4 backdrop-blur-sm">
             &gt;
-        </button>
+        </button> --}}
 
     </section>
 </div>

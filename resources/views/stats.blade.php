@@ -83,18 +83,18 @@
 
 @foreach ($slides as $i => $group)
     <div id="modal-{{ $i }}"
-        class="fullscreen-modal hidden fixed inset-0 hidden w-full h-screen justify-center items-center">
+        class="fullscreen-modal hidden fixed inset-0 w-full h-screen justify-center items-center">
         <button class="fixed top-4 right-4 text-white text-3xl z-50"
             onclick="closeModal({{ $i }})">&times;</button>
 
-        <button id="LeftScrollBtn"
-            class="fixed text-white left-3 bottom-6 md:bottom-1/2 text-3xl md:text-5xl font-bold hover:text-blue-400 z-40
+        <button id="LeftScrollBtn-{{ $i }}"
+            class="fixed text-white left-3 bottom-6 md:bottom-1/2 text-3xl md:text-5xl opacity-0 font-bold hover:text-blue-400 z-40
        bg-gray-800 md:bg-transparent rounded-full p-4 backdrop-blur-sm"
             onclick="scrollL({{ $i }})">
             &lt;
         </button>
 
-        <button id="RightScrollBtn"
+        <button id="RightScrollBtn-{{ $i }}"
             class="fixed text-white right-3 bottom-6 md:bottom-1/2 text-3xl md:text-5xl font-bold hover:text-blue-400 z-40
        bg-gray-800 md:bg-transparent rounded-full p-4 backdrop-blur-sm"
             onclick="scrollR({{ $i }})">
@@ -110,65 +110,64 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const html = document.documentElement;
-        const body = document.body;
-        let activeModalIndex = null;
+   document.addEventListener('DOMContentLoaded', () => {
+    const html = document.documentElement;
+    const body = document.body;
+    let activeModalIndex = null;
 
-        window.openModal = function(i) {
-            const modal = document.getElementById(`modal-${i}n`);
-            if (!modal) return;
+    window.openModal = function(i) {
+        const modal = document.getElementById(`modal-${i}n`);
+        if (!modal) return;
+        modal.classList.remove('hidden');
+        html.style.overflow = 'hidden';
+        body.style.overflow = 'hidden';
+        activeModalIndex = i;
+    };
 
-            modal.classList.remove('hidden');
+    window.closeModal = function(i) {
+        const modal = document.getElementById(`modal-${i}n`);
+        if (!modal) return;
+        modal.classList.add('hidden');
+        html.style.overflow = '';
+        body.style.overflow = '';
+        activeModalIndex = null;
+    };
 
-            html.style.overflow = 'hidden';
-            body.style.overflow = 'hidden';
-            activeModalIndex = i;
+    window.scrollR = function(i) {
+        const modal = document.getElementById(`modal-${i}n`);
+        if (!modal) return;
 
-        };
-
-        window.closeModal = function(i) {
-            const modal = document.getElementById(`modal-${i}n`);
-            if (!modal) return;
-
-            modal.classList.add('hidden');
-
-            html.style.overflow = '';
-            body.style.overflow = '';
-
-
-        };
-
-        window.scrollR = function(i) {
-            const modal = document.getElementById(`modal-${i}n`);
-            if (!modal) return;
-
-            modal.scrollBy({
-                left: window.innerWidth,
-                behavior: 'smooth'
-            });
-        };
-
-        window.scrollL = function(i) {
-            const modal = document.getElementById(`modal-${i}n`);
-            if (!modal) return;
-
-            modal.scrollBy({
-                left: -window.innerWidth,
-                behavior: 'smooth'
-            });
-        };
-
-        document.addEventListener('keydown', (e) => {
-            if (activeModalIndex === null) return;
-
-            if (e.key === 'ArrowRight') {
-                scrollR(activeModalIndex);
-            } else if (e.key === 'ArrowLeft') {
-                scrollL(activeModalIndex);
-            } else if (e.key === 'Escape') {
-                closeModal(activeModalIndex);
-            }
+        modal.scrollBy({
+            left: window.innerWidth,
+            behavior: 'smooth'
         });
+
+        const leftBtn = document.getElementById(`LeftScrollBtn-${i}n`);
+        leftBtn.classList.remove("opacity-0");
+        leftBtn.classList.add("opacity-60");
+    };
+
+    window.scrollL = function(i) {
+        const modal = document.getElementById(`modal-${i}n`);
+        if (!modal) return;
+
+        modal.scrollBy({
+            left: -window.innerWidth,
+            behavior: 'smooth'
+        });
+    };
+
+    document.addEventListener('keydown', (e) => {
+        if (activeModalIndex === null) return;
+
+        if (e.key === 'ArrowRight') {
+            scrollR(activeModalIndex);
+        } else if (e.key === 'ArrowLeft') {
+            scrollL(activeModalIndex);
+        } else if (e.key === 'Escape') {
+            closeModal(activeModalIndex);
+        }
     });
+});
+
 </script>
