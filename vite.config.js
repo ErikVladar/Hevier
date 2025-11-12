@@ -8,6 +8,7 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/css/slideshow.css',
                 'resources/js/app.js',
+                'resources/js/welcome/welcome.js',
                 'resources/js/slideshow.js'
             ],
             refresh: true,

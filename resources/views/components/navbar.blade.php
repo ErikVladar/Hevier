@@ -31,23 +31,41 @@
     document.addEventListener('DOMContentLoaded', () => {
         const toggle = document.getElementById('nav-menu-toggle');
         const menu = document.getElementById('nav-desktop-menu');
-
-        // Set an explicit transition on the element (one-time)
+    
         menu.style.transition = 'transform 0.5s ease';
-
+    
         let open = false;
-        toggle.addEventListener('click', () => {
+    
+        // Toggle open/close when clicking the button
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // prevent the click from bubbling to the document
             open = !open;
-
+    
             if (open) {
                 menu.style.transform = 'translateX(0)';
-                // toggle.classList.remove('md:text-white');
-                // toggle.classList.add('md:text-black');
             } else {
                 menu.style.transform = 'translateX(-100%)';
-                // toggle.classList.remove('md:text-black');
-                // toggle.classList.add('md:text-white');
+            }
+        });
+    
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const isClickInsideMenu = menu.contains(e.target);
+            const isClickOnToggle = toggle.contains(e.target);
+    
+            if (!isClickInsideMenu && !isClickOnToggle && open) {
+                open = false;
+                menu.style.transform = 'translateX(-100%)';
+            }
+        });
+    
+        // Optional: close on ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && open) {
+                open = false;
+                menu.style.transform = 'translateX(-100%)';
             }
         });
     });
-</script>
+    </script>
+    
