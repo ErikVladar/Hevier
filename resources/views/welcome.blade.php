@@ -85,7 +85,7 @@
                     <div id="cover" class="flex flex-col h-full mt-16 md:mt-32 w-full items-center justify-center">
                         <div class="text-center space-y-4">
                             <div id="book-cover"
-                                class="hidden relative animate__animated animate__zoomIn animate__slow cursor-pointer inline-block">
+                                class="hidden md:block relative animate__animated animate__zoomIn animate__slow cursor-pointer inline-block">
                                 <img src="storage/imgs/front.jpg" alt="Book Cover"
                                     class="transition-transform duration-150 hover:scale-105"
                                     style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
@@ -97,7 +97,7 @@
                                 </div>
                             </div>
                             <div
-                                class="block relative animate__animated animate__zoomIn animate__slow inline-block">
+                                class="block md:hidden relative animate__animated animate__zoomIn animate__slow inline-block">
                                 <img src="storage/imgs/front.jpg" alt="Book Cover"
                                     style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
                             </div>
@@ -182,7 +182,10 @@
         <div class="bg-gray-200 hard"></div>
 
         <!-- Page 1 -->
-        <div class="bg-white w-full h-full overflow-hidden text-gray-900">
+        <div class="relative">
+            <img src="storage/imgs/page-1.png" class="w-full h-full object-cover" />
+        </div>
+        {{-- <div class="bg-white w-full h-full overflow-hidden text-gray-900">
             <div class="p-6 md:p-10">
                 <h2 class="text-md md:text-4xl font-bold text-center mb-4 md:mb-6 text-blue-900">Úvod</h2>
                 <p class="text-[6px] md:text-lg leading-relaxed mb-2 md:mb-4">
@@ -198,10 +201,13 @@
                     Si pripravený pridať sa k Strážcom pohybu? Potom otoč stránku… dobrodružstvo sa začína.
                 </p>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Page 2 -->
-        <div class="bg-blue-50 w-full h-full overflow-hidden text-gray-900">
+        <div class="relative">
+            <img src="storage/imgs/page-2.png" class="w-full h-full object-cover" />
+        </div>
+        {{-- <div class="bg-blue-50 w-full h-full overflow-hidden text-gray-900">
             <div class="p-6 md:p-10">
                 <h2 class="text-md md:text-3xl font-bold mb-2 md:mb-4 text-blue-800">Kapitola 1: Volanie lesa</h2>
                 <p class="text-[6px] md:text-lg leading-relaxed mb-2 md:mb-4">
@@ -220,10 +226,13 @@
                 <p class="text-right text-[8px] md:text-sm italic text-gray-600 mt-4 md:mt-6">Pokračovanie na ďalšej
                     strane →</p>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Page 3 -->
-        <div class="bg-green-50 w-full h-full overflow-hidden text-gray-900">
+        <div class="relative">
+            <img src="storage/imgs/page-3.png" class="w-full h-full object-cover" />
+        </div>
+        {{-- <div class="bg-green-50 w-full h-full overflow-hidden text-gray-900">
             <div class="p-6 md:p-10">
                 <h2 class="text-md md:text-3xl font-bold mb-2 md:mb-4 text-green-800">Kapitola 1: Strážca lúky</h2>
                 <p class="text-[6px] md:text-lg leading-relaxed mb-2 md:mb-4">
@@ -240,7 +249,7 @@
                 </p>
                 <p class="text-right text-[10px] md:text-sm italic text-gray-600 mt-4 md:mt-6">— Koniec ukážky —</p>
             </div>
-        </div>
+        </div> --}}
 
         <div class="bg-gray-200 hard">
             <img src="storage/imgs/back.jpg" class="w-full h-full object-cover" />
