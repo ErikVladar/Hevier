@@ -115,7 +115,6 @@
         const body = document.body;
         let activeModalIndex = null;
     
-        // update visibility for a specific modal index
         function updateArrowVisibilityFor(i) {
             const modal = document.getElementById(`modal-${i}n`);
             const leftBtn = document.getElementById(`LeftScrollBtn-${i}n`);
@@ -133,7 +132,6 @@
                 leftBtn.classList.add("opacity-100");
             }
     
-            // small epsilon to avoid float rounding issues
             if (currentScroll >= maxScroll - 1) {
                 rightBtn.classList.add("opacity-0");
                 rightBtn.classList.remove("opacity-100");
@@ -152,13 +150,11 @@
             body.style.overflow = 'hidden';
             activeModalIndex = i;
     
-            // attach a single scroll handler for this modal (avoid duplicates)
             if (!modal._arrowHandler) {
                 modal._arrowHandler = () => updateArrowVisibilityFor(i);
                 modal.addEventListener('scroll', modal._arrowHandler, { passive: true });
             }
     
-            // set initial state
             updateArrowVisibilityFor(i);
         };
     
@@ -171,7 +167,6 @@
             body.style.overflow = '';
             activeModalIndex = null;
     
-            // cleanup scroll handler if attached
             if (modal._arrowHandler) {
                 modal.removeEventListener('scroll', modal._arrowHandler);
                 delete modal._arrowHandler;
@@ -187,7 +182,6 @@
                 behavior: 'smooth'
             });
     
-            // rely on scroll event but also call once after a short delay to ensure final state
             updateArrowVisibilityFor(i);
             setTimeout(() => updateArrowVisibilityFor(i), 250);
         };
@@ -205,7 +199,6 @@
             setTimeout(() => updateArrowVisibilityFor(i), 250);
         };
     
-        // keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (activeModalIndex === null) return;
             if (e.key === 'ArrowRight') {
