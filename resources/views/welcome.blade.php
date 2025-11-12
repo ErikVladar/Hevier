@@ -171,7 +171,7 @@
                         rounded-full text-gray-800 text-xs md:text-sm font-semibold shadow-md cursor-pointer
                         transition-opacity duration-500">
                     <img src="storage/imgs/cursor_flip.png" alt="Cursor icon"
-                        class="hidden md:block animate__animated animate__pulse animate__slow animate__infinite
+                        class="animate__animated animate__pulse animate__slow animate__infinite
             absolute -top-6 -right-6 w-12 transform scale-x-[-1]" />
 
                     <span class="text-xs md:text-sm select-none">Kliknite roh pre listovanie</span>
