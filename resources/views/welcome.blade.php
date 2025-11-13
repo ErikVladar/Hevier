@@ -85,7 +85,7 @@
                     <div id="cover" class="flex flex-col h-full mt-16 md:mt-32 w-full items-center justify-center">
                         <div class="text-center space-y-4">
                             <div id="book-cover"
-                                class="hidden md:block relative animate__animated animate__zoomIn animate__slow cursor-pointer inline-block">
+                                class="relative animate__animated animate__zoomIn animate__slow cursor-pointer inline-block">
                                 <img src="storage/imgs/front.jpg" alt="Book Cover"
                                     class="transition-transform duration-150 hover:scale-105"
                                     style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
@@ -96,11 +96,11 @@
                                         class="animate__animated animate__bounce animate__slower animate__infinite absolute -top-7 -left-7 w-12 pointer-events-none" />
                                 </div>
                             </div>
-                            <div
+                            {{-- <div
                                 class="block md:hidden relative animate__animated animate__zoomIn animate__slow inline-block">
                                 <img src="storage/imgs/front.jpg" alt="Book Cover"
                                     style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
-                            </div>
+                            </div> --}}
                         </div>
 
 
