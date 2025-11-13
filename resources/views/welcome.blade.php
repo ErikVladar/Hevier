@@ -2,7 +2,7 @@
     <x-foreground>
         <div
             class="relative w-full min-h-screen grid grid-cols-1 md:grid-cols-1 gap-10 items-center justify-center text-center">
-            <div class="w-full relative bg-cover bg-center px-20 mt-12 items-center justify-center text-center mb-32">
+            <div class="w-full relative bg-cover bg-center px-20 mt-12 items-center justify-center text-center">
                 <section id="about" class="grid grid-cols-1 md:grid-cols-2 items-stretch min-h-screen">
                     <div id="title" class="flex flex-col h-full pt-12 md:p-12 items-center text-center space-y-12">
 
@@ -104,10 +104,10 @@
                         </div>
 
 
-                        {{-- <a href="https://shop.hevi.sk/" target="_blank" rel="noopener noreferrer"
-                            class="cta-button-black mt-12 mb-32">
+                        <a href="https://shop.hevi.sk/" target="_blank" rel="noopener noreferrer"
+                            class="cta-button-black mt-16 mb-32">
                             Kúpiť
-                        </a> --}}
+                        </a>
                     </div>
                 </section>
 
