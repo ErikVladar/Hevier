@@ -32,6 +32,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/turn/turn.js"></script>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C2FND8Q2W3"></script>
+
     <link rel="stylesheet" href="https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.css" />
     <link rel="stylesheet"
         href="https://unpkg.com/photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css">
@@ -59,7 +62,7 @@
     <div id="ghost-container">
 
         <div class="min-h-screen bg-fixed bg-cover bg-center bg-no-repeat bg-white/30 items-center"
-        {{-- <div class="min-h-screen bg-fixed bg-cover bg-center bg-no-repeat bg-white/30 items-center [@media(min-width:1080px)]:px-32 [@media(min-width:1080px)]:pt-20" --}}
+            {{-- <div class="min-h-screen bg-fixed bg-cover bg-center bg-no-repeat bg-white/30 items-center [@media(min-width:1080px)]:px-32 [@media(min-width:1080px)]:pt-20" --}}
             style="background-image: url('{{ asset('storage/imgs/bg.png') }}'); background-attachment: fixed;">
             <main>
                 {{ $slot }}
@@ -72,6 +75,17 @@
 </body>
 
 </html>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-C2FND8Q2W3');
+</script>
 
 {{-- <script>
     function spawnGhost() {
