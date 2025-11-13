@@ -98,7 +98,7 @@
                             </div>
                             <div
                                 class="block md:hidden relative animate__animated animate__zoomIn animate__slow inline-block">
-                                <img src="storage/imgs/front.jpg" alt="Book Cover"
+                                <img src="storage/imgs/front.jpg" alt="Book Front"
                                     style="width:24rem; max-width:80vw; height:auto; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,0.3);">
                             </div>
                         </div>
@@ -170,20 +170,20 @@
                     class="relative inline-flex items-center gap-2 bg-white/90 backdrop-blur px-6 py-1
                         rounded-full text-gray-800 text-xs md:text-sm font-semibold shadow-md cursor-pointer
                         transition-opacity duration-500">
-                    <img src="storage/imgs/cursor_flip.png" alt="Cursor icon"
+                    <img src="storage/imgs/cursor_flip.png" alt="Cursor flipped icon"
                         class="animate__animated animate__pulse animate__slow animate__infinite
             absolute -top-6 -right-6 w-12 transform scale-x-[-1]" />
 
                     <span class="text-xs md:text-sm select-none">Kliknite roh pre listovanie</span>
                 </div>
             </div>
-            <img src="storage/imgs/front.jpg" class="w-full h-full object-cover" />
+            <img src="storage/imgs/front.jpg" alt="Front" class="w-full h-full object-cover" />
         </div>
         <div class="bg-gray-200 hard"></div>
 
         <!-- Page 1 -->
         <div class="relative">
-            <img src="storage/imgs/page-1.png" class="w-full h-full object-cover" />
+            <img src="storage/imgs/page-1.png" alt="Page 1" class="w-full h-full object-cover" />
         </div>
         {{-- <div class="bg-white w-full h-full overflow-hidden text-gray-900">
             <div class="p-6 md:p-10">
@@ -205,7 +205,7 @@
 
         <!-- Page 2 -->
         <div class="relative">
-            <img src="storage/imgs/page-2.png" class="w-full h-full object-cover" />
+            <img src="storage/imgs/page-2.png" alt="Page 2" class="w-full h-full object-cover" />
         </div>
         {{-- <div class="bg-blue-50 w-full h-full overflow-hidden text-gray-900">
             <div class="p-6 md:p-10">
@@ -230,7 +230,7 @@
 
         <!-- Page 3 -->
         <div class="relative">
-            <img src="storage/imgs/page-3.png" class="w-full h-full object-cover" />
+            <img src="storage/imgs/page-3.png" alt="Page 3" class="w-full h-full object-cover" />
         </div>
         {{-- <div class="bg-green-50 w-full h-full overflow-hidden text-gray-900">
             <div class="p-6 md:p-10">
@@ -252,7 +252,7 @@
         </div> --}}
 
         <div class="bg-gray-200 hard">
-            <img src="storage/imgs/back.jpg" class="w-full h-full object-cover" />
+            <img src="storage/imgs/back.jpg" alt="Back" class="w-full h-full object-cover" />
         </div>
     </div>
 

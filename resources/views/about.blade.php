@@ -166,7 +166,7 @@
                                             <div class="relative w-full inline-block">
 
                                                 <img src="storage/imgs/artwork_o.png"
-                                                    alt="Ilustrácia: Strážcovia pohybu — kniha a deti v pohybe"
+                                                    alt="Ilustrácia: Strážcovia pohybu"
                                                     class="rounded-2xl w-screen object-cover" />
 
                                             </div>
