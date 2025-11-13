@@ -21,10 +21,10 @@
                                     style="transform: rotate(-2deg); transform-origin: left;">
                                     {{ $content['about']['title_1'] }}
                                 </h1>
-                                <h1 class="font-[Franklin] antialiased text-black text-6xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl mb-2 animate__animated animate__slideInRight animate__slow"
+                                <h2 class="font-[Franklin] antialiased text-black text-6xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl mb-2 animate__animated animate__slideInRight animate__slow"
                                     style="transform: rotate(-2deg); transform-origin: right;">
                                     {{ $content['about']['title_2'] }}
-                                </h1>
+                                </h2>
                             </div>
 
                             <div x-show="editing">
