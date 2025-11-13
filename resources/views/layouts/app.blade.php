@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <meta name="description"
+        content="Strážcovia pohybu – dobrodružná detská kniha, ktorá učí deti milovať pohyb, zdravie a radosť z aktívneho života. Objavte príbeh, ktorý rozhýbe fantáziu aj telo.">
+    <meta name="keywords"
+        content="Strážcovia pohybu, detská kniha, pohyb, zdravie, slovenská literatúra pre deti, aktívny život, šport pre deti">
+
     <title>Strážcovia Pohybu</title>
 
     <link href="{{ asset('css/my.css') }}" rel="stylesheet">
