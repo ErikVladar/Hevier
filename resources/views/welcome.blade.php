@@ -54,7 +54,7 @@
                                     {{ $content['about']['body'] }}
                                 </p>
 
-                                <a href="https://youtube.com/@strazcoviapohybu?si=zS3xwfofZIPZ3-pD" target="_blank"
+                                <a href="https://youtu.be/pJXmpHHewvo" target="_blank"
                                     rel="noopener noreferrer"
                                     class="animate__animated animate__pulse animate__infinite animate__slow
                                         inline-flex mt-12 items-center justify-center 
