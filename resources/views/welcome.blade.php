@@ -54,10 +54,39 @@
                                     {{ $content['about']['body'] }}
                                 </p>
 
-                                <a href="https://youtu.be/pJXmpHHewvo" target="_blank"
-                                    rel="noopener noreferrer"
+                                <a href="https://www.dubovskymusic.sk/strazcovia-pohybu/" target="_blank" rel="noopener noreferrer"
                                     class="animate__animated animate__pulse animate__infinite animate__slow
-                                        inline-flex mt-12 items-center justify-center 
+                                            inline-flex mt-12 items-center justify-center 
+                                            text-black bg-gradient-to-br from-white to-gray-100 
+                                            hover:from-gray-200 hover:to-gray-400 hover:text-white
+                                            rounded-full w-16 h-16 
+                                            shadow-sm hover:shadow-lg
+                                            border border-gray-300 hover:border-gray-500
+                                            hover:scale-110 transition-all duration-300 ease-out active:scale-95">
+                                    <svg viewBox="0 0 32 32" class="w-12 h-12" fill="currentColor" stroke="currentColor"
+                                        stroke-width="1">
+                                        <!-- outer rounded rectangle -->
+                                        <path
+                                            d="M27 12.994V6.96c0-.53-.21-1.039-.586-1.414A1.996 1.996 0 0 0 24.999 4H6.99a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2l6 .04"
+                                            fill="none" />
+
+                                        <!-- horizontal lines -->
+                                        <path d="M9 10h14c.55 0 1-.448 1-1s-.45-1-1-1H9c-.55 0-1 .448-1 1s.45 1 1 1z" />
+                                        <path d="M9 14h14c.55 0 1-.448 1-1s-.45-1-1-1H9c-.55 0-1 .448-1 1s.45 1 1 1z" />
+                                        <path d="M9 18h6c.55 0 1-.448 1-1s-.45-1-1-1H9c-.55 0-1 .448-1 1s.45 1 1 1z" />
+                                        <path d="M9 22h6c.55 0 1-.448 1-1s-.45-1-1-1H9c-.55 0-1 .448-1 1s.45 1 1 1z" />
+
+                                        <!-- microphone shape -->
+                                        <path
+                                            d="M18 23.922c-1.105 0-2.002.897-2.002 2.002s.897 2.002 2.002 2.002c1.104 0 2.001-.897 2.001-2.002v-7.122l6-.75.003 3.867c-1.105 0-2.002.897-2.002 2.002s.897 2.001 2.002 2.001c1.105 0 2.002-.897 2.002-2.001l-.006-7.003a1 1 0 0 0-1.124-.99l-8 1a1 1 0 0 0-.876.992v6.003z"
+                                            fill="currentColor" stroke="none" />
+                                    </svg>
+                                </a>
+
+
+                                <a href="https://youtu.be/pJXmpHHewvo" target="_blank" rel="noopener noreferrer"
+                                    class="animate__animated animate__pulse animate__infinite animate__slow
+                                        inline-flex mt-4 items-center justify-center 
                                         text-black bg-gradient-to-br from-white to-gray-100 
                                         hover:from-gray-200 hover:to-gray-400 hover:text-white
                                         rounded-full w-24 h-24 
@@ -164,8 +193,8 @@
 
 
         <div class="hard relative">
-            <div x-data="{ visible: true }" x-show="visible" @click="visible = false" class="absolute top-4 right-4 z-50"
-                x-transition.opacity style="pointer-events: auto;">
+            <div x-data="{ visible: true }" x-show="visible" @click="visible = false"
+                class="absolute top-4 right-4 z-50" x-transition.opacity style="pointer-events: auto;">
                 <div
                     class="relative inline-flex items-center gap-2 bg-white/90 backdrop-blur px-6 py-1
                         rounded-full text-gray-800 text-xs md:text-sm font-semibold shadow-md cursor-pointer
