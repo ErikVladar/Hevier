@@ -48,9 +48,9 @@
                             </div>
                         </div>
                         <div x-data="{ editing: false }" class="w-full relative">
-                            <div x-show="!editing" class="relative flex flex-col items-center text-center">
+                            <div x-show="!editing" class="relative flex flex-col items-center text-center animate__animated animate__slideInUp animate__slow">
 
-                                <p class="text-gray-800 text-3xl animate__animated animate__slideInUp animate__slow">
+                                <p class="text-gray-800 text-3xl">
                                     {{ $content['about']['body'] }}
                                 </p>
 
