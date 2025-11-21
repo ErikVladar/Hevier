@@ -54,7 +54,7 @@
                                     {{ $content['about']['body'] }}
                                 </p>
 
-                                <a href="https://www.dubovskymusic.sk/strazcovia-pohybu/" target="_blank" rel="noopener noreferrer"
+                                {{-- <a href="https://www.dubovskymusic.sk/strazcovia-pohybu/" target="_blank" rel="noopener noreferrer"
                                     class="animate__animated animate__pulse animate__infinite animate__slow
                                             inline-flex mt-12 items-center justify-center 
                                             text-black bg-gradient-to-br from-white to-gray-100 
@@ -78,7 +78,7 @@
                                             d="M18 23.922c-1.105 0-2.002.897-2.002 2.002s.897 2.002 2.002 2.002c1.104 0 2.001-.897 2.001-2.002v-7.122l6-.75.003 3.867c-1.105 0-2.002.897-2.002 2.002s.897 2.001 2.002 2.001c1.105 0 2.002-.897 2.002-2.001l-.006-7.003a1 1 0 0 0-1.124-.99l-8 1a1 1 0 0 0-.876.992v6.003z"
                                             fill="currentColor" stroke="none" />
                                     </svg>
-                                </a>
+                                </a> --}}
 
 
                                 <a href="https://youtu.be/pJXmpHHewvo" target="_blank" rel="noopener noreferrer"
