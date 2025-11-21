@@ -83,7 +83,7 @@
 
                                 <a href="https://youtu.be/pJXmpHHewvo" target="_blank" rel="noopener noreferrer"
                                     class="animate__animated animate__pulse animate__infinite animate__slow
-                                        inline-flex mt-4 items-center justify-center 
+                                        inline-flex mt-12 items-center justify-center 
                                         text-black bg-gradient-to-br from-white to-gray-100 
                                         hover:from-gray-200 hover:to-gray-400 hover:text-white
                                         rounded-full w-24 h-24 
