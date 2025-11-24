@@ -48,7 +48,8 @@
                             </div>
                         </div>
                         <div x-data="{ editing: false }" class="w-full relative">
-                            <div x-show="!editing" class="relative flex flex-col items-center text-center animate__animated animate__slideInUp animate__slow">
+                            <div x-show="!editing"
+                                class="relative flex flex-col items-center text-center animate__animated animate__slideInUp animate__slow">
 
                                 <p class="text-gray-800 text-3xl">
                                     {{ $content['about']['body'] }}
@@ -130,8 +131,8 @@
                         </div>
 
 
-                        <a href="https://shop.hevi.sk/" target="_blank" rel="noopener noreferrer"
-                            class="cta-button-black mt-16 mb-32">
+                        <a href="https://shop.hevi.sk/produkt/daniel-hevier-strazcovia-pohybu/" target="_blank"
+                            rel="noopener noreferrer" class="cta-button-black mt-16 mb-32">
                             Kúpiť
                         </a>
                     </div>
@@ -190,8 +191,8 @@
 
 
         <div class="hard relative">
-            <div x-data="{ visible: true }" x-show="visible" @click="visible = false"
-                class="absolute top-4 right-4 z-50" x-transition.opacity style="pointer-events: auto;">
+            <div x-data="{ visible: true }" x-show="visible" @click="visible = false" class="absolute top-4 right-4 z-50"
+                x-transition.opacity style="pointer-events: auto;">
                 <div
                     class="relative inline-flex items-center gap-2 bg-white/90 backdrop-blur px-6 py-1
                         rounded-full text-gray-800 text-xs md:text-sm font-semibold shadow-md cursor-pointer
