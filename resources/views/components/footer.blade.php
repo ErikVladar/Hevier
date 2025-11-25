@@ -82,7 +82,7 @@
                 </li>
 
                 <li>
-                    <a href="https://www.tiktok.com/@strazcoviapohybu?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer"
+                    <a href="https://tiktok.com/@strazcovia_pohybu" target="_blank" rel="noopener noreferrer"
                         class="group flex items-center gap-2 transition text-gray-700 hover:text-black">
                         <svg class="w-8 h-8 text-gray-400 transition group-hover:text-black"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"
