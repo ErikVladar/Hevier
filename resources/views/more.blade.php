@@ -32,7 +32,7 @@
                     bio="Rasťo už ako malý chlapec mal rád všetky športy. Až do dvanástich rokov hrával najradšej futbal a hokej, ktoré mu aj veľmi išli. Dlhý čas nevedel, ktorý šport si vybrať, pretože ho bavili oba, no nakoniec sa rozhodol naplno venovať hokeju. Na ľade mu to išlo skvele. Bol rýchly, obratný a mal dobrý prehľad v hre. Počas tréningov si ho rýchlo všimli tréneri, pretože sa nikdy nevzdával a mal v sebe veľké odhodlanie. Každý tréning bral vážne, aj keď to niekedy bolo ťažké. Po škole bežal rovno na štadión a aj keď bol unavený, nikdy sa nesťažoval – hokej ho jednoducho bavil. Už ako dieťa sníval o tom, že raz bude hrať za Slovensko a že si oblečie reprezentačný dres. Tento sen sa mu splnil – stal sa reprezentantom Slovenska a zahral si po boku najlepších slovenských hokejistov."
                     uspech1="Majster sveta (2002)" uspech2="Účasť na zimných olympijských hrách (2002)"
                     uspech3="Víťaz Calder Cupu (2003)" uspech4="Majster Švajčiarska (2008)"
-                    uspech5="Majster Slovenskej extraligy (1994/1995 a 1995/1996)"/>
+                    uspech5="Majster Slovenskej extraligy (1994/1995 a 1995/1996)" />
 
                 <x-bio-right name="Petra Vlhová" img="imgs/amb2"
                     bio="Peťa odmalička žila pod horami, kde bol sneh doma skoro každý deň. Jej rodičia vlastnili bufety priamo pri lyžiarskych svahoch. Kým oni predávali klobásky a čaj lyžiarom, malá Peťa už mala lyže na nohách a jazdila hore-dole po kopci. Na svahu bola ako doma. Keď skončil tréning, nešla hneď domov – sadla si do bufetu, dala si hotdog, napila sa čaju a šup naspäť na svah. Niekedy lyžovala, kým sa celkom nezotmelo. Nikdy sa nehrala s bábikami, ale radšej stavala bunkre s chalanmi alebo súťažila, kto rýchlejšie zíde kopec. V piatich rokoch už trénovala v klube. Na tréningoch bola húževnatá, často najmladšia, no aj tak vyhrávala. Peťa nikdy nechcela byť ako typické dievčatá - nenosila šaty, ani sa nehrala s bábikami. Vždy bola odvážna, tvrdohlavá a priama – presne taká, aká je dodnes."
@@ -47,7 +47,7 @@
                     uspech1="Majster sveta (2002)" uspech2="Memorial Cup (1998)"
                     uspech3="5x účasť v NHL All-Star Game (2000, 2002, 2003, 2004, 2007, 2008)"
                     uspech4="Účasť na zimných olympijských hrách (2002, 2006, 2010)"
-                    uspech5="Ocenenie Rad Ľudovíta Štúra II. triedy za mimoriadne zásluhy o rozvoj Slovenska v oblasti športu (2022)"/>
+                    uspech5="Ocenenie Rad Ľudovíta Štúra II. triedy za mimoriadne zásluhy o rozvoj Slovenska v oblasti športu (2022)" />
 
                 <x-bio-right name="Paulína Batovská Fialková" img="imgs/amb4"
                     bio="Paja už ako malá bola veľmi aktívna – rada športovala, behala po horách a milovala sneh. Spolu so svojou mladšou sestrou sa začali venovať biatlonu – športu, v ktorom sa beží na lyžiach a strieľa zo zbrane. Na začiatku to nebolo jednoduché. Tréneri ich učili trpezlivosti, disciplíne a vytrvalosti. Trénovali v skromných podmienkach – často im chýbalo vybavenie a niekedy sa im dokonca pokazil autobus, ktorým chodili na preteky. Ale ani to ich neodradilo. Paulína bola už vtedy veľmi cieľavedomá a zodpovedná, chcela sa zlepšovať a tvrdo na sebe pracovala. Tréneri ju museli občas aj pribrzdiť, pretože tréningy brala tak vážne, že by cvičila aj nonstop. Sestry Fialky boli na trati súperky, ale mimo nej najlepšie kamarátky. Paulína hovorí, že si navzájom veľmi pomáhali – spolu sa smiali, plakali, radili si a podporovali sa. Keď bolo ťažko, vždy vedeli, že majú jedna druhú. A možno práve vďaka tomu zvládli všetky výzvy, ktoré biatlon priniesol. Ich príbeh ukazuje, že aj keď začiatky môžu byť ťažké, tvrdá práca, odhodlanie a podpora rodiny dokážu človeka doviesť veľmi ďaleko."
@@ -61,7 +61,16 @@
                     uspech1="Majster sveta (2002)" uspech2="4x účasť v NHL All-Star Game (1997, 1998, 2001, 2002)"
                     uspech3="Bronzová medaila z majstrovstiev sveta (2003)"
                     uspech4="Účasť na zimných olympijských hrách (1994, 2010)"
-                    uspech5="Líder v bodoch na majstrovstvách sveta (2003)"/>
+                    uspech5="Líder v bodoch na majstrovstvách sveta (2003)" />
+
+                <x-bio-right name="Zuzana Rehák-Štefečeková" img="imgs/amb6"
+                    bio="Zuzka vyrastala v športovo založenej rodine a aj preto už ako päťročná začala hrávať tenis, ktorému sa venovala sedem rokov. Napokon ju však prestal baviť a podobne to dopadlo aj s volejbalom, ktorý si neskôr vyskúšala na základnej škole. V kolektívnych športoch sa necítila úplne „doma“, hoci chcela športovať ďalej. K športovej streľbe ju priviedol jej otec, amatérsky strelec v skeete. Na strelnici bola prvýkrát už ako niekoľkomesačné dieťa – víkendy s otcom tu boli súčasťou rodinného života. V dvanástich rokoch jej otec navrhol, aby si streľbu vyskúšala. Úplne prvý výstrel vystrelila symbolicky na Silvestra a streľba ju okamžite zaujala. Následne na to začala spolu s otcom pravidelne trénovať každú nedeľu na strelnici, keď jej otec, sused aj známi pomáhali nabíjať stroje a vytvárali jej podporujúce prostredie. Najskôr skúšala skeet, neskôr double trap, až napokon zakotvila pri trape, ktorý jej najviac sedel. Do konca strednej školy trávila víkendy prevažne na strelnici, kde systematicky trénovala a rástla ako športovkyňa. Zuzka často hovorí, že športová streľba je do veľkej miery dedičná a že najväčší kus jej úspechu tvorí prostredie, v ktorom vyrastala: podpora rodiny, trénerov, silný tím a jej schopnosť podať najlepší výkon práve v súťaži. Už od detstva sa totiž ukazovalo, že nie je „tréningový“, ale „pretekový typ“."
+                    uspech1="Zlatá medaila v trape z Letných olympijských hier (2020)"
+                    uspech2="2x strieborná medaila v trape z Letných olympijských hier (2008, 2012)" uspech3="4x účasť na Letných olympijských hrách (2008, 2012, 2020, 2024)"
+                    uspech4="2x majsterka sveta v trape (2010, 2018)"
+                    uspech5="Majsterka sveta v trape v mixe (2018)" 
+                    uspech6="Držiteľka svetového rekordu" 
+                    />
 
                 <!-- Activities Section -->
                 {{-- <div class="w-full py-16 px-6" data-aos="fade-up">

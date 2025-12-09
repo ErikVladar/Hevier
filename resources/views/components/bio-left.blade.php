@@ -12,18 +12,12 @@
         class="relative w-full md:w-1/3 bg-gray-200 flex flex-col items-center">
         <div class="relative w-full h-[70vh] mb-6 overflow-hidden">
             <template x-for="(image, index) in images" :key="index">
-                <img
-                  x-show="index === currentIndex"
-                  x-transition:enter="transition ease-out duration-500"
-                  x-transition:enter-start="opacity-0 scale-105"
-                  x-transition:enter-end="opacity-100 scale-100"
-                  x-transition:leave="transition ease-in duration-500"
-                  x-transition:leave-start="opacity-100 scale-100"
-                  x-transition:leave-end="opacity-0 scale-95"
-                  :src="image"
-                  class="absolute inset-0 w-full h-full object-cover z-0"
-                >
-              </template>              
+                <img x-show="index === currentIndex" x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 scale-105" x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-500"
+                    x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                    :src="image" class="absolute inset-0 w-full h-full object-cover z-0">
+            </template>
 
             <button @click="prev" style="border:1px solid black"
                 class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/50 text-black p-2 rounded-full hover:bg-gray-800 hover:text-white z-10">‹</button>
@@ -36,7 +30,8 @@
                     <form action="{{ route('ambGallery.upload.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div>
-                            <input style="display: none"  type="text" name="folder" class="form-control" value="{{ $img }}">
+                            <input style="display: none" type="text" name="folder" class="form-control"
+                                value="{{ $img }}">
                             <input type="file" name="image" class="form-control pb-2">
                         </div>
                         <div>
@@ -53,12 +48,26 @@
         <div class="w-full text-left px-6 pb-6">
             <h3 class="font-semibold text-md mb-3">Úspechy</h3>
             <ul class="list-disc text-md pl-5 space-y-2">
-                <li>{{ $uspech1 }}</li>
-                <li>{{ $uspech2 }}</li>
-                <li>{{ $uspech3 }}</li>
-                <li>{{ $uspech4 }}</li>
-                <li>{{ $uspech5 }}</li>
+                @if (!empty($uspech1))
+                    <li>{{ $uspech1 }}</li>
+                @endif
+                @if (!empty($uspech2))
+                    <li>{{ $uspech2 }}</li>
+                @endif
+                @if (!empty($uspech3))
+                    <li>{{ $uspech3 }}</li>
+                @endif
+                @if (!empty($uspech4))
+                    <li>{{ $uspech4 }}</li>
+                @endif
+                @if (!empty($uspech5))
+                    <li>{{ $uspech5 }}</li>
+                @endif
+                @if (!empty($uspech6))
+                    <li>{{ $uspech6 }}</li>
+                @endif
             </ul>
+
         </div>
     </div>
 </div>
